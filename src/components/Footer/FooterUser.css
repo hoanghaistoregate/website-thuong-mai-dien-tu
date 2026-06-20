@@ -1,0 +1,268 @@
+.main-footer {
+  background-color: #0b63b6; /* Màu xanh thương hiệu chuẩn */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin-top: 0 !important; /* Ép sát dính liền khối Sevicer phía trên */
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+/* Định dạng thẻ a chung cho toàn hệ thống Footer */
+.main-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.main-footer a:hover {
+  color: #f3ae48 !important; /* Đổi sang màu cam nổi bật khi hover */
+  transform: translateX(4px); /* Đẩy nhẹ sang phải */
+}
+
+/* Khung chứa chia 3 cột thu vào lòng màn hình */
+.footer-top-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px 30px 15px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.1fr; /* Chia tỉ lệ 3 cột */
+  gap: 128px; /* Hạ từ 120px xuống 40px để không bị vỡ giao diện ở màn hình vừa */
+  box-sizing: border-box;
+}
+
+/* Tiêu đề h3 các cột */
+.footer-column h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+/* Vạch trắng trang trí dưới tiêu đề h3 */
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 2px;
+  background-color: #ffffff;
+}
+.company-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.company-info-list li {
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: #e0f0ff; /* Màu chữ xanh nhạt tinh tế */
+}
+
+.company-info-list li strong {
+  color: #ffffff;
+}
+
+.policy-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-links li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 15px;
+  display: flex;
+  align-items: center; /* Giúp dấu chấm tròn và chữ thẳng hàng */
+}
+
+/* Tạo dấu chấm tròn trước danh sách link */
+.policy-links li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.policy-links li a {
+  display: block;
+  padding: 2px 0;
+  width: 100%;
+}
+
+.hotline-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Khối hotline */
+.hotline-phone-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hotline-icon-247 {
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hotline-label {
+  font-size: 11px;
+  margin: 0;
+  color: #e0f0ff;
+  font-weight: bold;
+}
+
+.hotline-number-big {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Vòng tròn các icon mạng xã hội */
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.footer-social-icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.footer-social-icons a:hover {
+  background-color: #c6ac85 !important;
+  transform: translateY(-3px); /* Nhấc nhẹ lên thay vì thụt sang phải */
+}
+
+.footer-social-icons a svg {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Các hộp Badge liên hệ màu trắng nổi bật bên phải */
+.floating-contact-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.badge-item {
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 6px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.badge-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.floating-contact-badges .badge-item:nth-child(1) .badge-logo {
+  background-color: #1877f2;
+} /* Facebook */
+.floating-contact-badges .badge-item:nth-child(2) .badge-logo {
+  background-color: #0068ff;
+  font-size: 11px;
+} /* Zalo */
+.floating-contact-badges .badge-item:nth-child(3) .badge-logo {
+  background-color: #e53935;
+} /* Điện thoại */
+
+.badge-text p {
+  margin: 0;
+}
+
+.badge-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.badge-time {
+  font-size: 11px;
+  color: #777777;
+  margin-top: 2px !important;
+}
+
+.footer-copyright-bar {
+  background-color: #084c8d; /* Màu xanh đen đậm hẳn xuống tạo khối tách biệt */
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright-bar p {
+  font-size: 13px;
+  color: #d0e4f7;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .footer-top-container {
+    grid-template-columns: 1fr 1fr; /* Chuyển thành 2 cột trên Máy tính bảng */
+    gap: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .footer-top-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột dọc trên Điện thoại */
+    gap: 35px;
+  }
+  .badge-item {
+    width: 100%; /* Hộp badge bung lụa căng tràn màn hình điện thoại */
+  }
+}

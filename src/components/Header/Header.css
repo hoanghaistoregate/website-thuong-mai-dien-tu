@@ -1,0 +1,337 @@
+/* ==========================================================================
+   1. KHUNG HEADER CHÍNH & TOP NAV
+   ========================================================================== */
+.header {
+  background-color: #0057b8;
+  color: #fff;
+}
+
+.header .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* An toàn khi co màn hình */
+}
+
+.header .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.header .header-logo {
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transform: translateY(8px);
+  transition: transform 0.2s ease;
+}
+
+.header .header-logo:hover {
+  transform: scale(1.02);
+}
+
+.header-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header .header-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.header .header-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  cursor: default; /* Trả về mặc định, chỉ đổi pointer cho nút click được */
+  transition: color 0.2s ease;
+}
+
+.header .header-item:hover {
+  color: orange;
+}
+
+/* Các item có tính năng Click mở Modal trên Header */
+.header-item.clickable-item {
+  cursor: pointer !important;
+}
+
+.header-item.clickable-item:hover {
+  color: orange !important; /* Đồng bộ màu cam nổi bật khi hover */
+}
+
+/* ==========================================================================
+   2. SEARCH BOX & BOTTOM HEADER
+   ========================================================================== */
+.header .header-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.header .category-btn {
+  width: 220px;
+  height: 45px;
+  border-radius: 8px;
+  background: #003d82;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.header .search-box {
+  flex: 1;
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header .category-select {
+  width: 150px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.header .search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.header .search-btn {
+  width: 100px;
+  font-size: 20px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.header .search-btn:hover {
+  background: #e08b00; /* Cam đậm hơn chút khi hover */
+}
+
+/* ==========================================================================
+   3. MODAL OVERLAY CHUẨN (Nền tối mờ, tập trung vào trung tâm)
+   ========================================================================== */
+/* --- CSS GIAO DIỆN MODAL DẢI ĐẦU XANH GIỐNG MẪU --- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  backdrop-filter: blur(4px);
+  user-select: none;
+}
+
+/* Khung bọc ngoài Modal - xóa padding để dải màu bám sát viền */
+.modal-content-custom {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  overflow: hidden; /* Cắt góc tròn cho dải màu phía trên */
+  user-select: text;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+/* Dải header màu xanh dương đậm chuẩn như ảnh mẫu */
+.modal-header-blue {
+  background-color: #0057b8; /* Sử dụng màu xanh thương hiệu của bạn */
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Riêng phần hotline khẩn cấp nếu bạn muốn chuyển sang dải màu đỏ cho đúng tính chất khẩn cấp */
+.modal-header-blue.bg-red {
+  background-color: #d32f2f;
+}
+
+/* Chữ tiêu đề màu trắng nằm chính giữa dải xanh */
+.modal-title-white {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  letter-spacing: 0.5px;
+  text-transform: none;
+}
+
+/* Nút X màu đen/xám nằm gọn ở góc phải của thanh tiêu đề */
+.modal-close-btn-white {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #222222; /* Màu đen tối để nhìn rõ trên nền xanh giống ảnh mẫu */
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close-btn-white:hover {
+  color: #ffffff; /* Hover đổi sang trắng nổi bật */
+}
+
+/* Phần thân chứa nội dung bên dưới dải xanh */
+.modal-body-content {
+  padding: 25px 30px 30px 30px;
+  text-align: center;
+}
+
+/* Các phần text và form giữ nguyên định dạng sạch sẽ */
+.modal-subtitle {
+  font-size: 13.5px;
+  color: #666666;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  text-align: left; /* Căn trái nhẹ cho phần mô tả */
+}
+
+.modal-subtitle .highlight-text {
+  color: orange;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0057b8;
+  box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.12);
+}
+
+.modal-submit-btn {
+  width: 100%;
+  padding: 13px;
+  background: orange;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.modal-submit-btn:hover {
+  background: #e08b00;
+}
+
+/* CSS cho list Hotline */
+.hotline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hotline-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.hotline-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hotline-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222222;
+}
+
+.hotline-role {
+  font-size: 11px;
+  color: #777777;
+}
+
+.hotline-call-btn {
+  padding: 8px 14px;
+  background-color: orange;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.hotline-call-btn:hover {
+  background-color: #e08b00; /* Cam đậm khi đưa chuột vào */
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

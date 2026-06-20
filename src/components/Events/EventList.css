@@ -1,0 +1,137 @@
+/* Khung bọc tổng thể khu vực Linh Kiện */
+.event-list {
+  max-width: 1200px;
+  margin: 50px auto; /* Tạo khoảng cách thoáng đãng với khối Catenogy phía trên */
+  padding: 0 15px;
+}
+
+/* Thanh đầu đề chứa chữ "Linh Kiện" và dãy nút bấm */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #0b5ed7; /* Tạo một đường kẻ gạch chân dưới toàn vùng tiêu đề */
+  padding-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Tiêu đề chữ "Linh Kiện" */
+.event-header h2 {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 15px;
+}
+
+/* Vạch màu cam dựng đứng tạo điểm nhấn bên trái chữ Linh Kiện */
+.event-header h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 4px;
+  background-color: #ff9800;
+  border-radius: 2px;
+}
+
+/* Khu vực thanh menu chứa các nút linh kiện */
+.event-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Các nút bấm danh mục linh kiện (Card đồ họa, CPU, RAM...) */
+.event-tab {
+  padding: 8px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px; /* Bo góc dạng Oval dẹt nhẹ thanh lịch */
+  background: #ffffff;
+  color: #555555;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hiệu ứng khi hover hoặc khi nút đó đang được chọn (active) */
+.event-tab:hover,
+.event-tab.active {
+  background: #0b5ed7;
+  border-color: #0b5ed7;
+  color: #ffffff;
+}
+
+.event-list .product-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ) !important; /* Đảm bảo luôn giữ đúng tỉ lệ 4 món/hàng */
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* 2. Style riêng cho các thẻ Card nằm trong vùng Linh Kiện */
+.event-list .product-card {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+  box-shadow: none;
+}
+
+/* Tạo hiệu ứng nhấc nhẹ lên và đổ bóng nhẹ khi rê chuột vào linh kiện */
+.event-list .product-card:hover {
+  transform: translateY(-4px);
+  border-color: #0b5ed7;
+  box-shadow: 0 6px 18px rgba(11, 94, 215, 0.08);
+}
+
+/* 3. Khống chế khung chứa ảnh linh kiện để ảnh luôn vuông vức, sạch sẽ */
+.event-list .product-card-img {
+  width: 100%;
+  height: 160px; /* Cố định chiều cao ảnh để Card không bị trồi sụt */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  margin-bottom: 10px;
+}
+
+.event-list .product-card-img img {
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ảnh giữ nguyên tỷ lệ, không bị méo lệch bóp méo hình dạng */
+}
+
+/* 4. Tùy chỉnh chi tiết phần chữ, giá cả bên trong card Linh Kiện */
+.event-list .product-card-info h4 {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+  height: 40px; /* Khóa chiều cao tên sản phẩm tối đa 2 dòng chữ */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 8px;
+}
+
+/* Chỉnh lại màu sắc giá tiền linh kiện cho nổi bật */
+.event-list .current-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #d32f2f;
+}
