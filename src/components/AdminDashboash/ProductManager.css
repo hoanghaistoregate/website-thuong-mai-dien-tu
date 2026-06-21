@@ -1,0 +1,394 @@
+/* ===== GLOBAL ===== */
+.pm-container {
+  padding: 30px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== CARD ===== */
+.pm-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== HEADER ===== */
+.pm-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pm-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pm-controls h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #1e293b;
+}
+
+/* ===== SELECT ===== */
+.pm-select-target {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== ADD BUTTON ===== */
+.pm-btn-add {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.pm-btn-add:hover {
+  background: #2563eb;
+}
+
+/* ===== TABLE ===== */
+.pm-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.pm-table thead {
+  background: #f1f5f9;
+}
+
+.pm-table th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #334155;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.pm-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* ===== IMAGE ===== */
+.pm-product-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ===== TEXT ===== */
+.pm-product-name {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.pm-product-price {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.pm-action-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pm-btn-edit {
+  background: #facc15;
+  color: #111827;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pm-btn-edit:hover {
+  background: #eab308;
+}
+
+.pm-btn-delete {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pm-btn-delete:hover {
+  background: #dc2626;
+}
+
+/* ===== EMPTY / LOADING ===== */
+.pm-table td[colspan] {
+  text-align: center;
+  padding: 25px;
+  color: #94a3b8;
+}
+
+/* ================= MODAL STYLE (PHONG CÁCH FORM TRẢ GÓP CAO CẤP) ================= */
+
+/* Lớp nền mờ phủ toàn màn hình */
+/* Hiệu ứng mở mượt mà phóng từ nhỏ lên lớn */
+@keyframes modalPopupOpen {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 241, 245, 0.6); /* Màu tối sang trọng */
+  backdrop-filter: blur(4px); /* Làm mờ hậu cảnh như trang cao cấp */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Hộp thoại nội dung chính */
+.modal-content {
+  background: #ffffff;
+  width: 500px;
+  border-radius: 12px;
+  position: relative;
+  animation: modalSliceUp 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* 🌟 GIỚI HẠN CHIỀU CAO TỐI ĐA CỦA MODAL BẰNG 90% MÀN HÌNH */
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column; /* Tách biệt Header và Form nội dung */
+}
+/* Thanh tiêu đề Modal giống header form trả góp */
+.modal-content h3 {
+  margin: 0;
+  padding: 18px 24px;
+  background: linear-gradient(
+    135deg,
+    #1e3a8a,
+    #3b82f6
+  ); /* Gradient xanh công nghệ */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Khung bọc form bên trong có khoảng cách đều đặn */
+.form-layouts {
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+
+  /* 🌟 KÍCH HOẠT THANH CUỘN DỌC TỰ ĐỘNG KHI NỘI DUNG QUÁ DÀI */
+  overflow-y: auto;
+}
+
+/* 💡 TÙY CHỈNH THANH CUỘN (SCROLLBAR) CHO ĐẸP VÀ MẢNH HƠN (Không bị thô như mặc định) */
+.form-layouts::-webkit-scrollbar {
+  width: 6px; /* Độ rộng thanh cuộn mảnh tinh tế */
+}
+
+.form-layouts::-webkit-scrollbar-track {
+  background: #f1f5f9; /* Màu nền đường ray */
+}
+
+.form-layouts::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* Màu thanh kéo */
+  border-radius: 4px;
+}
+
+.form-layouts::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Từng dòng bao gồm Label và Input */
+.form-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Chữ nhãn hướng dẫn */
+.form-groups label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase; /* Viết hoa nhẹ nhàng chuyên nghiệp */
+  letter-spacing: 0.5px;
+}
+
+/* Ô nhập liệu cao cấp */
+.form-groups input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  color: #1e293b;
+  background-color: #f8fafc; /* Nền xám nhạt tinh tế */
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hiệu ứng khi nhấn chuột vào ô nhập liệu */
+.form-groups input:focus {
+  background-color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15); /* Viền bóng xanh bao quanh */
+}
+
+/* Nơi chứa các nút hành động ở góc dưới */
+.modal-actions {
+  display: flex;
+  justify-content: space-between; /* Đẩy 2 nút ra 2 bên tạo độ rộng rãi */
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Nút Hủy */
+.btn-cancel {
+  flex: 1; /* Chia đều kích thước nút */
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+/* Nút Đăng ký / Lưu lại */
+.btn-submit {
+  flex: 1; /* Chia đều kích thước nút */
+  background: #ff4d4f; /* Đổi sang tông đỏ/cam nổi bật kích thích hành động như nút trả góp */
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(255, 77, 79, 0.3);
+  transition: all 0.2s;
+}
+
+.btn-submit:hover {
+  background: #e03e3f;
+  transform: translateY(-1px); /* Nhấc nhẹ nút lên khi hover */
+  box-shadow: 0 6px 12px -2px rgba(255, 77, 79, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 10px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pagination button:hover {
+  background: #f1f5f9;
+}
+
+.pagination button.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Cập nhật ảnh */
+
+/* Khung bọc khu vực upload ảnh */
+.image-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Nút chọn file ẩn dòng chữ mặc định xấu xí đi */
+.custom-file-input {
+  padding: 10px;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1; /* Viền nét đứt tạo cảm giác upload */
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  transition: all 0.2s;
+}
+
+.custom-file-input:hover {
+  border-color: #0056cb;
+  background-color: #f0f6ff;
+  color: #0056cb;
+}
+
+/* Ảnh xem trước nhỏ (Preview) bên trong Modal */
+.image-preview-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-top: 5px;
+}

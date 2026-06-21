@@ -48,8 +48,8 @@
 .header .header-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 16px;
+  gap: 4px;
+  font-size: 14px;
   cursor: default; /* Trả về mặc định, chỉ đổi pointer cho nút click được */
   transition: color 0.2s ease;
 }
@@ -326,6 +326,72 @@
 }
 
 @keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Định vị cho wrapper của tài khoản */
+.account-dropdown-wrapper {
+  position: relative; /* Để menu con căn theo nút này */
+}
+
+/* Style cho menu thả xuống */
+.account-dropdown-menu {
+  position: absolute;
+  top: 130%; /* Đẩy menu xuống dưới một chút */
+  right: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 8px 0;
+  list-style: none;
+  z-index: 1000;
+  border: 1px solid #e0e0e0;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Các item bên trong menu */
+.account-dropdown-menu li {
+  padding: 10px 16px;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.account-dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style cho các thẻ Link chữ bên trong menu */
+.account-dropdown-menu li a {
+  color: #333333 !important;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Riêng nút đăng xuất */
+.account-dropdown-menu .logout-item {
+  color: #ff4d4f;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 4px;
+}
+
+.account-dropdown-menu .logout-item:hover {
+  background-color: #fff1f0;
+}
+
+/* Hiệu ứng mượt mà khi mở menu */
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(-10px);

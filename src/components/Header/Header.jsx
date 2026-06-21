@@ -9,11 +9,16 @@ import { FaShippingFast } from "react-icons/fa";
 import { MdOutlineAddIcCall } from "react-icons/md";
 import { PiShoppingCartDuotone } from "react-icons/pi";
 import { IoSearch } from "react-icons/io5";
+import { VscAccount } from "react-icons/vsc";
 
 const Header = (props) => {
   // Trạng thái lưu tên modal đang mở (null, "HỖ TRỢ TRẢ GÓP", "GIÁ ƯU ĐÃI NHẤT", hoặc "HOTLINE")
   const [activeModal, setActiveModal] = useState(null);
-
+  // Trạng thái mở/đóng menu thả xuống của Tài khoản
+  const [showAccountMenu, setShowAccountMenu] = useState(false);
+  // GIẢ ĐỊNH TRẠNG THÁI ĐĂNG NHẬP (Bạn sẽ thay thế bằng logic Auth thực tế của bạn sau này)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true); // Giả định tài khoản là Admin
   // Trạng thái lưu thông tin form đăng ký (dành cho Trả góp / Ưu đãi)
   const [formData, setFormData] = useState({
     fullName: "",
@@ -33,6 +38,12 @@ const Header = (props) => {
       document.body.style.overflow = "unset";
     };
   }, [activeModal]);
+  // Đóng menu tài khoản khi click ra ngoài tự do
+  useEffect(() => {
+    const handleCloseMenu = () => setShowAccountMenu(false);
+    window.addEventListener("click", handleCloseMenu);
+    return () => window.removeEventListener("click", handleCloseMenu);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,6 +67,12 @@ const Header = (props) => {
       return "Nhập sản phẩm bạn đang quan tâm để nhận báo giá chiết khấu tốt nhất...";
     }
     return "Nhập lời nhắn của bạn...";
+  };
+
+  // Hàm xử lý Đăng xuất giả định
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    alert("Đã đăng xuất thành công!");
   };
 
   return (
@@ -104,6 +121,48 @@ const Header = (props) => {
                 <PiShoppingCartDuotone />
                 Giỏ Hàng
               </li>
+
+              {/* PHẦN THÊM MỚI: TÀI KHOẢN DROPDOWN */}
+              <li
+                className="header-item clickable-item account-dropdown-wrapper"
+                onClick={(e) => {
+                  e.stopPropagation(); // Ngăn sự kiện click lan ra ngoài làm đóng menu ngay lập tức
+                  setShowAccountMenu(!showAccountMenu);
+                }}
+              >
+                <VscAccount />
+                <span>Tài khoản</span>
+
+                {/* Menu con hiển thị khi click vào */}
+                {showAccountMenu && (
+                  <ul className="account-dropdown-menu">
+                    {!isLoggedIn ? (
+                      <>
+                        <li>
+                          <Link to="/login">Đăng nhập</Link>
+                        </li>
+                        <li>
+                          <Link to="/Register">Đăng ký</Link>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        {isAdmin && (
+                          <li>
+                            <Link to="/admin">Trang Admin</Link>
+                          </li>
+                        )}
+                        <li>
+                          <Link to="/profile">Thông tin cá nhân</Link>
+                        </li>
+                        <li onClick={handleLogout} className="logout-item">
+                          Đăng xuất
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                )}
+              </li>
             </ul>
           </nav>
         </div>
@@ -147,7 +206,7 @@ const Header = (props) => {
             className="modal-content-custom"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* PHẦN ĐẦU MODAL - DẢI MÀU XANH GIỐNG ẢNH MÀU MẪU */}
+            {/* ... Nội dung modal giữ nguyên như cũ của bạn ... */}
             <div
               className={`modal-header-blue ${activeModal === "HOTLINE" ? "bg-red" : ""}`}
             >
@@ -163,10 +222,7 @@ const Header = (props) => {
                 &times;
               </button>
             </div>
-
-            {/* PHẦN THÂN MODAL - CHỨA NỘI DUNG FORM HOẶC HOTLINE */}
             <div className="modal-body-content">
-              {/* TRƯỜNG HỢP 1: NẾU ẤN VÀO HOTLINE */}
               {activeModal === "HOTLINE" ? (
                 <>
                   <p className="modal-subtitle">
@@ -185,38 +241,14 @@ const Header = (props) => {
                         0911.108.133
                       </a>
                     </div>
-                    <div className="hotline-card">
-                      <div className="hotline-info">
-                        <span className="hotline-name">Nguyễn Văn B</span>
-                        <span className="hotline-role">
-                          Tư vấn mua hàng & Trả góp
-                        </span>
-                      </div>
-                      <a href="tel:0911108133" className="hotline-call-btn">
-                        0911.108.133
-                      </a>
-                    </div>
-                    <div className="hotline-card">
-                      <div className="hotline-info">
-                        <span className="hotline-name">Nguyễn Văn C</span>
-                        <span className="hotline-role">
-                          Khiếu nại & Bảo hành
-                        </span>
-                      </div>
-                      <a href="tel:0911108133" className="hotline-call-btn">
-                        0911.108.133
-                      </a>
-                    </div>
                   </div>
                 </>
               ) : (
-                /* TRƯỜNG HỢP 2: NẾU ẤN CÁC NÚT DỊCH VỤ KHÁC */
                 <>
                   <p className="modal-subtitle">
                     <span className="highlight-text">{activeModal}</span>. Vui
                     lòng để lại thông tin cá nhân dưới đây!
                   </p>
-
                   <form onSubmit={handleSubmit}>
                     <div className="form-group">
                       <label>Họ và tên *</label>
@@ -229,7 +261,6 @@ const Header = (props) => {
                         placeholder="Nhập họ và tên"
                       />
                     </div>
-
                     <div className="form-group">
                       <label>Email *</label>
                       <input
@@ -241,7 +272,6 @@ const Header = (props) => {
                         placeholder="example@gmail.com"
                       />
                     </div>
-
                     <div className="form-group">
                       <label>Số điện thoại *</label>
                       <input
@@ -253,7 +283,6 @@ const Header = (props) => {
                         placeholder="Nhập số điện thoại"
                       />
                     </div>
-
                     <div className="form-group">
                       <label>Nội dung chi tiết</label>
                       <textarea
@@ -264,7 +293,6 @@ const Header = (props) => {
                         placeholder={getPlaceholderMessage()}
                       ></textarea>
                     </div>
-
                     <button type="submit" className="modal-submit-btn">
                       Xác nhận
                     </button>

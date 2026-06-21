@@ -98,8 +98,6 @@ const SpecsModal = ({ isOpen, onClose, product }) => {
             <tbody>
               {specsList.map((spec, index) => (
                 <tr key={index}>
-                  {" "}
-                  {/* <--- Đặt key trực tiếp ở thẻ tr, không bọc div ở đây */}
                   <td>
                     <strong>{spec.k}</strong>
                   </td>

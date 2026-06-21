@@ -1,38 +1,37 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Thế Giới Máy Tính",
-      "price": 100000,
+      "price": 200000,
       "image": "/images/logo11.jpg"
     },
-
     {
-      "id": 2,
+      "id": "2",
       "name": "Thế Giới Của M2",
       "price": 200000,
       "image": "/images/logo10.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Thế Giới Trò Chơi",
       "price": 100000,
       "image": "/images/logo12.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Thế Giới Của PC",
       "price": 300000,
       "image": "/images/logo6.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Thế Giới Huyền Bí",
       "price": 500000,
       "image": "/images/logo8.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Thế Giới Marvier",
       "price": 400000,
       "image": "/images/logo9.jpg"
@@ -40,50 +39,49 @@
   ],
   "catenogies": [
     {
-      "id": 1,
+      "id": "1",
       "name": "PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060)",
       "price": 14000000,
       "image": "/images/pc.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
       "price": 20000000,
       "image": "/images/pc3.webp"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 )",
       "price": 18000000,
       "image": "/images/pc.jpg"
     },
-
     {
-      "id": 4,
+      "id": "4",
       "name": "PC GAMING NTC VIP2 ( B560 - I7 11700F - 16G - GTX1660S )",
       "price": 15000000,
       "image": "/images/pc5.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "PC GAMING ADLER LAKE I5 THẾ HỆ 12 ( B660 - I5 12400F - 16G - RTX3050 )",
       "price": 18000000,
       "image": "/images/pc6.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I7 12700F - RAM 16G - SSD 250G NVME - VGA RTX3070TI )",
       "price": 19000000,
       "image": "/images/pc7.jpeg"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Máy tính văn phòng G6405 RAM 4GB SSD 120GB",
       "price": 15000000,
       "image": "/images/pc8.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Laptop Gaming Acer Aspire 7 A715 41G R8KQ",
       "price": 17000000,
       "image": "/images/pc9.jpg"
@@ -91,102 +89,100 @@
   ],
   "eventList": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nguồn Gigabyte P650B 650W (80 Plus Bronze/Non Modular)",
       "price": 140000,
       "image": "/images/LC1.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Card đồ họa ASROCK Radeon RX 6800 Challenger Pro 16G OC (16GB GDDR6, 256-bit, HDMI+DP, 2x8-pin)",
       "price": 200000,
       "image": "/images/LC2.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Ổ cứng HDD WD Purple 1TB 3.5 inch, 5400RPM, SATA, 64MB Cache (WD10PURZ)",
       "price": 180000,
       "image": "/images/LC3.jpg"
     },
-
     {
-      "id": 4,
+      "id": "4",
       "name": "CPU AMD Ryzen 7 5800X (3.8GHz Turbo Up To 4.7 GHz, 8 Nhân 16 Luồng, 36MB Cache, AM4)",
       "price": 150000,
       "image": "/images/LC4.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Màn Hình Samsung LS27R350FHEXXV (27 inch / FHD / IPS / 75Hz)",
       "price": 180000,
       "image": "/images/LC5.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Mainboard Gigabyte Z790 AORUS ELITE AX (Intel Z790, Socket LGA1700, ATX, 4 khe RAM DDR5)",
       "price": 190000,
       "image": "/images/LC6.webp"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Chuột không dây Logitech M221 (silent) Black",
       "price": 150000,
       "image": "/images/LC7.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Màn hình Dell S2421H (23.8inch / FHD / IPS / 75Hz/ Loa 3W)",
       "price": 170000,
       "image": "/images/LC8.webp"
     }
   ],
-
   "LaptopUser": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Laptop HP 15s-fq1017TU 8VY69PA (Silver)",
-      "price": 1400000,
-      "image": "/images/LT10.jpg"
+      "price": 1399999,
+      "image": "/images/LT10.jpg",
+      "deleted": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "LAPTOP MSI GF63 THIN 11UC-667VN ( I7-11800H/ 8GB/ SSD 512GB/ RTX3050 4GB/ 15.6 FHD/ 144HZ )",
       "price": 2000000,
       "image": "/images/LT2.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "LAPTOP ASUS TUF GAMING FX506HC I5 11400H/8GB/512GB/4GB RTX3050/144HZ/WIN11 (HN144W)",
       "price": 1800000,
       "image": "/images/LT3.jpg"
     },
-
     {
-      "id": 4,
+      "id": "4",
       "name": "Laptop Acer Gaming Nitro 5 AN515-55-70AX NH.Q7NSV.001",
       "price": 1500000,
       "image": "/images/LT4.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "LAPTOP HP 15S-FQ5080TU (15.6INCH/ FHD/ I5-1235U/ 8GB/ SSD 256GB/ WIN 11/ SILVER)",
       "price": 1800000,
       "image": "/images/LT5.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Laptop MSI Modern 14 A10M 1053VN",
       "price": 1900000,
       "image": "/images/LT6.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "LAPTOP ACER ASPIRE 3 A315-58-561V CORE I5-1135G7/ 8GB/ 512GB/ 15.6INCH FHD/ BẠC NK MỚI",
       "price": 1500000,
       "image": "/images/LT7.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Laptop HP Spectre x360 Convertible 13-aw0181TU 8YQ35PA",
       "price": 1700000,
       "image": "/images/LT8.jpg"
@@ -194,49 +190,49 @@
   ],
   "ProductPagies": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Laptop HP Omnibook X Flip 14-FK0092AU BZ7P5PA",
       "price": 14000000,
       "image": "/images/pr1.webp"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Laptop Lenovo IdeaPad Slim 5 14AGP11 83S1006RVN",
       "price": 15000000,
       "image": "/images/pr2.webp"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop Acer Gaming Nitro ProPanel ANV15-41-R7CR",
       "price": 16000000,
       "image": "/images/pr3.webp"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Laptop Lenovo IdeaPad Slim 5 14IPH11",
       "price": 1400000,
       "image": "/images/pr4.webp"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Laptop Lenovo Yoga Slim 7 14IPH11 83QM002FVN",
       "price": 17000000,
       "image": "/images/pr5.webp"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Laptop MSI Prestige 13 AI+ Ukiyoe Edition A2VMG-075VN",
       "price": 18000000,
       "image": "/images/pr6.webp"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Laptop TP 15s-fq1017TU ",
       "price": 1900000,
       "image": "/images/pr7.webp"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Laptop HP 15s-fq1017TU 8VY69PA (Silver)",
       "price": 20000000,
       "image": "/images/pr8.webp"
@@ -244,16 +240,14 @@
   ],
   "ProductMenus": [
     {
-      "id": 1,
+      "id": "1",
       "name": "PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB)",
       "brand": "Baseus",
       "category": "PC Render",
       "status": "Còn hàng",
-
       "price": 5420000,
       "oldPrice": 55000000,
       "image": "/images/pr1.webp",
-
       "specs": {
         "CPU": "Intel Core i9-14900K",
         "GPU": "RTX 4070 Super OC 12GB",
@@ -261,7 +255,6 @@
         "SSD": "1TB NVMe",
         "Nguồn": "1000W"
       },
-
       "promotions": [
         "Combo khuyến mãi: mua 3 giảm 3%, mua 5 giảm 5%",
         "Giảm thêm tối đa 3% khi thanh toán BN-member",
@@ -269,7 +262,6 @@
         "Voucher 100K khi mua từ 1000K",
         "Săn siêu KM trên Livestream"
       ],
-
       "services": [
         "Giao hàng COD toàn quốc",
         "Freeship HCM đơn trên 200K",
@@ -280,7 +272,6 @@
       ],
       "description": {
         "title": "Mô tả chi tiết sản phẩm",
-
         "content": [
           {
             "heading": "Hiệu năng mạnh mẽ với Intel Core i9-14900K",
@@ -311,18 +302,16 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB)",
       "brand": "AMD",
       "category": "PC Gaming",
       "status": "Còn hàng",
-
       "price": 32990000,
       "oldPrice": 35990000,
       "discount": 8,
       "save": 3000000,
       "image": "/images/pr2.webp",
-
       "specs": {
         "CPU": "AMD Ryzen 7 9700X",
         "GPU": "RTX 5070 12GB",
@@ -330,7 +319,6 @@
         "SSD": "1TB NVMe Gen4",
         "Nguồn": "850W 80 Plus Gold"
       },
-
       "promotions": [
         "Tặng bàn phím Gaming",
         "Tặng chuột Gaming RGB",
@@ -338,7 +326,6 @@
         "Miễn phí lắp đặt",
         "Bảo hành tận nơi"
       ],
-
       "services": [
         "Giao hàng toàn quốc",
         "Freeship nội thành",
@@ -347,7 +334,6 @@
         "1 đổi 1 trong 30 ngày",
         "Hỗ trợ kỹ thuật trọn đời"
       ],
-
       "description": {
         "title": "Mô tả chi tiết sản phẩm",
         "content": [
@@ -380,18 +366,16 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB)",
       "brand": "AMD",
       "category": "PC Gaming",
       "status": "Còn hàng",
-
       "price": 32990000,
       "oldPrice": 35990000,
       "discount": 8,
       "save": 3000000,
       "image": "/images/pr3.webp",
-
       "specs": {
         "CPU": "AMD Ryzen 7 9700X",
         "GPU": "RTX 5070 12GB",
@@ -399,7 +383,6 @@
         "SSD": "1TB NVMe Gen4",
         "Nguồn": "850W 80 Plus Gold"
       },
-
       "promotions": [
         "Tặng bàn phím Gaming",
         "Tặng chuột Gaming RGB",
@@ -407,7 +390,6 @@
         "Miễn phí lắp đặt",
         "Bảo hành tận nơi"
       ],
-
       "services": [
         "Giao hàng toàn quốc",
         "Freeship nội thành",
@@ -416,7 +398,6 @@
         "1 đổi 1 trong 30 ngày",
         "Hỗ trợ kỹ thuật trọn đời"
       ],
-
       "description": {
         "title": "Mô tả chi tiết sản phẩm",
         "content": [
@@ -449,18 +430,16 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB)",
       "brand": "AMD",
       "category": "PC Gaming",
       "status": "Còn hàng",
-
       "price": 32990000,
       "oldPrice": 35990000,
       "discount": 8,
       "save": 3000000,
       "image": "/images/pr4.webp",
-
       "specs": {
         "CPU": "AMD Ryzen 7 9700X",
         "GPU": "RTX 5070 12GB",
@@ -468,7 +447,6 @@
         "SSD": "1TB NVMe Gen4",
         "Nguồn": "850W 80 Plus Gold"
       },
-
       "promotions": [
         "Tặng bàn phím Gaming",
         "Tặng chuột Gaming RGB",
@@ -476,7 +454,6 @@
         "Miễn phí lắp đặt",
         "Bảo hành tận nơi"
       ],
-
       "services": [
         "Giao hàng toàn quốc",
         "Freeship nội thành",
@@ -485,7 +462,6 @@
         "1 đổi 1 trong 30 ngày",
         "Hỗ trợ kỹ thuật trọn đời"
       ],
-
       "description": {
         "title": "Mô tả chi tiết sản phẩm",
         "content": [
@@ -518,7 +494,7 @@
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "PC OFFICE i5-12400 (Intel UHD, RAM 16GB, SSD 512GB)",
       "brand": "Dell",
       "category": "PC Office",
@@ -575,7 +551,7 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "PC OFFICE i5-12400 (Intel UHD, RAM 16GB, SSD 512GB)",
       "brand": "Dell",
       "category": "PC Office",
@@ -631,5 +607,48 @@
         ]
       }
     }
-  ]
+  ],
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Admini",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "phone": "0911108133",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-06-21T10:00:00"
+    },
+    {
+      "id": "2",
+      "fullName": "Nguyễn Văn A",
+      "username": "nguyenvana",
+      "email": "vana@gmail.com",
+      "password": "123456",
+      "phone": "0987654321",
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-06-21T10:30:00"
+    },
+    {
+      "id": "3",
+      "fullName": "nguyên van b",
+      "email": "nguyenvan@gmail.com",
+      "phone": "0999992834",
+      "password": "123456789",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "fullName": "HoangHai",
+      "email": "hoanghai@gmail.com",
+      "phone": "0911221212",
+      "password": "123456789",
+      "role": "user",
+      "status": "active"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
