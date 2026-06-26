@@ -617,9 +617,45 @@
       "password": "123456789@",
       "role": "admin",
       "status": "active"
+    },
+    {
+      "id": "1782406441185",
+      "fullName": "Hoang Hai",
+      "email": "Hoanghai@gmail.com",
+      "phone": "0111111111",
+      "password": "123456",
+      "role": "user",
+      "status": "active"
     }
   ],
   "cart": [],
-  "orders": [],
+  "orders": [
+    {
+      "orderCode": "DH-20260626-144238",
+      "userId": "1782406441185",
+      "fullName": "Hoang Hai",
+      "phone": "0111111111",
+      "email": "Hoanghai@gmail.com",
+      "address": "aaaaaaa",
+      "note": "",
+      "paymentMethod": "bank",
+      "status": "pending",
+      "totalAmount": 32990000,
+      "createdAt": "2026-06-26T07:42:38.892Z",
+      "products": [
+        {
+          "productId": "2",
+          "name": "PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB)",
+          "image": "/images/pr2.webp",
+          "quantity": 1,
+          "unitPrice": 32990000,
+          "subtotal": 32990000,
+          "fromTable": "ProductMenus"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "reviews": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

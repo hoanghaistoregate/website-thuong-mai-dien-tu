@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // --- IMPORT SONNER ĐỂ THAY THẾ ALERT MẶC ĐỊNH ---
 import { toast } from "sonner";
-import { IoLogoDesignernews } from "react-icons/io";
+// import { IoLogoDesignernews } from "react-icons/io";
+import logo from "../../assets/AMI.png";
 import "./Header.css";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { MdDiscount } from "react-icons/md";
@@ -20,15 +21,15 @@ const Header = (props) => {
   const [activeModal, setActiveModal] = useState(null);
   // Trạng thái mở/đóng menu thả xuống của Tài khoản
   const [showAccountMenu, setShowAccountMenu] = useState(false);
-  // 🌟 THÊM: Trạng thái lưu tổng số lượng sản phẩm trong giỏ hàng
+  // THÊM: Trạng thái lưu tổng số lượng sản phẩm trong giỏ hàng
   const [cartCount, setCartCount] = useState(0);
 
-  // 🌟 ĐỌC DỮ LIỆU ĐĂNG NHẬP THỰC TẾ TỪ LOCALSTORAGE
+  // ĐỌC DỮ LIỆU ĐĂNG NHẬP THỰC TẾ TỪ LOCALSTORAGE
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const isLoggedIn = !!currentUser;
   const isAdmin = currentUser?.role === "admin";
 
-  // 🌟 ĐÃ CẬP NHẬT: Hàm đồng bộ số lượng giỏ hàng kết hợp bộ cứu hộ chống lệch kiểu dữ liệu
+  // ĐÃ CẬP NHẬT: Hàm đồng bộ số lượng giỏ hàng kết hợp bộ cứu hộ chống lệch kiểu dữ liệu
   const fetchCartCount = async () => {
     if (!currentUser) {
       setCartCount(0);
@@ -45,7 +46,7 @@ const Header = (props) => {
         cartData = await res.json();
       }
 
-      // 🌟 BỘ CỨU HỘ CHUẨN ĐÉT: Nếu DB có hàng nhưng trả về rỗng do lệch kiểu dữ liệu (String vs Number)
+      // BỘ CỨU HỘ CHUẨN ĐÉT: Nếu DB có hàng nhưng trả về rỗng do lệch kiểu dữ liệu (String vs Number)
       if (!cartData || cartData.length === 0) {
         const resAll = await fetch("http://localhost:3000/cart");
         if (resAll.ok) {
@@ -68,7 +69,7 @@ const Header = (props) => {
     }
   };
 
-  // 🌟 THEO DÕI SỰ KIỆN: Chạy khi mount và lắng nghe tín hiệu phát ra từ các nút bấm chi tiết
+  // THEO DÕI SỰ KIỆN: Chạy khi mount và lắng nghe tín hiệu phát ra từ các nút bấm chi tiết
   useEffect(() => {
     fetchCartCount(); // Chạy lần đầu khi vừa vào trang hoặc load lại trang
 
@@ -137,61 +138,61 @@ const Header = (props) => {
   };
 
   return (
-    <header className="header">
+    <header className="site-header">
       {/* Header - top */}
-      <div className="container">
-        <div className="header-top">
-          <div className="header-logo">
+      <div className="site-header__container">
+        <div className="site-header__top">
+          <div className="site-header__logo">
             <Link to="/">
-              <IoLogoDesignernews style={{ cursor: "pointer" }} />
+              <img src={logo} alt="FlashSCore" className="logo" />
             </Link>
           </div>
-          <nav className="header-nav">
-            <ul className="header-menu">
+          <nav className="site-header__nav">
+            <ul className="site-header__menu">
               <li
-                className="header-item clickable-item"
+                className="site-header__menu-item site-header__menu-item--clickable"
                 onClick={() => setActiveModal("HỖ TRỢ TRẢ GÓP")}
               >
                 <MdOutlineSupportAgent />
                 Hỗ Trợ Trả Góp
               </li>
               <li
-                className="header-item clickable-item"
+                className="site-header__menu-item site-header__menu-item--clickable"
                 onClick={() => setActiveModal("GIÁ ƯU ĐÃI NHẤT")}
               >
                 <MdDiscount />
                 Giá Ưu Đãi Nhất
               </li>
-              <li className="header-item">
+              <li className="site-header__menu-item">
                 <AiOutlineFileProtect />
                 Bảo Hành Tận Nhà
               </li>
-              <li className="header-item">
+              <li className="site-header__menu-item">
                 <FaShippingFast />
                 Miễn Phí Vận Chuyển
               </li>
               <li
-                className="header-item clickable-item"
+                className="site-header__menu-item site-header__menu-item--clickable"
                 onClick={() => setActiveModal("HOTLINE")}
               >
                 <MdOutlineAddIcCall />
                 HOTLINE
               </li>
               <li
-                className="header-item clickable-item cart-item"
+                className="site-header__menu-item site-header__menu-item--clickable site-header__cart-item"
                 onClick={() => navigate("/cart")}
               >
-                <div className="cart-icon">
+                <div className="site-header__cart-icon">
                   <PiShoppingCartDuotone />
                   {/* Hiển thị biến state số lượng thực tế đã được đồng bộ hóa */}
-                  <span className="cart-count">{cartCount}</span>
+                  <span className="site-header__cart-count">{cartCount}</span>
                 </div>
                 Giỏ Hàng
               </li>
 
               {/* TÀI KHOẢN DROPDOWN ĐÃ PHÂN QUYỀN THỰC TẾ */}
               <li
-                className="header-item clickable-item account-dropdown-wrapper"
+                className="site-header__menu-item site-header__menu-item--clickable site-header__account-wrapper"
                 onClick={(e) => {
                   e.stopPropagation();
                   setShowAccountMenu(!showAccountMenu);
@@ -202,7 +203,7 @@ const Header = (props) => {
 
                 {/* Menu con hiển thị khi click vào */}
                 {showAccountMenu && (
-                  <ul className="account-dropdown-menu">
+                  <ul className="site-header__account-menu">
                     {!isLoggedIn ? (
                       <>
                         <li>
@@ -222,7 +223,10 @@ const Header = (props) => {
                         <li>
                           <Link to="/profile">Thông tin cá nhân</Link>
                         </li>
-                        <li onClick={handleLogout} className="logout-item">
+                        <li
+                          onClick={handleLogout}
+                          className="site-header__account-menu-logout"
+                        >
                           Đăng xuất
                         </li>
                       </>
@@ -235,9 +239,9 @@ const Header = (props) => {
         </div>
 
         {/* Header - Bottom */}
-        <div className="header-bottom">
+        <div className="site-header__bottom">
           <div
-            className="container"
+            className="site-header__bottom-inner"
             style={{
               display: "flex",
               alignItems: "center",
@@ -245,20 +249,22 @@ const Header = (props) => {
               width: "100%",
             }}
           >
-            <button className="category-btn">Danh Mục Sản Phẩm</button>
-            <div className="search-box">
-              <select className="category-select">
+            <button className="site-header__category-btn">
+              Danh Mục Sản Phẩm
+            </button>
+            <div className="site-header__search-box">
+              <select className="site-header__search-category">
                 <option>Danh Mục</option>
                 <option>Laptop</option>
                 <option>PC</option>
                 <option>Con Chuột</option>
               </select>
               <input
-                className="search-input"
+                className="site-header__search-input"
                 type="text"
                 placeholder="Bạn cần tìm gì..."
               />
-              <button className="search-btn" type="submit">
+              <button className="site-header__search-btn" type="submit">
                 <IoSearch />
               </button>
             </div>
@@ -268,42 +274,50 @@ const Header = (props) => {
 
       {/* GIAO DIỆN HIỂN THỊ CÁC MODAL */}
       {activeModal && (
-        <div className="modal-overlay" onClick={() => setActiveModal(null)}>
+        <div
+          className="site-header__modal-overlay"
+          onClick={() => setActiveModal(null)}
+        >
           <div
-            className="modal-content-custom"
+            className="site-header__modal-content"
             onClick={(e) => e.stopPropagation()}
           >
             <div
-              className={`modal-header-blue ${activeModal === "HOTLINE" ? "bg-red" : ""}`}
+              className={`site-header__modal-header ${activeModal === "HOTLINE" ? "site-header__modal-header--alert" : ""}`}
             >
-              <h3 className="modal-title-white">
+              <h3 className="site-header__modal-title">
                 {activeModal === "HOTLINE"
                   ? "LIÊN HỆ KHẨN CẤP"
                   : "LIÊN HỆ VỚI CHÚNG TÔI"}
               </h3>
               <button
-                className="modal-close-btn-white"
+                className="site-header__modal-close"
                 onClick={() => setActiveModal(null)}
               >
                 &times;
               </button>
             </div>
-            <div className="modal-body-content">
+            <div className="site-header__modal-body">
               {activeModal === "HOTLINE" ? (
                 <>
-                  <p className="modal-subtitle">
+                  <p className="site-header__modal-subtitle">
                     Vui lòng gọi trực tiếp cho các tổng đài viên dưới đây để
                     được xử lý sự cố lập tức!
                   </p>
-                  <div className="hotline-list">
-                    <div className="hotline-card">
-                      <div className="hotline-info">
-                        <span className="hotline-name">Quách Hoàng Hải</span>
-                        <span className="hotline-role">
+                  <div className="site-header__hotline-list">
+                    <div className="site-header__hotline-card">
+                      <div className="site-header__hotline-info">
+                        <span className="site-header__hotline-name">
+                          Quách Hoàng Hải
+                        </span>
+                        <span className="site-header__hotline-role">
                           Hỗ trợ kỹ thuật phần cứng
                         </span>
                       </div>
-                      <a href="tel:0911108133" className="hotline-call-btn">
+                      <a
+                        href="tel:0911108133"
+                        className="site-header__hotline-call"
+                      >
                         0911.108.133
                       </a>
                     </div>
@@ -311,12 +325,14 @@ const Header = (props) => {
                 </>
               ) : (
                 <>
-                  <p className="modal-subtitle">
-                    <span className="highlight-text">{activeModal}</span>. Vui
-                    lòng để lại thông tin cá nhân dưới đây!
+                  <p className="site-header__modal-subtitle">
+                    <span className="site-header__highlight">
+                      {activeModal}
+                    </span>
+                    . Vui lòng để lại thông tin cá nhân dưới đây!
                   </p>
                   <form onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className="site-header__form-group">
                       <label>Họ và tên *</label>
                       <input
                         type="text"
@@ -327,7 +343,7 @@ const Header = (props) => {
                         placeholder="Nhập họ và tên"
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="site-header__form-group">
                       <label>Email *</label>
                       <input
                         type="email"
@@ -338,7 +354,7 @@ const Header = (props) => {
                         placeholder="example@gmail.com"
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="site-header__form-group">
                       <label>Số điện thoại *</label>
                       <input
                         type="tel"
@@ -349,7 +365,7 @@ const Header = (props) => {
                         placeholder="Nhập số điện thoại"
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="site-header__form-group">
                       <label>Nội dung chi tiết</label>
                       <textarea
                         name="message"
@@ -359,7 +375,7 @@ const Header = (props) => {
                         placeholder={getPlaceholderMessage()}
                       ></textarea>
                     </div>
-                    <button type="submit" className="modal-submit-btn">
+                    <button type="submit" className="site-header__modal-submit">
                       Xác nhận
                     </button>
                   </form>

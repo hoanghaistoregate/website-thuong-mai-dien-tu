@@ -11,6 +11,7 @@ import { IoCall } from "react-icons/io5";
 import { FaRocketchat } from "react-icons/fa6";
 import { FcShipped } from "react-icons/fc";
 import "./ProductMenu.css";
+import ProductReviews from "./ProductReviews";
 
 const ProductMenu = () => {
   const { id } = useParams();
@@ -263,7 +264,7 @@ const ProductMenu = () => {
                 </div>
 
                 <div className="promotion-box">
-                  <h3>🎁 Khuyến mãi đặc biệt</h3>
+                  <h3> Khuyến mãi đặc biệt</h3>
                   <ul>
                     {product.promotions?.map((p, i) => (
                       <li key={i}>{p}</li>
@@ -369,6 +370,9 @@ const ProductMenu = () => {
           onClose={() => setShowInstallment(false)}
           product={product}
         />
+      )}
+      {product && product.id && (
+        <ProductReviews productId={product.id} collectionName="ProductMenus" />
       )}
 
       <Sevicer />

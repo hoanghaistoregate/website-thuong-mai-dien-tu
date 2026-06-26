@@ -12,6 +12,7 @@ import SpecsModal from "../../pages/SpecsModal";
 import Sevicer from "../../components/Sevicer/Sevicer";
 import { getImageUrl } from "../../utils/imageUtils";
 import { toast } from "sonner";
+import ProductReviews from "../../pages/ProductReviews";
 
 const LaptopPage = () => {
   const { id } = useParams(); // Lấy ID sản phẩm từ URL
@@ -494,6 +495,9 @@ const LaptopPage = () => {
             </div>
           </div>
         </section>
+      )}
+      {product && product.id && (
+        <ProductReviews productId={product.id} collectionName="LaptopUser" />
       )}
 
       <InstallmentModal

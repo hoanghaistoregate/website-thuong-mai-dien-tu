@@ -39,29 +39,22 @@ const Admin = () => {
         <div className="sidebar-logo">
           <h2>ADMIN</h2>
         </div>
-
         <nav className="sidebar-menu">
           <Link to="/admin/products" className={isActive("products")}>
             <FaBoxOpen />
-
             <span>Sản phẩm</span>
           </Link>
 
           <Link to="/admin/orders" className={isActive("orders")}>
             <FaShoppingCart />
-
             <span>Đơn hàng</span>
           </Link>
-
           <Link to="/admin/users" className={isActive("users")}>
             <FaUsers />
-
             <span>Người dùng</span>
           </Link>
-
           <Link to="/admin/statistics" className={isActive("statistics")}>
             <FaChartBar />
-
             <span>Thống kê</span>
           </Link>
         </nav>

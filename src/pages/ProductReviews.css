@@ -1,0 +1,309 @@
+/* =============================================
+   ProductReviews.css — 2-column layout
+   ============================================= */
+
+.reviews-section {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+  color: #1a1a2e;
+}
+
+/* ---- Tiêu đề ---- */
+.reviews-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f0f0f5;
+}
+
+.reviews-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.reviews-count-badge {
+  background: #efefff;
+  color: #6c63ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 99px;
+}
+
+/* =============================================
+   2-COLUMN LAYOUT
+   ============================================= */
+
+.reviews-body {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  align-items: start;
+  border: 1px solid #e8e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ---- CỘT TRÁI: form ---- */
+.reviews-form-panel {
+  background: #f8f8fc;
+  border-right: 1px solid #e8e8f0;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* bám chiều cao cột phải */
+  align-self: stretch;
+}
+
+.reviews-form-panel h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 4px;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b6b8a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Star selector */
+.star-selector {
+  display: flex;
+  gap: 4px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.star-selector input[type="radio"] {
+  display: none;
+}
+
+.star-selector label {
+  font-size: 1.75rem;
+  color: #dcdce8;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    transform 0.1s;
+  line-height: 1;
+}
+
+.star-selector label:hover,
+.star-selector label:hover ~ label,
+.star-selector input[type="radio"]:checked ~ label {
+  color: #f5a623;
+}
+
+.star-selector label:hover {
+  transform: scale(1.15);
+}
+
+/* Textarea */
+.reviews-form-panel textarea {
+  background: #fff;
+  border: 1px solid #dcdce8;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #1a1a2e;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  min-height: 100px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  line-height: 1.6;
+}
+
+.reviews-form-panel textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+}
+
+.reviews-form-panel textarea::placeholder {
+  color: #a0a0b8;
+}
+
+/* Nút gửi */
+.reviews-form-panel button[type="submit"] {
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s,
+    box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.reviews-form-panel button[type="submit"]:hover {
+  background: #5a52e0;
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.3);
+}
+
+.reviews-form-panel button[type="submit"]:active {
+  transform: scale(0.97);
+}
+
+/* ---- CỘT PHẢI: danh sách ---- */
+.reviews-list-panel {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 520px;
+  overflow-y: auto;
+  /* thanh cuộn mảnh */
+  scrollbar-width: thin;
+  scrollbar-color: #dcdce8 transparent;
+}
+
+.reviews-list-panel::-webkit-scrollbar {
+  width: 5px;
+}
+.reviews-list-panel::-webkit-scrollbar-thumb {
+  background: #dcdce8;
+  border-radius: 99px;
+}
+
+/* Empty state */
+.reviews-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  color: #a0a0b8;
+  text-align: center;
+  flex: 1;
+}
+
+.reviews-empty .empty-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.reviews-empty p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* ---- Review card ---- */
+.review-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #f0f0f5;
+  border-radius: 10px;
+  transition:
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.review-card:hover {
+  box-shadow: 0 3px 12px rgba(26, 26, 46, 0.07);
+  border-color: #e0e0ee;
+}
+
+/* Avatar */
+.review-avatar {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c63ff, #a89cff);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.review-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.review-author {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #1a1a2e;
+}
+
+.review-stars {
+  display: flex;
+  gap: 1px;
+}
+
+.review-stars span {
+  font-size: 0.8rem;
+  color: #dcdce8;
+}
+
+.review-stars span.filled {
+  color: #f5a623;
+}
+
+.review-date {
+  font-size: 0.75rem;
+  color: #a0a0b8;
+  margin-left: auto;
+}
+
+.review-comment {
+  font-size: 0.85rem;
+  color: #3a3a5c;
+  line-height: 1.65;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* =============================================
+   RESPONSIVE — stack thành 1 cột
+   ============================================= */
+
+@media (max-width: 640px) {
+  .reviews-body {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-form-panel {
+    border-right: none;
+    border-bottom: 1px solid #e8e8f0;
+  }
+
+  .reviews-list-panel {
+    max-height: 400px;
+  }
+}

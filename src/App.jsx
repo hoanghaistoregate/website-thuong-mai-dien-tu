@@ -21,6 +21,7 @@ import AdminOrders from "./components/AdminDashboash/AdminOrders";
 
 // 🌟 Hãy kiểm tra chắc chắn đường dẫn này trỏ đúng đến file Cart.jsx thông minh chúng ta vừa viết
 import Cart from "./pages/CartUser/Cart";
+import Statistics from "./components/AdminDashboash/Statistics";
 
 // 🛡️ BỘ BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -54,6 +55,7 @@ function App() {
         <Route path="/component/:id" element={<ComponentPage />} />
 
         {/* Giỏ hàng & Thanh toán */}
+        <Route path="/admin/statistics" element={<Statistics />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orders" element={<UserOrders />} />
@@ -88,6 +90,14 @@ function App() {
           element={
             <AdminProtectedRoute>
               <AdminOrders />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/statistics"
+          element={
+            <AdminProtectedRoute>
+              <statistics />
             </AdminProtectedRoute>
           }
         />

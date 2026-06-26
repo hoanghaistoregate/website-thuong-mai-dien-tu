@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast, Toaster } from "sonner";
-import { FaUser, FaCreditCard } from "react-icons/fa";
+import { FaUser, FaCreditCard, FaShoppingBag, FaTag } from "react-icons/fa";
 import Header from "../../components/Header/Header";
 import FooterUser from "../../components/Footer/FooterUser";
 import Sevicer from "../Sevicer/Sevicer";
@@ -20,10 +20,36 @@ const cleanPrice = (priceInput) => {
   return parseInt(cleaned, 10) || 0;
 };
 
+const formatPrice = (amount) => amount.toLocaleString("vi-VN") + "₫";
+
 const generateOrderCode = () => {
   const now = new Date();
   return `DH-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}-${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
 };
+
+const PAYMENT_METHODS = [
+  {
+    value: "cod",
+    label: "Thanh toán khi nhận hàng",
+    desc: "COD — thanh toán bằng tiền mặt khi nhận",
+    icon: "💵",
+    iconBg: "#fef3c7",
+  },
+  {
+    value: "bank",
+    label: "Chuyển khoản ngân hàng",
+    desc: "Thanh toán qua tài khoản ngân hàng",
+    icon: "🏦",
+    iconBg: "#e0f2fe",
+  },
+  {
+    value: "momo",
+    label: "Ví MoMo",
+    desc: "Thanh toán nhanh qua ví điện tử MoMo",
+    icon: "📱",
+    iconBg: "#fce7f3",
+  },
+];
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -33,9 +59,11 @@ const Checkout = () => {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [couponCode, setCouponCode] = useState("");
   const [customerInfo, setCustomerInfo] = useState({
     fullName: "",
     phone: "",
+    email: "",
     address: "",
     note: "",
     paymentMethod: "cod",
@@ -53,6 +81,7 @@ const Checkout = () => {
         ...prev,
         fullName: currentUser.fullName || "",
         phone: currentUser.phone || "",
+        email: currentUser.email || "",
         address: currentUser.address || "",
       }));
 
@@ -80,12 +109,10 @@ const Checkout = () => {
             const table = item.fromTable || "catenogies";
             const pRes = await fetch(`${API_URL}/${table}/${item.productId}`);
             const pData = pRes.ok ? await pRes.json() : {};
-
-            // 🌟 GIẢI PHÁP: Lưu ID giỏ hàng vào 'cartId' để không bị pData đè mất
             return {
               ...pData,
               ...item,
-              cartId: item.id, // ID gốc của bảng cart
+              cartId: item.id,
               table,
             };
           }),
@@ -100,6 +127,13 @@ const Checkout = () => {
     };
     init();
   }, [buyNowItem, navigate]);
+
+  const subTotal = cartItems.reduce(
+    (sum, item) => sum + cleanPrice(item.price) * item.quantity,
+    0,
+  );
+  const shipping = subTotal > 500000 ? 0 : 30000;
+  const totalAmount = subTotal + shipping;
 
   const handleSubmitOrder = async (e) => {
     e.preventDefault();
@@ -124,7 +158,7 @@ const Checkout = () => {
         userId: currentUser.id,
         ...customerInfo,
         status: "pending",
-        totalAmount: formattedProducts.reduce((sum, p) => sum + p.subtotal, 0),
+        totalAmount,
         createdAt: new Date().toISOString(),
         products: formattedProducts,
       };
@@ -138,7 +172,6 @@ const Checkout = () => {
       if (!res.ok) throw new Error("Lỗi khi gửi đơn hàng");
 
       if (!buyNowItem) {
-        // 🌟 SỬ DỤNG cartId ĐÃ LƯU TRƯỚC ĐÓ
         await Promise.all(
           cartItems.map((item) => {
             if (item.cartId) {
@@ -176,63 +209,223 @@ const Checkout = () => {
           </Link>
           <span>Thanh toán</span>
         </div>
+
         <div className="container">
           <form className="checkout-wrapper" onSubmit={handleSubmitOrder}>
+            {/* ── CỘT TRÁI ── */}
             <div className="checkout-left">
-              <h3 className="checkout-section-title">
-                <FaUser /> <span>THÔNG TIN GIAO HÀNG</span>
-              </h3>
-              <div className="checkout-form">
-                <div className="checkout-group">
-                  <label>Họ và tên *</label>
-                  <input
-                    required
-                    value={customerInfo.fullName}
-                    onChange={(e) =>
-                      setCustomerInfo({
-                        ...customerInfo,
-                        fullName: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <div className="checkout-group">
-                  <label>Số điện thoại *</label>
-                  <input
-                    required
-                    value={customerInfo.phone}
-                    onChange={(e) =>
-                      setCustomerInfo({
-                        ...customerInfo,
-                        phone: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <div className="checkout-group">
-                  <label>Địa chỉ *</label>
-                  <input
-                    required
-                    value={customerInfo.address}
-                    onChange={(e) =>
-                      setCustomerInfo({
-                        ...customerInfo,
-                        address: e.target.value,
-                      })
-                    }
-                  />
+              {/* Thông tin giao hàng */}
+              <div className="checkout-card">
+                <h3 className="checkout-section-title">
+                  <FaUser /> <span>THÔNG TIN GIAO HÀNG</span>
+                </h3>
+                <div className="checkout-form">
+                  <div className="checkout-group">
+                    <label>Họ và tên *</label>
+                    <input
+                      required
+                      placeholder="Nguyễn Văn A"
+                      value={customerInfo.fullName}
+                      onChange={(e) =>
+                        setCustomerInfo({
+                          ...customerInfo,
+                          fullName: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="checkout-row-2">
+                    <div className="checkout-group">
+                      <label>Số điện thoại *</label>
+                      <input
+                        required
+                        placeholder="0912 345 678"
+                        value={customerInfo.phone}
+                        onChange={(e) =>
+                          setCustomerInfo({
+                            ...customerInfo,
+                            phone: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="checkout-group">
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        placeholder="email@example.com"
+                        value={customerInfo.email}
+                        onChange={(e) =>
+                          setCustomerInfo({
+                            ...customerInfo,
+                            email: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                  </div>
+
+                  <div className="checkout-group">
+                    <label>Địa chỉ *</label>
+                    <input
+                      required
+                      placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành"
+                      value={customerInfo.address}
+                      onChange={(e) =>
+                        setCustomerInfo({
+                          ...customerInfo,
+                          address: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="checkout-group">
+                    <label>Ghi chú</label>
+                    <textarea
+                      rows={2}
+                      placeholder="Ghi chú thêm về đơn hàng (tuỳ chọn)..."
+                      value={customerInfo.note}
+                      onChange={(e) =>
+                        setCustomerInfo({
+                          ...customerInfo,
+                          note: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
                 </div>
               </div>
-              <h3 className="checkout-section-title-payment">
-                <FaCreditCard /> <span>PHƯƠNG THỨC THANH TOÁN</span>
-              </h3>
-              <button
-                type="submit"
-                className="btn-confirm-checkout"
-                disabled={submitting}
-              >
-                {submitting ? "ĐANG XỬ LÝ..." : "XÁC NHẬN ĐẶT HÀNG"}
-              </button>
+
+              {/* Phương thức thanh toán */}
+              <div className="checkout-card">
+                <h3 className="checkout-section-title">
+                  <FaCreditCard /> <span>PHƯƠNG THỨC THANH TOÁN</span>
+                </h3>
+                <div className="pay-methods">
+                  {PAYMENT_METHODS.map((pm) => (
+                    <label
+                      key={pm.value}
+                      className={`pay-opt ${customerInfo.paymentMethod === pm.value ? "active" : ""}`}
+                    >
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value={pm.value}
+                        checked={customerInfo.paymentMethod === pm.value}
+                        onChange={() =>
+                          setCustomerInfo({
+                            ...customerInfo,
+                            paymentMethod: pm.value,
+                          })
+                        }
+                      />
+                      <div
+                        className="pay-icon"
+                        style={{ background: pm.iconBg }}
+                      >
+                        {pm.icon}
+                      </div>
+                      <div className="pay-label">
+                        <strong>{pm.label}</strong>
+                        <span>{pm.desc}</span>
+                      </div>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* ── CỘT PHẢI ── */}
+            <div className="checkout-right">
+              {/* Tóm tắt đơn hàng */}
+              <div className="checkout-card">
+                <h3 className="checkout-section-title">
+                  <FaShoppingBag /> <span>ĐƠN HÀNG CỦA BẠN</span>
+                </h3>
+
+                <div className="order-items">
+                  {cartItems.map((item, idx) => (
+                    <div className="order-item" key={idx}>
+                      <div className="item-thumb">
+                        {item.image ? (
+                          <img src={item.image} alt={item.name} />
+                        ) : (
+                          <span className="item-thumb-placeholder">🛍</span>
+                        )}
+                        <span className="item-qty-badge">{item.quantity}</span>
+                      </div>
+                      <div className="item-info">
+                        <p className="item-name">{item.name || "Sản phẩm"}</p>
+                        {item.variant && (
+                          <span className="item-variant">{item.variant}</span>
+                        )}
+                      </div>
+                      <div className="item-price">
+                        {formatPrice(cleanPrice(item.price) * item.quantity)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <hr className="co-divider" />
+
+                <div className="sum-rows">
+                  <div className="sum-row">
+                    <span>Tạm tính</span>
+                    <span>{formatPrice(subTotal)}</span>
+                  </div>
+                  <div className="sum-row">
+                    <span>Phí vận chuyển</span>
+                    <span className={shipping === 0 ? "free-ship" : ""}>
+                      {shipping === 0 ? "Miễn phí" : formatPrice(shipping)}
+                    </span>
+                  </div>
+                </div>
+
+                <hr className="co-divider" />
+
+                <div className="sum-row sum-total">
+                  <span>Tổng cộng</span>
+                  <span className="total-price">
+                    {formatPrice(totalAmount)}
+                  </span>
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn-confirm-checkout"
+                  disabled={submitting}
+                >
+                  {submitting ? "ĐANG XỬ LÝ..." : "XÁC NHẬN ĐẶT HÀNG"}
+                </button>
+
+                <p className="secure-note">🔒 Thông tin của bạn được bảo mật</p>
+              </div>
+
+              {/* Mã giảm giá */}
+              <div className="checkout-card coupon-card">
+                <div className="coupon-header">
+                  <FaTag />
+                  <span>Mã giảm giá</span>
+                </div>
+                <div className="coupon-row">
+                  <input
+                    type="text"
+                    placeholder="Nhập mã giảm giá..."
+                    value={couponCode}
+                    onChange={(e) => setCouponCode(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    className="btn-coupon"
+                    onClick={() => toast.info("Tính năng đang phát triển")}
+                  >
+                    Áp dụng
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

@@ -134,136 +134,144 @@ const AdminOrders = () => {
       {filteredOrders.length === 0 ? (
         <div className="no-orders">Không có đơn hàng nào trong mục này.</div>
       ) : (
-        <div className="orders-table-container">
-          <table className="orders-table">
-            <thead>
-              <tr>
-                <th>Mã đơn hàng</th>
-                <th>Khách hàng</th>
-                <th>Sản phẩm mua</th>
-                <th>Tổng tiền</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredOrders.map((order) => (
-                <tr key={order.id}>
-                  <td className="order-code">
-                    <strong>{order.orderCode}</strong>
-                  </td>
-                  <td>
-                    <div className="customer-info">
-                      <p>
-                        <FaUser /> {order.customerName}
-                      </p>
-                      <p>SĐT: {order.phone}</p>
-                      <p className="address-text">ĐC: {order.address}</p>
+        <div className="orders-card-container">
+          {filteredOrders.map((order) => (
+            <div className="order-card" key={order.id}>
+              {/* Header */}
+              <div className="order-card-header">
+                <div>
+                  <h3 className="order-code">#{order.orderCode}</h3>
+
+                  <span className={`status-badge ${order.status}`}>
+                    {order.status === "pending" && "Chờ xử lý"}
+                    {order.status === "confirmed" && "Đã xác nhận"}
+                    {order.status === "shipping" && "Đang giao"}
+                    {order.status === "completed" && "Hoàn thành"}
+                    {order.status === "cancelled" && "Đã hủy"}
+                  </span>
+                </div>
+
+                <div className="order-total">
+                  {formatPrice(
+                    order.totalAmount > 0
+                      ? order.totalAmount
+                      : (order.products || []).reduce(
+                          (sum, p) => sum + p.unitPrice * p.quantity,
+                          0,
+                        ),
+                  )}
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="order-card-body">
+                {/* Customer */}
+                <div className="customer-section">
+                  <div className="customer-avatar">
+                    <FaUser />
+                  </div>
+
+                  <div className="customer-info">
+                    <h4>{order.customerName}</h4>
+
+                    <p>
+                      <strong>SĐT:</strong> {order.phone}
+                    </p>
+
+                    <p className="address-text">
+                      <strong>Địa chỉ:</strong> {order.address}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Product */}
+                <div className="products-section">
+                  {(order.products || []).map((prod, idx) => (
+                    <div className="product-item-summary" key={idx}>
+                      <img
+                        src={
+                          prod.image &&
+                          (prod.image.startsWith("http") ||
+                            prod.image.startsWith("data:") ||
+                            prod.image.startsWith("/images"))
+                            ? prod.image
+                            : "https://placehold.co/80x80?text=PC"
+                        }
+                        alt={prod.name}
+                      />
+
+                      <div className="product-info">
+                        <h5>{prod.name || `Sản phẩm #${prod.productId}`}</h5>
+
+                        <p>Số lượng: {prod.quantity}</p>
+
+                        <span>{formatPrice(prod.unitPrice)}</span>
+                      </div>
                     </div>
-                  </td>
-                  <td>
-                    <div className="order-products-list">
-                      {order.products?.map((prod, idx) => (
-                        <div key={idx} className="product-item-summary">
-                          <img
-                            src={
-                              prod.image &&
-                              (prod.image.startsWith("http") ||
-                                prod.image.startsWith("data:") ||
-                                prod.image.startsWith("/images"))
-                                ? prod.image
-                                : "https://placehold.co/40x40?text=PC"
-                            }
-                            alt={prod.name}
-                            width="40"
-                            height="40"
-                            style={{ objectFit: "cover", borderRadius: "4px" }}
-                          />
-                          <span>
-                            {prod.name || `Sản phẩm #${prod.productId}`} (x
-                            {prod.quantity})
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="order-amount">
-                    {/* Tính tổng động dự phòng tránh hoàn toàn lỗi lưu dữ liệu cũ bị NaN hoặc bằng 0 */}
-                    {formatPrice(
-                      order.totalAmount > 0
-                        ? order.totalAmount
-                        : (order.products || []).reduce(
-                            (sum, p) => sum + p.unitPrice * p.quantity,
-                            0,
-                          ),
-                    )}
-                  </td>
-                  <td>
-                    <span className={`status-badge ${order.status}`}>
-                      {order.status === "pending" && "Chờ xử lý"}
-                      {order.status === "confirmed" && "Đã xác nhận"}
-                      {order.status === "shipping" && "Đang giao"}
-                      {order.status === "completed" && "Thành công"}
-                      {order.status === "cancelled" && "Đã hủy đơn"}
-                    </span>
-                  </td>
-                  <td>
-                    <div className="action-buttons">
-                      {order.status === "pending" && (
-                        <>
-                          <button
-                            className="btn-approve"
-                            onClick={() =>
-                              handleUpdateStatus(order.id, "confirmed")
-                            }
-                          >
-                            <FaCheck /> Duyệt
-                          </button>
-                          <button
-                            className="btn-cancel"
-                            onClick={() =>
-                              handleUpdateStatus(order.id, "cancelled")
-                            }
-                          >
-                            <FaBan /> Hủy
-                          </button>
-                        </>
-                      )}
-                      {order.status === "confirmed" && (
-                        <button
-                          className="btn-ship"
-                          onClick={() =>
-                            handleUpdateStatus(order.id, "shipping")
-                          }
-                        >
-                          <FaTruck /> Giao hàng
-                        </button>
-                      )}
-                      {order.status === "shipping" && (
-                        <button
-                          className="btn-complete"
-                          onClick={() =>
-                            handleUpdateStatus(order.id, "completed")
-                          }
-                        >
-                          Hoàn thành
-                        </button>
-                      )}
-                      {(order.status === "cancelled" ||
-                        order.status === "completed") && (
-                        <button
-                          className="btn-delete"
-                          onClick={() => handleDeleteOrder(order.id)}
-                        >
-                          <FaTrash /> Xóa hẳn
-                        </button>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="order-card-footer">
+                <div className="action-buttons">
+                  {order.status === "pending" && (
+                    <>
+                      <button
+                        className="btn-approve"
+                        onClick={() =>
+                          handleUpdateStatus(order.id, "confirmed")
+                        }
+                      >
+                        <FaCheck />
+                        Duyệt
+                      </button>
+
+                      <button
+                        className="btn-cancel"
+                        onClick={() =>
+                          handleUpdateStatus(order.id, "cancelled")
+                        }
+                      >
+                        <FaBan />
+                        Hủy
+                      </button>
+                    </>
+                  )}
+
+                  {order.status === "confirmed" && (
+                    <button
+                      className="btn-ship"
+                      onClick={() => handleUpdateStatus(order.id, "shipping")}
+                    >
+                      <FaTruck />
+                      Giao hàng
+                    </button>
+                  )}
+
+                  {order.status === "shipping" && (
+                    <button
+                      className="btn-complete"
+                      onClick={() => handleUpdateStatus(order.id, "completed")}
+                    >
+                      Hoàn thành
+                    </button>
+                  )}
+
+                  {(order.status === "completed" ||
+                    order.status === "cancelled") && (
+                    <button
+                      className="btn-delete"
+                      onClick={() => handleDeleteOrder(order.id)}
+                    >
+                      <FaTrash />
+                      Xóa hẳn
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
       <Toaster position="top-right" richColors />
