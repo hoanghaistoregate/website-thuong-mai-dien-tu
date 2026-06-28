@@ -732,15 +732,7 @@
       "status": "active"
     }
   ],
-  "cart": [
-    {
-      "id": "cart-cate-2-1782660154687",
-      "userId": "1",
-      "productId": "2",
-      "quantity": 3,
-      "fromTable": "catenogies"
-    }
-  ],
+  "cart": [],
   "orders": [],
   "reviews": [
     {
@@ -752,6 +744,16 @@
       "comment": "rrrrrrrrrrrrr",
       "createdAt": "2026-06-26T10:18:13.897Z",
       "id": "1782469093897"
+    },
+    {
+      "productId": "2",
+      "collection": "ProductMenus",
+      "userId": "1",
+      "userName": "Admin7709",
+      "rating": 5,
+      "comment": "ttttt",
+      "createdAt": "2026-06-28T17:33:20.915Z",
+      "id": "1782668000916"
     }
   ],
   "news": [

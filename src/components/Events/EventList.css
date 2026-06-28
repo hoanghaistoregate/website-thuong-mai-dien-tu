@@ -5,6 +5,13 @@
   padding: 0 15px;
 }
 
+.component-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
 /* Thanh đầu đề chứa chữ "Linh Kiện" và dãy nút bấm */
 .event-header {
   display: flex;

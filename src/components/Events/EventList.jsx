@@ -1,45 +1,47 @@
+import { useNavigate } from "react-router-dom";
 import "./EventList.css";
-// ✅ 1. Sửa dòng import: Xóa ProductGrid đi, thay bằng ComponentCard chuyên biệt cho linh kiện
 import ComponentCard from "../ProductCard/ComponentCard";
 
+const TABS = [
+  { label: "CARD ĐỒ HỌA", category: "vga" },
+  { label: "CPU - BỘ XỬ LÝ", category: "cpu" },
+  { label: "MAINBOARD", category: "mainboard" },
+  { label: "Ổ CỨNG HDD", category: "hdd" },
+  { label: "PSU - NGUỒN", category: "psu" },
+  { label: "RAM - BỘ NHỚ TRONG", category: "ram" },
+];
+
 const EventList = ({ eventList }) => {
-  const tabs = [
-    "CARD ĐỒ HỌA",
-    "CPU - BỘ XỬ LÝ",
-    "MAINBOARD",
-    "Ổ CỨNG HDD",
-    "PSU - NGUỒN",
-    "RAM - BỘ NHỚ TRONG",
-  ];
+  const navigate = useNavigate();
 
   return (
     <section className="event-list">
       <div className="event-header">
         <h2>Linh Kiện</h2>
-
         <nav className="event-tabs">
-          {tabs.map((tab, index) => (
+          {TABS.map((tab) => (
             <button
-              key={index}
-              className={`event-tab ${index === 0 ? "active" : ""}`}
+              key={tab.category}
+              className="event-tab"
+              onClick={() => navigate(`/component/${tab.category}`)}
             >
-              {tab}
+              {tab.label}
             </button>
           ))}
         </nav>
       </div>
-      <div
-        className="component-grid-layout"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "20px",
-          marginTop: "20px",
-        }}
-      >
+
+      <div className="component-grid-layout">
         {eventList && eventList.length > 0 ? (
           eventList.map((item) => (
-            <ComponentCard key={item.id} product={item} />
+            // Đảm bảo ComponentCard của bạn nhận sự kiện click hoặc chứa Link
+            <div
+              key={item.id}
+              onClick={() => navigate(`/component-category/${item.id}`)}
+              style={{ cursor: "pointer" }}
+            >
+              <ComponentCard product={item} />
+            </div>
           ))
         ) : (
           <p>Đang tải danh sách linh kiện...</p>

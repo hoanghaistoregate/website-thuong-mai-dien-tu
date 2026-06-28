@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// --- IMPORT SONNER ĐỂ THAY THẾ ALERT MẶC ĐỊNH ---
 import { toast } from "sonner";
-// import { IoLogoDesignernews } from "react-icons/io";
 import logo from "../../assets/AMI.png";
 import "./Header.css";
 import { MdOutlineSupportAgent } from "react-icons/md";
@@ -17,26 +15,22 @@ import { VscAccount } from "react-icons/vsc";
 const Header = (props) => {
   const navigate = useNavigate();
 
-  // Trạng thái lưu tên modal đang mở (null, "HỖ TRỢ TRẢ GÓP", "GIÁ ƯU ĐÃI NHẤT", hoặc "HOTLINE")
   const [activeModal, setActiveModal] = useState(null);
-  // Trạng thái mở/đóng menu thả xuống của Tài khoản
   const [showAccountMenu, setShowAccountMenu] = useState(false);
-  // THÊM: Trạng thái lưu tổng số lượng sản phẩm trong giỏ hàng
   const [cartCount, setCartCount] = useState(0);
+  // MỚI: state lưu từ khoá người dùng đang gõ trong ô tìm kiếm
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // ĐỌC DỮ LIỆU ĐĂNG NHẬP THỰC TẾ TỪ LOCALSTORAGE
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const isLoggedIn = !!currentUser;
   const isAdmin = currentUser?.role === "admin";
 
-  // ĐÃ CẬP NHẬT: Hàm đồng bộ số lượng giỏ hàng kết hợp bộ cứu hộ chống lệch kiểu dữ liệu
   const fetchCartCount = async () => {
     if (!currentUser) {
       setCartCount(0);
       return;
     }
     try {
-      // Bước 1: Thử gọi lọc theo cách thông thường qua URL
       const res = await fetch(
         `http://localhost:3000/cart?userId=${currentUser.id}`,
       );
@@ -46,19 +40,16 @@ const Header = (props) => {
         cartData = await res.json();
       }
 
-      // BỘ CỨU HỘ CHUẨN ĐÉT: Nếu DB có hàng nhưng trả về rỗng do lệch kiểu dữ liệu (String vs Number)
       if (!cartData || cartData.length === 0) {
         const resAll = await fetch("http://localhost:3000/cart");
         if (resAll.ok) {
           const allCart = await resAll.json();
-          // Tự dùng filter ép cả 2 vế về dạng String để so sánh an toàn
           cartData = allCart.filter(
             (item) => String(item.userId) === String(currentUser.id),
           );
         }
       }
 
-      // Cộng dồn tất cả trường quantity của các sản phẩm có trong giỏ hàng
       const total = cartData.reduce(
         (sum, item) => sum + (Number(item.quantity) || 1),
         0,
@@ -69,9 +60,8 @@ const Header = (props) => {
     }
   };
 
-  // THEO DÕI SỰ KIỆN: Chạy khi mount và lắng nghe tín hiệu phát ra từ các nút bấm chi tiết
   useEffect(() => {
-    fetchCartCount(); // Chạy lần đầu khi vừa vào trang hoặc load lại trang
+    fetchCartCount();
 
     window.addEventListener("cartUpdated", fetchCartCount);
     return () => {
@@ -79,7 +69,6 @@ const Header = (props) => {
     };
   }, [currentUser?.id]);
 
-  // Trạng thái lưu thông tin form đăng ký (dành cho Trả góp / Ưu đãi)
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -87,7 +76,6 @@ const Header = (props) => {
     message: "",
   });
 
-  // Khóa cuộn trang khi có bất kỳ Modal nào mở
   useEffect(() => {
     if (activeModal) {
       document.body.style.overflow = "hidden";
@@ -99,7 +87,6 @@ const Header = (props) => {
     };
   }, [activeModal]);
 
-  // Đóng menu tài khoản khi click ra ngoài tự do
   useEffect(() => {
     const handleCloseMenu = () => setShowAccountMenu(false);
     window.addEventListener("click", handleCloseMenu);
@@ -130,16 +117,25 @@ const Header = (props) => {
     return "Nhập lời nhắn của bạn...";
   };
 
-  // Xử lý Đăng xuất thực tế, xóa sạch LocalStorage và đá về Login
   const handleLogout = () => {
     localStorage.removeItem("currentUser");
     toast.success("Đã đăng xuất tài khoản thành công!");
     navigate("/login");
   };
 
+  // MỚI: xử lý khi người dùng bấm nút search hoặc nhấn Enter trong ô input
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const trimmed = searchQuery.trim();
+    if (!trimmed) {
+      toast.warning("Vui lòng nhập từ khoá tìm kiếm!");
+      return;
+    }
+    navigate(`/search?q=${encodeURIComponent(trimmed)}`);
+  };
+
   return (
     <header className="site-header">
-      {/* Header - top */}
       <div className="site-header__container">
         <div className="site-header__top">
           <div className="site-header__logo">
@@ -184,13 +180,11 @@ const Header = (props) => {
               >
                 <div className="site-header__cart-icon">
                   <PiShoppingCartDuotone />
-                  {/* Hiển thị biến state số lượng thực tế đã được đồng bộ hóa */}
                   <span className="site-header__cart-count">{cartCount}</span>
                 </div>
                 Giỏ Hàng
               </li>
 
-              {/* TÀI KHOẢN DROPDOWN ĐÃ PHÂN QUYỀN THỰC TẾ */}
               <li
                 className="site-header__menu-item site-header__menu-item--clickable site-header__account-wrapper"
                 onClick={(e) => {
@@ -201,7 +195,6 @@ const Header = (props) => {
                 <VscAccount />
                 <span>{isLoggedIn ? currentUser.fullName : "Tài khoản"}</span>
 
-                {/* Menu con hiển thị khi click vào */}
                 {showAccountMenu && (
                   <ul className="site-header__account-menu">
                     {!isLoggedIn ? (
@@ -238,7 +231,6 @@ const Header = (props) => {
           </nav>
         </div>
 
-        {/* Header - Bottom */}
         <div className="site-header__bottom">
           <div
             className="site-header__bottom-inner"
@@ -252,7 +244,11 @@ const Header = (props) => {
             <button className="site-header__category-btn">
               Danh Mục Sản Phẩm
             </button>
-            <div className="site-header__search-box">
+            {/* MỚI: bọc trong <form> + input controlled để bắt được submit/Enter */}
+            <form
+              className="site-header__search-box"
+              onSubmit={handleSearchSubmit}
+            >
               <select className="site-header__search-category">
                 <option>Danh Mục</option>
                 <option>Laptop</option>
@@ -263,16 +259,17 @@ const Header = (props) => {
                 className="site-header__search-input"
                 type="text"
                 placeholder="Bạn cần tìm gì..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button className="site-header__search-btn" type="submit">
                 <IoSearch />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
 
-      {/* GIAO DIỆN HIỂN THỊ CÁC MODAL */}
       {activeModal && (
         <div
           className="site-header__modal-overlay"

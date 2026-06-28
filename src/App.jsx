@@ -28,6 +28,8 @@ import News from "./components/Sidebar/News";
 import NewsDetail from "./components/Sidebar/NewsDetail";
 import CategoryPage from "./components/Catenogy/CategoryPage";
 import LaptopMenu from "./components/Newlaptop/LaptopMenu";
+import EventListPage from "./components/Events/EventListPage";
+import SearchResults from "./pages/SearchResults/SearchResults";
 
 // 🛡️ BỘ BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -52,11 +54,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/Profile" element={<Profile />} />
         <Route path="/edit" element={<EditProfile />} />
 
         {/* Tuyến đường sản phẩm chi tiết */}
+        <Route path="/search" element={<SearchResults />} />
         <Route path="/laptop/:category" element={<LaptopMenu />} />
+        <Route path="/component/:category" element={<EventListPage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/news" element={<News />} />
@@ -64,7 +67,7 @@ function App() {
         <Route path="/page/:id" element={<ProductPage />} />
         <Route path="/menu/:id" element={<ProductMenu />} />
         <Route path="/laptop-detail/:id" element={<LaptopPage />} />
-        <Route path="/component/:id" element={<ComponentPage />} />
+        <Route path="/component-category/:id" element={<ComponentPage />} />
 
         {/* Giỏ hàng & Thanh toán */}
         <Route path="/admin/discount" element={<Discount />} />
