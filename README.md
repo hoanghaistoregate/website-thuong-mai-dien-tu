@@ -1,6 +1,6 @@
-# 🚀 React + Vite - Commerces Demo
+# React + Vite - Commerces Demo
 
-## 📦 Cách chạy project
+## Cách chạy project
 
 ### 1. Clone project về máy
 
@@ -50,7 +50,7 @@ http://localhost:5173
 
 ---
 
-## ⚠️ Lưu ý
+## Lưu ý
 
 - Không tắt terminal chạy json-server
 - Nếu lỗi json-server:
@@ -59,6 +59,18 @@ npm install -g json-server
 
 ---
 
-## 🎉 Done
+## Done
 
-Chạy xong là dùng được ngay 🚀
+Chạy xong là dùng được ngay
+
+## Cách đẩy code lên github
+
+- git initi
+- git add .
+- git commit -m "Initi"
+- git push origin main
+
+## kiẻm tra xem đang ở nhánh nào
+
+- git branch
+- Dấu \* là nhánh hiện tại.
