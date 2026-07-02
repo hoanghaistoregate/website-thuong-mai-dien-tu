@@ -803,89 +803,7 @@
     }
   ],
   "cart": [],
-  "orders": [
-    {
-      "orderCode": "DH-20260702-0951",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "Admin7709@gmail.com",
-      "address": "hà đông - hà nội ",
-      "note": "ttttt",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 40000000,
-      "voucherCode": null,
-      "discountAmount": 0,
-      "createdAt": "2026-07-01T17:09:51.618Z",
-      "products": [
-        {
-          "productId": "2",
-          "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
-          "image": "/images/pc3.webp",
-          "quantity": 2,
-          "unitPrice": 20000000,
-          "subtotal": 40000000,
-          "fromTable": "catenogies"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "orderCode": "DH-20260702-02135",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "Admin7709@gmail.com",
-      "address": "hà đông - hà nội ",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 13000000,
-      "voucherCode": "SANMUAHE50K",
-      "discountAmount": 5000000,
-      "createdAt": "2026-07-01T17:21:35.102Z",
-      "products": [
-        {
-          "productId": "3",
-          "name": "PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 )",
-          "image": "/images/pc.jpg",
-          "quantity": 1,
-          "unitPrice": 18000000,
-          "subtotal": 18000000,
-          "fromTable": "catenogies"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "orderCode": "DH-20260702-0236",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "Admin7709@gmail.com",
-      "address": "hà đông - hà nội ",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 19500000,
-      "voucherCode": "GIAMLINHKIEN10",
-      "discountAmount": 500000,
-      "createdAt": "2026-07-01T17:23:06.428Z",
-      "products": [
-        {
-          "productId": "2",
-          "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
-          "image": "/images/pc3.webp",
-          "quantity": 1,
-          "unitPrice": 20000000,
-          "subtotal": 20000000,
-          "fromTable": "catenogies"
-        }
-      ],
-      "id": 3
-    }
-  ],
+  "orders": [],
   "reviews": [],
   "news": [
     {
@@ -1111,9 +1029,39 @@
       "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
       "expiredAt": "2026-08-31",
       "maxCollect": 100,
-      "collectedCount": 44
+      "collectedCount": 45
     }
   ],
-  "userVouchers": [],
+  "userVouchers": [
+    {
+      "userId": "1",
+      "voucherCode": "SANMUAHE",
+      "collectedAt": "2026-07-02T12:11:01.223Z",
+      "used": true,
+      "id": 1
+    }
+  ],
+  "serviceRequests": [
+    {
+      "service": "HỖ TRỢ TRẢ GÓP",
+      "fullName": "Hoàng Hải",
+      "email": "sieucapbro92@gmail.com",
+      "phone": "0911108133",
+      "message": "t muốn có ưu đãi",
+      "status": "pending",
+      "createdAt": "2026-07-02T17:10:28.351Z",
+      "id": 1
+    },
+    {
+      "service": "GIÁ ƯU ĐÃI NHẤT",
+      "fullName": "Hoàng Hải",
+      "email": "sieucapbro92@gmail.com",
+      "phone": "0911108133",
+      "message": "111111",
+      "status": "pending",
+      "createdAt": "2026-07-02T17:25:31.743Z",
+      "id": 2
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

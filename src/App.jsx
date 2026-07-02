@@ -28,6 +28,7 @@ import EventListPage from "./components/Events/EventListPage";
 import SearchResults from "./pages/SearchResults/SearchResults";
 import FlashSalePage from "./components/Sidebar/FlashSalePage";
 import VoucherWallet from "./components/Sidebar/VoucherWallet";
+import AdminServiceRequests from "./components/AdminDashboash/AdminServiceRequests";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -74,6 +75,10 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orders" element={<UserOrders />} />
+        <Route
+          path="/admin/service-requests"
+          element={<AdminServiceRequests />}
+        />
 
         {/* ================= ADMIN ROUTES (BẢO MẬT) ================= */}
         <Route

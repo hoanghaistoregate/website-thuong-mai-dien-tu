@@ -98,13 +98,34 @@ const Header = (props) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast.success(
-      `Xác nhận yêu cầu [${activeModal}] thành công! Chúng tôi sẽ liên hệ lại sớm nhất.`,
-    );
-    setFormData({ fullName: "", email: "", phone: "", message: "" });
-    setActiveModal(null);
+    try {
+      const res = await fetch("http://localhost:3000/serviceRequests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service: activeModal,
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          status: "pending", // pending | processing | done
+          createdAt: new Date().toISOString(),
+        }),
+      });
+
+      if (!res.ok) throw new Error("Gửi yêu cầu thất bại");
+
+      toast.success(
+        `Đã gửi yêu cầu [${activeModal}] thành công! Chúng tôi sẽ liên hệ lại sớm nhất.`,
+      );
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+      setActiveModal(null);
+    } catch (err) {
+      console.error(err);
+      toast.error("Có lỗi xảy ra, vui lòng thử lại!");
+    }
   };
 
   const getPlaceholderMessage = () => {

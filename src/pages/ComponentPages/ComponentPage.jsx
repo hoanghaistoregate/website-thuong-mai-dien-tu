@@ -23,7 +23,7 @@ const ComponentPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
 
-  // ================= LOGIC XỬ LÝ GIỎ HÀNG LINH KIỆN (ĐÃ SỬA ĐÚNG NHÃN) =================
+  // ================= XỬ LÝ GIỎ HÀNG LINH KIỆN =================
   const handleAddToCart = async (
     redirectToCart = false,
     customProductId = null,
@@ -379,7 +379,7 @@ const ComponentPage = () => {
                   style={{ position: "relative" }}
                 >
                   <Link
-                    to={`/component/${item.id}`}
+                    to={`/component-category/${item.id}`}
                     className="related-card-link"
                   >
                     <div className="related-product-card">

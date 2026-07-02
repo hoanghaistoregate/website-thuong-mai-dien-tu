@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "sonner";
 import "./Sevicer.css";
 import {
   MdLocalShipping,
@@ -50,14 +51,35 @@ const Sevicer = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  // gửi lên sever để xử lý thông tin
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Thông tin khách hàng đăng ký [${activeService}]:`, formData);
-    alert(
-      `Xác nhận yêu cầu [${activeService}] thành công! Chúng tôi sẽ liên hệ lại sớm nhất.`,
-    );
-    setFormData({ fullName: "", email: "", phone: "", message: "" });
-    setActiveService(null);
+    try {
+      const res = await fetch("http://localhost:3000/serviceRequests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service: activeService,
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          status: "pending", // pending | processing | done
+          createdAt: new Date().toISOString(),
+        }),
+      });
+
+      if (!res.ok) throw new Error("Gửi yêu cầu thất bại");
+
+      toast.success(
+        `Đã gửi yêu cầu [${activeService}] thành công! Chúng tôi sẽ liên hệ lại sớm nhất.`,
+      );
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+      setActiveService(null);
+    } catch (err) {
+      console.error(err);
+      toast.error("Có lỗi xảy ra, vui lòng thử lại!");
+    }
   };
 
   useEffect(() => {

@@ -10,6 +10,7 @@ import {
   FaChartBar,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { MdSupportAgent } from "react-icons/md";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -57,6 +58,13 @@ const Admin = () => {
           <Link to="/admin/statistics" className={isActive("statistics")}>
             <FaChartBar />
             <span>Thống Kê</span>
+          </Link>
+          <Link
+            to="/admin/service-requests"
+            className={isActive("service-requests")}
+          >
+            <MdSupportAgent />
+            <span>Yêu Cầu Dịch Vụ</span>
           </Link>
         </nav>
       </aside>

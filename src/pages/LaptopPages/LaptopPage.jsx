@@ -451,7 +451,10 @@ const LaptopPage = () => {
                   className="related-card-link-wrapper"
                   style={{ position: "relative" }}
                 >
-                  <Link to={`/laptop/${item.id}`} className="related-card-link">
+                  <Link
+                    to={`/laptop-detail/${item.id}`}
+                    className="related-card-link"
+                  >
                     <div className="related-product-card">
                       <div className="related-card-img-wrapper">
                         <img
