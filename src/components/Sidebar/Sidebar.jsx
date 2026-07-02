@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
+// import FlashSale from "./FlashSale";
 
 const menu = [
   {
@@ -39,27 +40,33 @@ const menu = [
   {
     title: "Khuyến Mãi",
     children: [
-      { name: "Săn Sale Mùa Hè", id: "san-sale" },
-      { name: "Khuyễn Mãi Tri Ân", id: "sale" },
+      { name: "Săn Sale Mùa Hè", id: "san-sale", path: "/san-sale" },
+      { name: "Khuyến Mãi Tri Ân", id: "sale", path: "/tri-an-khach-hang" },
     ],
   },
   {
     title: "Tin Tức",
-    path: "/news", // Thêm thuộc tính path để điều hướng
+    path: "/news",
   },
 ];
 
 const Sidebar = () => {
   const navigate = useNavigate();
 
+  // Click vào menu cha (ví dụ "Tin Tức" không có children, chỉ có path)
   const handleMenuClick = (item) => {
     if (item.path) {
       navigate(item.path);
     }
   };
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
+  // Click vào mục con: có path thì điều hướng trang mới, không thì scroll tới section
+  const handleSubClick = (sub) => {
+    if (sub.path) {
+      navigate(sub.path);
+      return;
+    }
+    const element = document.getElementById(sub.id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -84,7 +91,7 @@ const Sidebar = () => {
                   <div
                     key={i}
                     className="nav-panel__link"
-                    onClick={() => scrollToSection(sub.id)}
+                    onClick={() => handleSubClick(sub)}
                   >
                     {sub.name}
                   </div>
@@ -93,6 +100,7 @@ const Sidebar = () => {
             )}
           </li>
         ))}
+        {/* <FlashSale /> */}
       </ul>
     </div>
   );

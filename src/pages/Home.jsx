@@ -8,7 +8,7 @@ import EventList from "../components/Events/EventList";
 import LaptopUser from "../components/Newlaptop/LaptopUser";
 import Sevicer from "../components/Sevicer/Sevicer";
 import FooterUser from "../components/Footer/FooterUser";
-import GameModal from "../components/GameTitle/GameModal"; // Import component rời
+// import GameModal from "../components/GameTitle/GameModal"; // Import component rời
 import "./Home.css";
 
 const Home = () => {
@@ -78,11 +78,11 @@ const Home = () => {
       <Header />
 
       {/* Gọi Component Modal tách rời ở đây */}
-      <GameModal
+      {/* <GameModal
         isOpen={showGameModal}
         onClose={() => setShowGameModal(false)}
         onConfirm={handleConfirmGame}
-      />
+      /> */}
       <div className="layout">
         <Sidebar />
         <main className="main-content">

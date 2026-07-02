@@ -113,49 +113,97 @@
     {
       "id": "1",
       "name": "Nguồn Gigabyte P650B 650W (80 Plus Bronze/Non Modular)",
-      "price": 140000,
+      "price": 1050000,
+      "oldPrice": 1400000,
+      "discount": 25,
+      "category": "psu",
+      "status": "Còn hàng",
+      "soldPercent": 62,
+      "stockLeft": 8,
       "image": "/images/LC1.jpg"
     },
     {
       "id": "2",
       "name": "Card đồ họa ASROCK Radeon RX 6800 Challenger Pro 16G OC (16GB GDDR6, 256-bit, HDMI+DP, 2x8-pin)",
-      "price": 200000,
+      "price": 8500000,
+      "oldPrice": 12000000,
+      "discount": 30,
+      "category": "vga",
+      "status": "Còn hàng",
+      "soldPercent": 75,
+      "stockLeft": 5,
       "image": "/images/LC2.jpg"
     },
     {
       "id": "3",
       "name": "Ổ cứng HDD WD Purple 1TB 3.5 inch, 5400RPM, SATA, 64MB Cache (WD10PURZ)",
-      "price": 180000,
+      "price": 990000,
+      "oldPrice": 1300000,
+      "discount": 24,
+      "category": "hdd",
+      "status": "Còn hàng",
+      "soldPercent": 40,
+      "stockLeft": 18,
       "image": "/images/LC3.jpg"
     },
     {
       "id": "4",
       "name": "CPU AMD Ryzen 7 5800X (3.8GHz Turbo Up To 4.7 GHz, 8 Nhân 16 Luồng, 36MB Cache, AM4)",
-      "price": 150000,
+      "price": 4200000,
+      "oldPrice": 6000000,
+      "discount": 30,
+      "category": "cpu",
+      "status": "Còn hàng",
+      "soldPercent": 55,
+      "stockLeft": 12,
       "image": "/images/LC4.jpg"
     },
     {
       "id": "5",
       "name": "Màn Hình Samsung LS27R350FHEXXV (27 inch / FHD / IPS / 75Hz)",
-      "price": 180000,
+      "price": 2800000,
+      "oldPrice": 3500000,
+      "discount": 20,
+      "category": "monitor",
+      "status": "Còn hàng",
+      "soldPercent": 33,
+      "stockLeft": 25,
       "image": "/images/LC5.jpg"
     },
     {
       "id": "6",
       "name": "Mainboard Gigabyte Z790 AORUS ELITE AX (Intel Z790, Socket LGA1700, ATX, 4 khe RAM DDR5)",
-      "price": 190000,
+      "price": 5900000,
+      "oldPrice": 7800000,
+      "discount": 25,
+      "category": "mainboard",
+      "status": "Còn hàng",
+      "soldPercent": 81,
+      "stockLeft": 3,
       "image": "/images/LC6.webp"
     },
     {
       "id": "7",
       "name": "Chuột không dây Logitech M221 (silent) Black",
-      "price": 150000,
+      "price": 350000,
+      "oldPrice": 450000,
+      "discount": 22,
+      "category": "hdd",
+      "status": "Còn hàng",
+      "soldPercent": 28,
+      "stockLeft": 40,
       "image": "/images/LC7.jpg"
     },
     {
       "id": "8",
       "name": "Màn hình Dell S2421H (23.8inch / FHD / IPS / 75Hz/ Loa 3W)",
-      "price": 170000,
+      "price": 2400000,
+      "oldPrice": 3100000,
+      "discount": 23,
+      "category": "ram",
+      "status": "Còn hàng",
+      "soldPercent": 47,
+      "stockLeft": 14,
       "image": "/images/LC8.webp"
     }
   ],
@@ -163,50 +211,98 @@
     {
       "id": "1",
       "name": "Laptop HP 15s-fq1017TU 8VY69PA (Silver)",
-      "price": 1399999,
+      "price": 9500000,
+      "oldPrice": 13000000,
+      "discount": 27,
+      "category": "laptop-cu",
+      "status": "Còn hàng",
+      "soldPercent": 58,
+      "stockLeft": 7,
       "image": "/images/LT10.jpg",
       "deleted": false
     },
     {
       "id": "2",
       "name": "LAPTOP MSI GF63 THIN 11UC-667VN ( I7-11800H/ 8GB/ SSD 512GB/ RTX3050 4GB/ 15.6 FHD/ 144HZ )",
-      "price": 2000000,
+      "price": 14900000,
+      "oldPrice": 19000000,
+      "discount": 22,
+      "category": "laptop-gaming",
+      "status": "Còn hàng",
+      "soldPercent": 70,
+      "stockLeft": 4,
       "image": "/images/LT2.jpg"
     },
     {
       "id": "3",
       "name": "LAPTOP ASUS TUF GAMING FX506HC I5 11400H/8GB/512GB/4GB RTX3050/144HZ/WIN11 (HN144W)",
-      "price": 1800000,
+      "price": 15500000,
+      "oldPrice": 19500000,
+      "discount": 21,
+      "category": "laptop-moi",
+      "status": "Còn hàng",
+      "soldPercent": 44,
+      "stockLeft": 11,
       "image": "/images/LT3.jpg"
     },
     {
       "id": "4",
       "name": "Laptop Acer Gaming Nitro 5 AN515-55-70AX NH.Q7NSV.001",
-      "price": 1500000,
+      "price": 13200000,
+      "oldPrice": 17000000,
+      "discount": 22,
+      "category": "laptop-do-hoa",
+      "status": "Còn hàng",
+      "soldPercent": 35,
+      "stockLeft": 16,
       "image": "/images/LT4.jpg"
     },
     {
       "id": "5",
       "name": "LAPTOP HP 15S-FQ5080TU (15.6INCH/ FHD/ I5-1235U/ 8GB/ SSD 256GB/ WIN 11/ SILVER)",
-      "price": 1800000,
+      "price": 11800000,
+      "oldPrice": 14500000,
+      "discount": 19,
+      "category": "laptop-do-hoa",
+      "status": "Còn hàng",
+      "soldPercent": 25,
+      "stockLeft": 22,
       "image": "/images/LT5.jpg"
     },
     {
       "id": "6",
       "name": "Laptop MSI Modern 14 A10M 1053VN",
-      "price": 1900000,
+      "price": 10900000,
+      "oldPrice": 13500000,
+      "discount": 19,
+      "category": "laptop",
+      "status": "Còn hàng",
+      "soldPercent": 52,
+      "stockLeft": 9,
       "image": "/images/LT6.jpg"
     },
     {
       "id": "7",
       "name": "LAPTOP ACER ASPIRE 3 A315-58-561V CORE I5-1135G7/ 8GB/ 512GB/ 15.6INCH FHD/ BẠC NK MỚI",
-      "price": 1500000,
+      "price": 9800000,
+      "oldPrice": 12500000,
+      "discount": 22,
+      "category": "laptop-moi",
+      "status": "Còn hàng",
+      "soldPercent": 67,
+      "stockLeft": 6,
       "image": "/images/LT7.jpg"
     },
     {
       "id": "8",
       "name": "Laptop HP Spectre x360 Convertible 13-aw0181TU 8YQ35PA",
-      "price": 1700000,
+      "price": 18500000,
+      "oldPrice": 24000000,
+      "discount": 23,
+      "category": "laptop-cu",
+      "status": "Còn hàng",
+      "soldPercent": 89,
+      "stockLeft": 2,
       "image": "/images/LT8.jpg"
     }
   ],
@@ -696,66 +792,101 @@
   "users": [
     {
       "id": "1",
-      "fullName": "Admin7709",
+      "fullName": "Hoàng Hải",
       "email": "Admin7709@gmail.com",
       "phone": "0911108133",
       "password": "123456789@",
       "role": "admin",
       "status": "active",
-      "address": "hà đông - hà nội "
-    },
-    {
-      "id": "1782406441185",
-      "fullName": "Hoang Hai",
-      "email": "Hoanghai@gmail.com",
-      "phone": "0111111111",
-      "password": "123456",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": "1782469191189",
-      "fullName": "abcxyz",
-      "email": "hoanghai@gmail.com",
-      "phone": "900000000",
-      "password": "123456789",
-      "role": "user",
-      "status": "active"
-    },
-    {
-      "id": "1782469541513",
-      "fullName": "yyyyyyy",
-      "email": "admin@gmail.coml",
-      "phone": "123456778",
-      "password": "123456",
-      "role": "user",
-      "status": "active"
+      "address": "hà đông - hà nội ",
+      "createdAt": ""
     }
   ],
   "cart": [],
-  "orders": [],
-  "reviews": [
+  "orders": [
     {
-      "productId": "2",
-      "collection": "catenogies",
+      "orderCode": "DH-20260702-0951",
       "userId": "1",
-      "userName": "Admin7709",
-      "rating": 5,
-      "comment": "rrrrrrrrrrrrr",
-      "createdAt": "2026-06-26T10:18:13.897Z",
-      "id": "1782469093897"
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "Admin7709@gmail.com",
+      "address": "hà đông - hà nội ",
+      "note": "ttttt",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 40000000,
+      "voucherCode": null,
+      "discountAmount": 0,
+      "createdAt": "2026-07-01T17:09:51.618Z",
+      "products": [
+        {
+          "productId": "2",
+          "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
+          "image": "/images/pc3.webp",
+          "quantity": 2,
+          "unitPrice": 20000000,
+          "subtotal": 40000000,
+          "fromTable": "catenogies"
+        }
+      ],
+      "id": 1
     },
     {
-      "productId": "2",
-      "collection": "ProductMenus",
+      "orderCode": "DH-20260702-02135",
       "userId": "1",
-      "userName": "Admin7709",
-      "rating": 5,
-      "comment": "ttttt",
-      "createdAt": "2026-06-28T17:33:20.915Z",
-      "id": "1782668000916"
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "Admin7709@gmail.com",
+      "address": "hà đông - hà nội ",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 13000000,
+      "voucherCode": "SANMUAHE50K",
+      "discountAmount": 5000000,
+      "createdAt": "2026-07-01T17:21:35.102Z",
+      "products": [
+        {
+          "productId": "3",
+          "name": "PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 )",
+          "image": "/images/pc.jpg",
+          "quantity": 1,
+          "unitPrice": 18000000,
+          "subtotal": 18000000,
+          "fromTable": "catenogies"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "orderCode": "DH-20260702-0236",
+      "userId": "1",
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "Admin7709@gmail.com",
+      "address": "hà đông - hà nội ",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 19500000,
+      "voucherCode": "GIAMLINHKIEN10",
+      "discountAmount": 500000,
+      "createdAt": "2026-07-01T17:23:06.428Z",
+      "products": [
+        {
+          "productId": "2",
+          "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
+          "image": "/images/pc3.webp",
+          "quantity": 1,
+          "unitPrice": 20000000,
+          "subtotal": 20000000,
+          "fromTable": "catenogies"
+        }
+      ],
+      "id": 3
     }
   ],
+  "reviews": [],
   "news": [
     {
       "id": 1,
@@ -914,5 +1045,75 @@
       "image": "/images/moto02.webp"
     }
   ],
+  "vouchers": [
+    {
+      "id": "v1",
+      "code": "SANMUAHE50K",
+      "type": "amount",
+      "value": 5000000,
+      "minOrder": 500000,
+      "des": "Giảm 50k cho đơn hàng từ 500k",
+      "expiredAt": "2026-08-31",
+      "maxCollect": 500,
+      "collectedCount": 132
+    },
+    {
+      "id": "v2",
+      "code": "SANMUAHE100K",
+      "type": "amount",
+      "value": 1000000,
+      "minOrder": 2000000,
+      "des": "Giảm 100k cho khách hàng VIP - đơn từ 2 triệu",
+      "expiredAt": "2026-08-31",
+      "maxCollect": 200,
+      "collectedCount": 200
+    },
+    {
+      "id": "v3",
+      "code": "SANMUAHE200K",
+      "type": "amount",
+      "value": 2000000,
+      "minOrder": 3000000,
+      "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
+      "expiredAt": "2026-08-31",
+      "maxCollect": 100,
+      "collectedCount": 44
+    },
+    {
+      "id": "v4",
+      "code": "GIAMLINHKIEN10",
+      "type": "percent",
+      "value": 70,
+      "maxDiscount": 500000,
+      "minOrder": 1000000,
+      "des": "Giảm 10% linh kiện, tối đa 500k",
+      "expiredAt": "2026-08-15",
+      "maxCollect": 300,
+      "collectedCount": 92
+    },
+    {
+      "id": "v5",
+      "code": "SAN200K",
+      "type": "amount",
+      "value": 2000000,
+      "minOrder": 3000000,
+      "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
+      "expiredAt": "2026-08-31",
+      "maxCollect": 100,
+      "collectedCount": 44
+    },
+    {
+      "id": "v6",
+      "code": "SANMUAHE",
+      "type": "amount",
+      "value": 2000000,
+      "minOrder": 3000000,
+      "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
+      "expiredAt": "2026-08-31",
+      "maxCollect": 100,
+      "collectedCount": 44
+    }
+  ],
+  "userVouchers": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

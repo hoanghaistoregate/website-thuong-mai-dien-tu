@@ -32,7 +32,7 @@ npm install
 
 Mở terminal mới và chạy:
 
-json-server --watch db.json --port 3000
+npx json-server --watch db.json --port 3000
 
 API chạy tại:
 http://localhost:3000

@@ -1,4 +1,3 @@
-// 🌟 Đã bổ sung import "Navigate" vào đây để tránh lỗi Crash ứng dụng
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
@@ -18,11 +17,8 @@ import { Toaster } from "sonner";
 import UserOrders from "./components/AdminDashboash/UserOrders";
 import Checkout from "./components/AdminDashboash/Checkout";
 import AdminOrders from "./components/AdminDashboash/AdminOrders";
-
-// 🌟 Hãy kiểm tra chắc chắn đường dẫn này trỏ đúng đến file Cart.jsx thông minh chúng ta vừa viết
 import Cart from "./pages/CartUser/Cart";
 import Statistics from "./components/AdminDashboash/Statistics";
-import Discount from "./components/AdminDashboash/DiscountUser";
 import EditProfile from "./components/AdminDashboash/EditProfile";
 import News from "./components/Sidebar/News";
 import NewsDetail from "./components/Sidebar/NewsDetail";
@@ -30,8 +26,10 @@ import CategoryPage from "./components/Catenogy/CategoryPage";
 import LaptopMenu from "./components/Newlaptop/LaptopMenu";
 import EventListPage from "./components/Events/EventListPage";
 import SearchResults from "./pages/SearchResults/SearchResults";
+import FlashSalePage from "./components/Sidebar/FlashSalePage";
+import VoucherWallet from "./components/Sidebar/VoucherWallet";
 
-// 🛡️ BỘ BẢO VỆ ROUTE ADMIN
+// BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -68,9 +66,10 @@ function App() {
         <Route path="/menu/:id" element={<ProductMenu />} />
         <Route path="/laptop-detail/:id" element={<LaptopPage />} />
         <Route path="/component-category/:id" element={<ComponentPage />} />
+        <Route path="/san-sale" element={<FlashSalePage />} />
+        <Route path="/tri-an-khach-hang" element={<VoucherWallet />} />
 
         {/* Giỏ hàng & Thanh toán */}
-        <Route path="/admin/discount" element={<Discount />} />
         <Route path="/admin/statistics" element={<Statistics />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />

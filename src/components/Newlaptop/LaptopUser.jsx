@@ -10,6 +10,10 @@ const TABS = [
 ];
 
 const LaptopUser = ({ laptopData }) => {
+  console.log(Array.isArray(laptopData));
+  console.log(laptopData);
+  console.log("LaptopUser:", laptopData);
+  console.log("Length:", laptopData?.length);
   const navigate = useNavigate();
 
   return (

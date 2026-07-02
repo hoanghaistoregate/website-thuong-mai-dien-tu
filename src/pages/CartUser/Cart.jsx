@@ -24,7 +24,7 @@ const Cart = () => {
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-  // ================= 🌟 HÀM FETCH GIỎ HÀNG THÔNG MINH (CHỐNG TRỐNG TRƠN) 🌟 =================
+  // ================= HÀM FETCH GIỎ HÀNG THÔNG MINH  =================
   const fetchCart = async () => {
     if (!currentUser) return;
     try {
@@ -38,7 +38,7 @@ const Cart = () => {
         cartData = await res.json();
       }
 
-      // 🌟 BỘ CỨU HỘ: Nếu JSON-Server trả về rỗng do lệch kiểu dữ liệu (String vs Number)
+      // Nếu JSON-Server trả về rỗng do lệch kiểu dữ liệu (String vs Number)
       if (!cartData || cartData.length === 0) {
         console.log(
           "Phát hiện mảng rỗng do lệch kiểu dữ liệu, kích hoạt bộ lọc ép kiểu ép buộc...",

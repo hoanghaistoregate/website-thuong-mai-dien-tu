@@ -1,14 +1,17 @@
 import "./ProductCard.css";
 import { PiShoppingCartDuotone } from "react-icons/pi";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 // Nhận thêm một prop là onCardClick từ Home truyền xuống
 const ProductCard = ({ product, onCardClick }) => {
+  const navigate = useNavigate();
   const handleGoToDetail = () => {
     // Nếu có hàm onCardClick truyền xuống thì kích hoạt nó và gửi kèm ID sản phẩm
     if (onCardClick) {
       onCardClick(product.id);
     }
+    navigate(`/page/${product.id}`);
   };
 
   return (

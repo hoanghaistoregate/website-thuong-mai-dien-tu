@@ -1,0 +1,151 @@
+.voucher-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  font-family: inherit;
+}
+
+.voucher-page__hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.voucher-page__eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #e11d48;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.voucher-page__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #18181b;
+  margin: 0 0 8px;
+}
+.voucher-page__subtitle {
+  font-size: 14px;
+  color: #71717a;
+  margin: 0;
+}
+
+.voucher-page__state {
+  text-align: center;
+  color: #71717a;
+  padding: 40px 0;
+}
+
+.voucher-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.voucher-card {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f2;
+}
+.voucher-card--disabled {
+  opacity: 0.55;
+}
+
+.voucher-card__value {
+  width: 110px;
+  flex-shrink: 0;
+  background: linear-gradient(160deg, #e11d48, #be123c);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  text-align: center;
+}
+.voucher-card--disabled .voucher-card__value {
+  background: linear-gradient(160deg, #a1a1aa, #71717a);
+}
+.voucher-card__number {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.voucher-card__value-label {
+  font-size: 8px;
+  opacity: 0.9;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.voucher-card__body {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.voucher-card__desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: #18181b;
+  margin: 0;
+}
+.voucher-card__meta {
+  font-size: 11px;
+  color: #a1a1aa;
+  margin: 0;
+}
+.voucher-card__urgency {
+  font-size: 11px;
+  color: #e11d48;
+  font-weight: 500;
+  margin: 2px 0 0;
+}
+
+.voucher-card__action {
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+}
+
+.voucher-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.voucher-btn--active {
+  background: #e11d48;
+  color: #fff;
+}
+.voucher-btn--active:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+.voucher-btn--collected {
+  background: #f0f0f2;
+  color: #52525b;
+  cursor: default;
+}
+.voucher-btn--disabled {
+  background: #e4e4e7;
+  color: #a1a1aa;
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  .voucher-card__value {
+    width: 84px;
+  }
+  .voucher-card__number {
+    font-size: 18px;
+  }
+}

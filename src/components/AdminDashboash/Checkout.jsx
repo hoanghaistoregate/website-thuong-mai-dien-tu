@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast, Toaster } from "sonner";
-import { FaUser, FaCreditCard, FaShoppingBag, FaTag } from "react-icons/fa";
+import { FaUser, FaCreditCard, FaTag, FaChevronDown } from "react-icons/fa";
 import Header from "../../components/Header/Header";
 import FooterUser from "../../components/Footer/FooterUser";
 import Sevicer from "../Sevicer/Sevicer";
@@ -26,27 +26,6 @@ const generateOrderCode = () => {
   const now = new Date();
   return `DH-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}-${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
 };
-
-const vouchers = [
-  {
-    code: "SANMUAHE50k",
-    type: "percent",
-    value: 20,
-    des: "Giảm 50k Cho Sản phẩm đầu tiên",
-  },
-  {
-    code: "SANMUAHE100k",
-    type: "percent",
-    value: 20,
-    des: "Giảm 100k cho khách hàng vip",
-  },
-  {
-    code: "SANMUAHE200k",
-    type: "percent",
-    value: 20,
-    des: "Giảm 200k khách hàng thân thiết",
-  },
-];
 
 const PAYMENT_METHODS = [
   {
@@ -76,12 +55,17 @@ const Checkout = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const buyNowItem = location.state?.buyNowItem;
+  const couponWrapRef = useRef(null);
 
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
+  const [appliedVoucher, setAppliedVoucher] = useState(null);
+  // Chỉ chứa các voucher user đã "thu thập" ở trang Kho Voucher
+  const [myVouchers, setMyVouchers] = useState([]);
+  const [showVoucherList, setShowVoucherList] = useState(false);
   const [customerInfo, setCustomerInfo] = useState({
     fullName: "",
     phone: "",
@@ -106,6 +90,24 @@ const Checkout = () => {
         email: currentUser.email || "",
         address: currentUser.address || "",
       }));
+
+      // Lấy danh sách voucher mà user này đã thu thập ở trang Kho Voucher,
+      // rồi join với bảng vouchers để có đầy đủ thông tin giảm giá
+      try {
+        const [userVoucherRes, voucherRes] = await Promise.all([
+          fetch(`${API_URL}/userVouchers?userId=${currentUser.id}`),
+          fetch(`${API_URL}/vouchers`),
+        ]);
+        const userVoucherData = await userVoucherRes.json();
+        const voucherData = await voucherRes.json();
+        const collectedCodes = userVoucherData.map((uv) => uv.voucherCode);
+        setMyVouchers(
+          voucherData.filter((v) => collectedCodes.includes(v.code)),
+        );
+      } catch (err) {
+        console.error(err);
+        // Không chặn checkout nếu tải voucher lỗi — chỉ là user không áp mã được
+      }
 
       if (buyNowItem) {
         setCartItems([{ ...buyNowItem, quantity: buyNowItem.quantity || 1 }]);
@@ -145,6 +147,17 @@ const Checkout = () => {
     init();
   }, [buyNowItem, navigate]);
 
+  // Đóng dropdown khi click ra ngoài
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (couponWrapRef.current && !couponWrapRef.current.contains(e.target)) {
+        setShowVoucherList(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const subTotal = cartItems.reduce(
     (sum, item) => sum + cleanPrice(item.price) * item.quantity,
     0,
@@ -152,18 +165,54 @@ const Checkout = () => {
   const shipping = subTotal > 500000 ? 0 : 30000;
   const totalAmount = Math.max(0, subTotal + shipping - discount);
 
-  const handleApplyCoupon = () => {
-    const foundVoucher = vouchers.find((v) => v.code === couponCode);
-    if (foundVoucher) {
-      let discountAmount = 0;
-      if (foundVoucher.type === "percent") {
-        discountAmount = (subTotal * foundVoucher.value) / 100;
-      }
-      setDiscount(discountAmount);
-      toast.success(`Đã áp dụng mã ${foundVoucher.code}!`);
-    } else {
-      toast.error("Mã giảm giá không hợp lệ");
+  const applyVoucherObj = (foundVoucher) => {
+    if (!foundVoucher) {
+      toast.error(
+        "Mã không hợp lệ hoặc bạn chưa thu thập mã này. Vào 'Kho Voucher' để lưu mã trước.",
+      );
+      return;
     }
+
+    if (subTotal < foundVoucher.minOrder) {
+      toast.error(
+        `Đơn hàng cần tối thiểu ${formatPrice(foundVoucher.minOrder)} để dùng mã này.`,
+      );
+      return;
+    }
+
+    let discountAmount = 0;
+    if (foundVoucher.type === "amount") {
+      discountAmount = foundVoucher.value;
+    } else if (foundVoucher.type === "percent") {
+      discountAmount = (subTotal * foundVoucher.value) / 100;
+      if (foundVoucher.maxDiscount) {
+        discountAmount = Math.min(discountAmount, foundVoucher.maxDiscount);
+      }
+    }
+
+    setDiscount(discountAmount);
+    setAppliedVoucher(foundVoucher);
+    setCouponCode(foundVoucher.code);
+    setShowVoucherList(false);
+    toast.success(
+      `Đã áp dụng mã ${foundVoucher.code}! Giảm ${formatPrice(discountAmount)}`,
+    );
+  };
+
+  const handleApplyCoupon = () => {
+    const trimmedCode = couponCode.trim().toUpperCase();
+    const foundVoucher = myVouchers.find((v) => v.code === trimmedCode);
+    applyVoucherObj(foundVoucher);
+  };
+
+  const handleSelectVoucherFromList = (voucher) => {
+    applyVoucherObj(voucher);
+  };
+
+  const handleRemoveCoupon = () => {
+    setDiscount(0);
+    setAppliedVoucher(null);
+    setCouponCode("");
   };
 
   const handleSubmitOrder = async (e) => {
@@ -189,6 +238,8 @@ const Checkout = () => {
         ...customerInfo,
         status: "pending",
         totalAmount,
+        voucherCode: appliedVoucher?.code || null,
+        discountAmount: discount,
         createdAt: new Date().toISOString(),
         products: formattedProducts,
       };
@@ -200,6 +251,25 @@ const Checkout = () => {
       });
 
       if (!res.ok) throw new Error("Lỗi khi gửi đơn hàng");
+
+      // Đánh dấu voucher đã dùng để không áp dụng lại lần sau
+      if (appliedVoucher) {
+        try {
+          const uvRes = await fetch(
+            `${API_URL}/userVouchers?userId=${currentUser.id}&voucherCode=${appliedVoucher.code}`,
+          );
+          const uvData = await uvRes.json();
+          if (uvData[0]) {
+            await fetch(`${API_URL}/userVouchers/${uvData[0].id}`, {
+              method: "PATCH",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ used: true }),
+            });
+          }
+        } catch (err) {
+          console.error("Không cập nhật được trạng thái voucher:", err);
+        }
+      }
 
       if (!buyNowItem) {
         await Promise.all(
@@ -359,46 +429,140 @@ const Checkout = () => {
             </div>
             <div className="checkout-right">
               <div className="checkout-card">
-                <h3>ĐƠN HÀNG CỦA BẠN</h3>
-                {cartItems.map((item, idx) => (
-                  <div key={idx} className="order-item">
-                    <p>
-                      {item.name} x {item.quantity}
-                    </p>
-                    <span>
-                      {formatPrice(cleanPrice(item.price) * item.quantity)}
-                    </span>
-                  </div>
-                ))}
+                <h3 className="order-summary-title">ĐƠN HÀNG CỦA BẠN</h3>
+                <div className="order-items">
+                  {cartItems.map((item, idx) => (
+                    <div key={idx} className="order-item">
+                      <p className="order-item-name">
+                        {item.name}{" "}
+                        <span className="order-item-qty">x{item.quantity}</span>
+                      </p>
+                      <span className="order-item-price">
+                        {formatPrice(cleanPrice(item.price) * item.quantity)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
                 <div className="sum-rows">
-                  <p>Tạm tính: {formatPrice(subTotal)}</p>
+                  <p>
+                    <span>Tạm tính</span>
+                    <span>{formatPrice(subTotal)}</span>
+                  </p>
                   {discount > 0 && (
-                    <p style={{ color: "red" }}>
-                      Giảm giá: -{formatPrice(discount)}
+                    <p className="sum-row-discount">
+                      <span>Giảm giá</span>
+                      <span>-{formatPrice(discount)}</span>
                     </p>
                   )}
                   <p>
-                    Phí ship:{" "}
-                    {shipping === 0 ? "Miễn phí" : formatPrice(shipping)}
+                    <span>Phí ship</span>
+                    <span className={shipping === 0 ? "free-ship" : ""}>
+                      {shipping === 0 ? "Miễn phí" : formatPrice(shipping)}
+                    </span>
                   </p>
-                  <p>
-                    <strong>Tổng cộng: {formatPrice(totalAmount)}</strong>
+                  <p className="sum-row-total">
+                    <span>Tổng cộng</span>
+                    <span className="total-price">
+                      {formatPrice(totalAmount)}
+                    </span>
                   </p>
                 </div>
               </div>
-              <div className="checkout-card coupon-card">
-                <input
-                  value={couponCode}
-                  onChange={(e) => setCouponCode(e.target.value)}
-                  placeholder="Nhập mã..."
-                />
-                <button type="button" onClick={handleApplyCoupon}>
-                  Áp dụng
-                </button>
+
+              <div className="checkout-card coupon-card" ref={couponWrapRef}>
+                <h4 className="coupon-title">
+                  <FaTag /> Mã giảm giá
+                </h4>
+
+                {appliedVoucher ? (
+                  <div className="coupon-applied">
+                    <span>
+                      <FaTag /> {appliedVoucher.code}
+                    </span>
+                    <button type="button" onClick={handleRemoveCoupon}>
+                      Bỏ mã
+                    </button>
+                  </div>
+                ) : (
+                  <div className="coupon-input-wrap">
+                    <div className="coupon-row">
+                      <input
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        onFocus={() => setShowVoucherList(true)}
+                        placeholder="Chọn hoặc nhập mã giảm giá..."
+                        autoComplete="off"
+                      />
+                      <button type="button" onClick={handleApplyCoupon}>
+                        Áp dụng
+                      </button>
+                    </div>
+
+                    {showVoucherList && (
+                      <div className="voucher-dropdown">
+                        {myVouchers.length === 0 ? (
+                          <div className="voucher-empty">
+                            <p>Bạn chưa có mã nào.</p>
+                            <Link
+                              to="/tri-an-khach-hang"
+                              onClick={() => setShowVoucherList(false)}
+                            >
+                              Vào Kho Voucher
+                            </Link>
+                          </div>
+                        ) : (
+                          <ul className="voucher-list">
+                            {myVouchers.map((v) => {
+                              const eligible = subTotal >= (v.minOrder || 0);
+                              return (
+                                <li
+                                  key={v.code}
+                                  className={`voucher-list-item ${!eligible ? "voucher-disabled" : ""}`}
+                                  onClick={() =>
+                                    eligible && handleSelectVoucherFromList(v)
+                                  }
+                                >
+                                  <div className="voucher-list-icon">
+                                    <FaTag />
+                                  </div>
+                                  <div className="voucher-list-info">
+                                    <strong>{v.code}</strong>
+                                    <span>
+                                      {v.type === "percent"
+                                        ? `Giảm ${v.value}%${v.maxDiscount ? ` (tối đa ${formatPrice(v.maxDiscount)})` : ""}`
+                                        : `Giảm ${formatPrice(v.value)}`}
+                                    </span>
+                                    <small>
+                                      Đơn tối thiểu{" "}
+                                      {formatPrice(v.minOrder || 0)}
+                                    </small>
+                                  </div>
+                                  {!eligible && (
+                                    <span className="voucher-locked">
+                                      Chưa đủ điều kiện
+                                    </span>
+                                  )}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
-              <button type="submit" disabled={submitting}>
-                XÁC NHẬN ĐẶT HÀNG
+
+              <button
+                type="submit"
+                className="btn-confirm-checkout"
+                disabled={submitting}
+              >
+                {submitting ? "ĐANG XỬ LÝ..." : "XÁC NHẬN ĐẶT HÀNG"}
               </button>
+              <p className="secure-note">
+                Thông tin của bạn được bảo mật an toàn
+              </p>
             </div>
           </form>
         </div>

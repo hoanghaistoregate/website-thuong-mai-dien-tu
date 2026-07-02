@@ -58,10 +58,6 @@ const Admin = () => {
             <FaChartBar />
             <span>Thống Kê</span>
           </Link>
-          <Link to="/admin/discount" className={isActive("discount")}>
-            <BiSolidDiscount />
-            <span>Giảm Giá</span>
-          </Link>
         </nav>
       </aside>
 
