@@ -10,6 +10,7 @@ import Sevicer from "../components/Sevicer/Sevicer";
 import FooterUser from "../components/Footer/FooterUser";
 // import GameModal from "../components/GameTitle/GameModal"; // Import component rời
 import "./Home.css";
+import ShowroomSystem from "./ShowroomSystem";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -114,12 +115,12 @@ const Home = () => {
       <div id="ram-section"> {/* Nội dung RAM */} </div>
       <div id="ssd-section"> {/* Nội dung SSD */} </div>
       <div id="card-section"> {/* Nội dung SSD */} </div>
-
       <div id="mainboard-section"> {/* Nội dung Mainboard */} </div>
       <div id="event-list">
         <EventList eventList={eventList} />
       </div>
       <Sevicer />
+      <ShowroomSystem />
 
       <div id="dich-vu"> {/* Nội dung SSD */} </div>
       <div id="chi-tiet"> {/* Nội dung SSD */} </div>

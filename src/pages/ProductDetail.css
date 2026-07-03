@@ -1058,3 +1058,56 @@
   color: #0056b3 !important;
   font-weight: 500;
 }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1150px) {
+  .product-detail-layout {
+    grid-template-columns: 300px 1fr;
+  }
+  .detail-right-policies {
+    grid-column: 1 / -1;
+  }
+  .description-layout-container {
+    grid-template-columns: 1fr;
+  }
+  .description-right-sidebar {
+    position: static;
+  }
+  .related-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .product-detail-layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-left-gallery {
+    position: static;
+  }
+  .product-main-title {
+    font-size: 19px;
+  }
+  .live-price {
+    font-size: 22px;
+  }
+  .sub-buy-buttons-row {
+    grid-template-columns: 1fr;
+  }
+  .related-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .main-image-wrapper::before,
+  .btn-add-to-cart-big,
+  .btn-buy-now-split,
+  .btn-installment-split,
+  .btn-view-all-specs,
+  .btn-quick-cart-circle,
+  .related-card-link-wrapper {
+    transition: none;
+  }
+}

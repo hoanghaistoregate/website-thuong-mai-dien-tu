@@ -4,6 +4,7 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
 // Nhận thêm một prop là onCardClick từ Home truyền xuống
+
 const ProductCard = ({ product, onCardClick }) => {
   const navigate = useNavigate();
   const handleGoToDetail = () => {

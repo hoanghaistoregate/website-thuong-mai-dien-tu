@@ -17,13 +17,13 @@ const EventList = ({ eventList }) => {
   return (
     <section className="event-list">
       <div className="event-header">
-        <h2>Linh Kiện</h2>
         <nav className="event-tabs">
           {TABS.map((tab) => (
             <button
               key={tab.category}
               className="event-tab"
               onClick={() => navigate(`/component/${tab.category}`)}
+              title={tab.label}
             >
               {tab.label}
             </button>

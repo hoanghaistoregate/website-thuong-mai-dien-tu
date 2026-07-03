@@ -124,7 +124,8 @@ const ProductMenu = () => {
     return (
       <>
         <Header />
-        <div style={{ padding: "80px 0", textAlign: "center" }}>
+        <div className="pms-state">
+          <span className="pms-state__tag">// đang tải</span>
           <h2>Đang tải thông tin chi tiết sản phẩm...</h2>
         </div>
         <FooterUser />
@@ -136,13 +137,13 @@ const ProductMenu = () => {
     return (
       <>
         <Header />
-        <div style={{ padding: "80px 0", textAlign: "center" }}>
+        <div className="pms-state">
+          <span className="pms-state__tag pms-state__tag--error">
+            // lỗi 404
+          </span>
           <h2>Sản phẩm không tồn tại hoặc đã bị gỡ bỏ!</h2>
-          <Link
-            to="/"
-            style={{ color: "#007bff", textDecoration: "underline" }}
-          >
-            Quay lại trang chủ
+          <Link to="/" className="pms-state__link">
+            ← Quay lại trang chủ
           </Link>
         </div>
         <FooterUser />
@@ -181,12 +182,15 @@ const ProductMenu = () => {
                 </div>
 
                 <div className="pms-specs">
-                  <h3>THÔNG SỐ KỸ THUẬT</h3>
+                  <h3>
+                    <span className="pms-specs__dot" />
+                    THÔNG SỐ KỸ THUẬT
+                  </h3>
                   {product.specs &&
                     Object.entries(product.specs).map(([key, value]) => (
                       <div className="pms-specs__row" key={key}>
-                        <span>{key}</span>
-                        <span>{value}</span>
+                        <span className="pms-specs__key">{key}</span>
+                        <span className="pms-specs__value">{value}</span>
                       </div>
                     ))}
                 </div>
@@ -219,17 +223,20 @@ const ProductMenu = () => {
 
               {/* CENTER COLUMN */}
               <div className="pms-col pms-col--center">
+                <span className="pms-eyebrow">
+                  {product.brand || "Sản phẩm"} · {product.status}
+                </span>
                 <h1>{product.name}</h1>
 
                 <div className="pms-meta">
-                  <span>
-                    <b>Thương hiệu:</b> {product.brand}
+                  <span className="pms-meta__tag">
+                    <b>Thương hiệu</b> {product.brand}
                   </span>
-                  <span>
-                    <b>Danh mục:</b> {product.category}
+                  <span className="pms-meta__tag">
+                    <b>Danh mục</b> {product.category}
                   </span>
-                  <span>
-                    <b>Tình trạng:</b> {product.status}
+                  <span className="pms-meta__tag">
+                    <b>Tình trạng</b> {product.status}
                   </span>
                 </div>
 
@@ -279,7 +286,7 @@ const ProductMenu = () => {
                   className="pms-desc-toggle"
                   onClick={() => setShowModal(true)}
                 >
-                  Xem chi tiết mô tả sản phẩm
+                  Xem chi tiết mô tả sản phẩm →
                 </button>
               </div>
 
@@ -316,7 +323,7 @@ const ProductMenu = () => {
             </button>
             <h2>{product.description?.title}</h2>
             {product.description?.content?.map((s, i) => (
-              <div key={i}>
+              <div key={i} className="pms-modal__section">
                 <h3>{s.heading}</h3>
                 <p>{s.text}</p>
                 {s.image && <img src={s.image} alt="" />}
@@ -338,7 +345,7 @@ const ProductMenu = () => {
                 <img src={item.image} alt={item.name} />
                 <h4>{item.name}</h4>
                 <p>{item.price?.toLocaleString()}đ</p>
-                <Link to={`/menu/${item.id}`}>Xem chi tiết</Link>
+                <Link to={`/menu/${item.id}`}>Xem chi tiết →</Link>
               </div>
             ))}
         </div>

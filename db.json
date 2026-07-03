@@ -64,49 +64,72 @@
       "id": "1",
       "name": "PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060)",
       "price": 14000000,
+      "category": "top-ban-chay",
       "image": "/images/pc.jpg"
     },
     {
       "id": "2",
       "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
       "price": 20000000,
+      "category": "top-ban-chay",
       "image": "/images/pc3.webp"
     },
     {
       "id": "3",
       "name": "PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 )",
       "price": 18000000,
+      "category": "top-cuc-khung",
       "image": "/images/pc.jpg"
     },
     {
       "id": "4",
       "name": "PC GAMING NTC VIP2 ( B560 - I7 11700F - 16G - GTX1660S )",
       "price": 15000000,
+      "category": "top-cuc-khung",
       "image": "/images/pc5.jpg"
     },
     {
       "id": "5",
       "name": "PC GAMING ADLER LAKE I5 THẾ HỆ 12 ( B660 - I5 12400F - 16G - RTX3050 )",
       "price": 18000000,
+      "category": "giai-nhiet",
       "image": "/images/pc6.jpg"
     },
     {
       "id": "6",
       "name": "PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I7 12700F - RAM 16G - SSD 250G NVME - VGA RTX3070TI )",
       "price": 19000000,
+      "category": "giai-nhiet",
       "image": "/images/pc7.jpeg"
     },
     {
       "id": "7",
       "name": "Máy tính văn phòng G6405 RAM 4GB SSD 120GB",
       "price": 15000000,
+      "category": "man-hinh",
       "image": "/images/pc8.jpg"
     },
     {
       "id": "8",
       "name": "Laptop Gaming Acer Aspire 7 A715 41G R8KQ",
       "price": 17000000,
+      "category": "man-hinh",
       "image": "/images/pc9.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Bộ tản nước custom G240 Minimal ARGB",
+      "price": 30000000,
+      "category": "man-hinh",
+      "image": "/images/pc11.webp",
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "name": "PC CSUTOM CM MASTERFRAME 700",
+      "price": 40000000,
+      "image": "/images/pc12.webp",
+      "deleted": false
     }
   ],
   "eventList": [
@@ -205,6 +228,22 @@
       "soldPercent": 47,
       "stockLeft": 14,
       "image": "/images/LC8.webp"
+    },
+    {
+      "id": 9,
+      "name": "Tai nghe Bowers & Wilkins Px7 S3",
+      "price": 13000000,
+      "category": "ram",
+      "image": "/images/LC11.webp",
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "name": "Loa Cerwin Vega Mini",
+      "price": 3000000,
+      "category": "psu",
+      "image": "/images/LC13.webp",
+      "deleted": false
     }
   ],
   "LaptopUser": [
@@ -304,6 +343,22 @@
       "soldPercent": 89,
       "stockLeft": 2,
       "image": "/images/LT8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "HP Gaming VICTUS 16 e0170AX R7 5800H",
+      "price": 9000000,
+      "category": "laptop-gaming",
+      "image": "/images/LT11.png",
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "name": "Laptop Gaming Acer Nitro 5 Eagle AN515-57-720A NH.QEQSV.004",
+      "price": 10000000,
+      "category": "laptop-moi",
+      "image": "/images/LT12.png",
+      "deleted": false
     }
   ],
   "ProductPagies": [
@@ -409,6 +464,13 @@
       "name": "iPhone 13 128GB (New VN/A)",
       "price": 20000000,
       "image": "/images/Ip06.jpg",
+      "deleted": false
+    },
+    {
+      "id": 17,
+      "name": "Tai Nghe Gaming HyperX Cloud III",
+      "price": 4000000,
+      "image": "/images/pr10.webp",
       "deleted": false
     }
   ],
@@ -782,11 +844,61 @@
       }
     },
     {
-      "id": 7,
+      "id": "9",
       "name": "Điện Thoại iPhone 16 PRO MAX 1TB Titan Đen Chính Hãng VNA",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
       "price": 2000000,
+      "oldPrice": 14000000,
       "image": "/images/Ip01.jpg",
-      "deleted": false
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
     }
   ],
   "users": [
@@ -1041,27 +1153,6 @@
       "id": 1
     }
   ],
-  "serviceRequests": [
-    {
-      "service": "HỖ TRỢ TRẢ GÓP",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "t muốn có ưu đãi",
-      "status": "pending",
-      "createdAt": "2026-07-02T17:10:28.351Z",
-      "id": 1
-    },
-    {
-      "service": "GIÁ ƯU ĐÃI NHẤT",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "111111",
-      "status": "pending",
-      "createdAt": "2026-07-02T17:25:31.743Z",
-      "id": 2
-    }
-  ],
+  "serviceRequests": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

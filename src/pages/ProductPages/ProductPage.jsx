@@ -43,7 +43,7 @@ const ProductPage = () => {
             <div
               key={item.id}
               className="product-card-1"
-              // CHUYỂN HƯỚNG SANG PRODUCT MENU BIỆT LẬP KÈM THEO ID CHUẨN
+              // CHUYỂN HƯỚNG SANG PRODUCT MENU
               onClick={() => navigate(`/menu/${item.id}`)}
               style={{ cursor: "pointer" }}
             >

@@ -1,243 +1,128 @@
-/* LaptopUser.css */
+/* ==========================================================================
+   LaptopUser — cùng hệ thiết kế tối giản với EventList/Catenogy
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --lu-bg: #fafafa;
+  --lu-panel-2: #f4f5f6;
+  --lu-border-soft: #eeeff1;
+  --lu-text: #161823;
+  --lu-text-muted: #6b6f76;
+  --lu-cyan-ink: #007a75;
+  --lu-pink: #fe2c55;
+  --lu-font-display: "Poppins", "Inter", sans-serif;
+  --lu-font-body: "Inter", -apple-system, sans-serif;
+}
+
+.laptop-menus,
+.laptop-menus * {
+  box-sizing: border-box;
+}
 
 .laptop-menus {
-  --ink: #10172a;
-  --muted: #64748b;
-  --accent: #4f46e5;
-  --accent-dark: #4338ca;
-  --accent-soft: #eef0ff;
-  --gold: #f59e0b;
-  --price: #e11d48;
-  --border: #e6e8f0;
-  --surface: #ffffff;
-  --surface-soft: #f8f9fc;
-
-  max-width: 1200px;
-  margin: 56px auto;
-  padding: 0 15px;
+  background: var(--lu-bg);
+  font-family: var(--lu-font-body);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 24px;
 }
 
-/* ---------- Thanh đầu đề ---------- */
-
+/* ---------- tabs ---------- */
 .laptop-lists {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 28px;
-  padding-bottom: 18px;
-  flex-wrap: wrap;
-  gap: 20px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--lu-border-soft);
 }
-
-.laptop-lists h2 {
-  font-size: 25px;
-  color: var(--ink);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  position: relative;
-  padding-left: 18px;
-  margin: 0;
-}
-
-/* Vạch gradient amber -> indigo, là chi tiết "signature" xuyên suốt design */
-.laptop-lists h2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6%;
-  height: 88%;
-  width: 5px;
-  border-radius: 3px;
-  background: linear-gradient(180deg, var(--gold), var(--accent));
-}
-
-/* ---------- Tabs danh mục ---------- */
-
 .laptop-containers {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
-
+.laptop-containers::-webkit-scrollbar {
+  display: none;
+}
 .laptop-chars {
-  padding: 9px 20px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
-}
-
-/* Hover: chỉ tint nhẹ, KHÔNG fill đặc để phân biệt rõ với active */
-.laptop-chars:hover {
-  background: var(--accent-soft);
-  border-color: var(--accent-soft);
-  color: var(--accent-dark);
-}
-
-.laptop-chars:active {
-  transform: scale(0.97);
-}
-
-/* Active: gradient fill + glow nhẹ, là tab đang được chọn */
-.laptop-chars.active {
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  border-color: var(--accent-dark);
-  color: #ffffff;
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.28);
-}
-
-.laptop-chars:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* ---------- Lưới sản phẩm ---------- */
-
-.laptop-menus .laptop-grid-layouts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 22px !important;
-  width: 100% !important;
-}
-
-.laptop-grid-layouts .product-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-  position: relative;
-  box-shadow: 0 1px 2px rgba(16, 23, 42, 0.04);
-  overflow: hidden;
-}
-
-/* Vạch màu mảnh phía trên card, chỉ hiện rõ khi hover - tạo cảm giác "được chọn" */
-.laptop-grid-layouts .product-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--accent));
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.laptop-grid-layouts .product-card:hover {
-  transform: translateY(-6px);
-  border-color: transparent;
-  box-shadow: 0 16px 28px rgba(16, 23, 42, 0.1);
-}
-
-.laptop-grid-layouts .product-card:hover::before {
-  opacity: 1;
-}
-
-.laptop-grid-layouts .product-card-img {
-  width: 100%;
-  height: 168px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface-soft);
-  border-radius: 10px;
-  margin-bottom: 14px;
-  overflow: hidden;
-}
-
-.laptop-grid-layouts .product-card-img img {
-  height: auto;
-  max-width: 85%;
-  max-height: 85%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.laptop-grid-layouts .product-card:hover .product-card-img img {
-  transform: scale(1.06);
-}
-
-.laptop-grid-layouts .product-card-info h4 {
-  font-size: 14px;
-  color: var(--ink);
+  flex-shrink: 0;
+  font-family: var(--lu-font-display);
   font-weight: 600;
-  line-height: 1.4;
-  height: 40px;
+  font-size: 13px;
+  color: var(--lu-text-muted);
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  max-width: 180px;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+.laptop-chars:hover {
+  color: var(--lu-text);
+}
+.laptop-chars.active {
+  color: var(--lu-text);
+  border-color: var(--lu-pink);
 }
 
-.laptop-grid-layouts .current-price {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--price);
-  letter-spacing: 0.01em;
+/* ---------- grid ---------- */
+.laptop-grid-layouts {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
-
 .laptop-grid-layouts p {
   grid-column: 1 / -1;
   text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-  font-style: italic;
-  padding: 48px 0;
+  color: var(--lu-text-muted);
+  font-size: 13px;
+  padding: 40px 0;
 }
 
-/* ---------- Responsive ---------- */
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .laptop-grid-layouts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 @media (max-width: 1024px) {
-  .laptop-menus .laptop-grid-layouts {
-    grid-template-columns: repeat(3, 1fr) !important;
+  .laptop-grid-layouts {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .laptop-menus {
-    margin: 36px auto;
+    padding: 24px 16px;
   }
-
-  .laptop-lists h2 {
-    font-size: 21px;
+  .laptop-grid-layouts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-
-  .laptop-menus .laptop-grid-layouts {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px !important;
+  .laptop-chars {
+    font-size: 11.5px;
+    padding: 8px 13px;
+    max-width: 140px;
   }
 }
 
-@media (max-width: 480px) {
-  .laptop-menus .laptop-grid-layouts {
-    grid-template-columns: repeat(1, 1fr) !important;
+@media (max-width: 380px) {
+  .laptop-grid-layouts {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .laptop-chars,
-  .laptop-grid-layouts .product-card,
-  .laptop-grid-layouts .product-card-img img {
+  .laptop-chars {
     transition: none;
   }
 }
