@@ -1,13 +1,3 @@
-/* ==========================================================================
-   Header.css
-   Concept: "Spec sheet" — a tech/electronics retailer reads like a device's
-   own spec panel. Dark utility strip on top (voltage/status readouts),
-   calm light strip below for the actual task (search). Numbers that matter
-   — cart count, hotline — get the monospace terminal treatment; everything
-   else stays quiet.
-   ========================================================================== */
-
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap");
 
 .site-header {
   --void: #0f1424;
