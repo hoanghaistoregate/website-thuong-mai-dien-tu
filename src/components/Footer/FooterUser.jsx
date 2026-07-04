@@ -11,7 +11,7 @@ const FooterUser = () => {
     <footer className="main-footer">
       <div className="footer-top-container">
         <div className="footer-column">
-          <h3>CÔNG TY TNHH TM & CÔNG NGHỆ QHH</h3>
+          <h3>CÔNG TY TNHH TM & CÔNG NGHỆ PHẦN MỀM</h3>
           <ul className="company-info-list">
             <li>
               <strong>Địa chỉ:</strong> 277 Tôn Đức Thắng - Đống Đa - Hà Nội

@@ -89,7 +89,7 @@ const Login = () => {
         // 🌟 4. Sonner bắn lỗi sai thông tin
         toast.error("Mật khẩu hoặc tài khoản không chính xác!");
         setPassword("");
-        setAccount(""); // ✅ ĐÃ SỬA THÀNH setAccount thay vì setEmail bậy bạ cũ!
+        setAccount(""); //
       }
     } catch (error) {
       console.error("Chi tiết lỗi API đăng nhập:", error);
@@ -239,7 +239,7 @@ const Login = () => {
       </div>
       <FooterUser />
 
-      {/* 🌟 THÀNH PHẦN <Toaster /> CỦA SONNER ĐỂ HIỂN THỊ THÔNG BÁO ĐĂNG NHẬP */}
+      {/*THÀNH PHẦN <Toaster /> CỦA SONNER ĐỂ HIỂN THỊ THÔNG BÁO ĐĂNG NHẬP */}
       <Toaster position="top-right" richColors closeButton duration={3000} />
     </>
   );

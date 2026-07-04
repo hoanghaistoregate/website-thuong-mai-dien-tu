@@ -472,6 +472,13 @@
       "price": 4000000,
       "image": "/images/pr10.webp",
       "deleted": false
+    },
+    {
+      "id": 18,
+      "name": "Tai Nghe Gaming HyperX Cloud III",
+      "price": 4000000,
+      "image": "/images/LT18.webp",
+      "deleted": false
     }
   ],
   "ProductMenus": [
@@ -899,6 +906,63 @@
           }
         ]
       }
+    },
+    {
+      "id": "18",
+      "name": "Điện Thoại iPhone 16 PRO MAX 1TB Titan Đen Chính Hãng VNA",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 2000000,
+      "oldPrice": 14000000,
+      "image": "/images/LT18.webp",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
     }
   ],
   "users": [
@@ -915,7 +979,71 @@
     }
   ],
   "cart": [],
-  "orders": [],
+  "orders": [
+    {
+      "orderCode": "DH-20260703-215520",
+      "userId": "1",
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "Admin7709@gmail.com",
+      "address": "hà đông - hà nội ",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 6500000,
+      "voucherCode": "SANMUAHE",
+      "discountAmount": 2000000,
+      "createdAt": "2026-07-03T14:55:20.795Z",
+      "products": [
+        {
+          "productId": "2",
+          "name": "Card đồ họa ASROCK Radeon RX 6800 Challenger Pro 16G OC (16GB GDDR6, 256-bit, HDMI+DP, 2x8-pin)",
+          "image": "/images/LC2.jpg",
+          "quantity": 1,
+          "unitPrice": 8500000,
+          "subtotal": 8500000,
+          "fromTable": "eventList"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderCode": "DH-20260704-152015",
+      "userId": "1",
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "Admin7709@gmail.com",
+      "address": "hà đông - hà nội ",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 4990000,
+      "voucherCode": "SANMUAHE50K",
+      "discountAmount": 5000000,
+      "createdAt": "2026-07-04T08:20:15.399Z",
+      "products": [
+        {
+          "productId": "3",
+          "name": "Ổ cứng HDD WD Purple 1TB 3.5 inch, 5400RPM, SATA, 64MB Cache (WD10PURZ)",
+          "image": "/images/LC3.jpg",
+          "quantity": 1,
+          "unitPrice": 990000,
+          "subtotal": 990000,
+          "fromTable": "eventList"
+        },
+        {
+          "productId": "9",
+          "name": "HP Gaming VICTUS 16 e0170AX R7 5800H",
+          "image": "/images/LT11.png",
+          "quantity": 1,
+          "unitPrice": 9000000,
+          "subtotal": 9000000,
+          "fromTable": "LaptopUser"
+        }
+      ],
+      "id": 2
+    }
+  ],
   "reviews": [],
   "news": [
     {
@@ -1085,7 +1213,7 @@
       "des": "Giảm 50k cho đơn hàng từ 500k",
       "expiredAt": "2026-08-31",
       "maxCollect": 500,
-      "collectedCount": 132
+      "collectedCount": 133
     },
     {
       "id": "v2",
@@ -1151,6 +1279,13 @@
       "collectedAt": "2026-07-02T12:11:01.223Z",
       "used": true,
       "id": 1
+    },
+    {
+      "userId": "1",
+      "voucherCode": "SANMUAHE50K",
+      "collectedAt": "2026-07-04T08:19:55.586Z",
+      "used": true,
+      "id": 2
     }
   ],
   "serviceRequests": [],
