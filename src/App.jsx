@@ -29,6 +29,7 @@ import SearchResults from "./pages/SearchResults/SearchResults";
 import FlashSalePage from "./components/Sidebar/FlashSalePage";
 import VoucherWallet from "./components/Sidebar/VoucherWallet";
 import AdminServiceRequests from "./components/AdminDashboash/AdminServiceRequests";
+import ProDemo from "./components/Sidebar/Prodemo";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -68,6 +69,7 @@ function App() {
         <Route path="/laptop-detail/:id" element={<LaptopPage />} />
         <Route path="/component-category/:id" element={<ComponentPage />} />
         <Route path="/san-sale" element={<FlashSalePage />} />
+        <Route path="/proDemo" element={<ProDemo />} />
         <Route path="/tri-an-khach-hang" element={<VoucherWallet />} />
 
         {/* Giỏ hàng & Thanh toán */}

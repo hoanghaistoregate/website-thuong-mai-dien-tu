@@ -12,6 +12,7 @@ import { FaRocketchat } from "react-icons/fa6";
 import { FcShipped } from "react-icons/fc";
 import "./ProductMenu.css";
 import ProductReviews from "./ProductReviews";
+import ShowroomSystem from "./ShowroomSystem";
 
 const ProductMenu = () => {
   const { id } = useParams();
@@ -363,6 +364,7 @@ const ProductMenu = () => {
       )}
 
       <Sevicer />
+      <ShowroomSystem />
       <FooterUser />
     </>
   );

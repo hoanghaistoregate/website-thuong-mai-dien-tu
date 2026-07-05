@@ -166,7 +166,12 @@
   transform: scale(0.97);
 }
 
-/* ---- CỘT PHẢI: danh sách ---- */
+/* ---- CỘT PHẢI: wrapper (chứa list + nút cuộn) ---- */
+.reviews-list-wrapper {
+  position: relative;
+  min-width: 0;
+}
+
 .reviews-list-panel {
   padding: 20px;
   display: flex;
@@ -174,6 +179,7 @@
   gap: 12px;
   max-height: 520px;
   overflow-y: auto;
+  scroll-behavior: smooth;
   /* thanh cuộn mảnh */
   scrollbar-width: thin;
   scrollbar-color: #dcdce8 transparent;
@@ -185,6 +191,52 @@
 .reviews-list-panel::-webkit-scrollbar-thumb {
   background: #dcdce8;
   border-radius: 99px;
+}
+
+/* Nút cuộn lên / xuống */
+.scroll-controls {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+
+.scroll-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e8e8f0;
+  background: #ffffff;
+  color: #6c63ff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(26, 26, 46, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.scroll-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-btn:hover {
+  background: #6c63ff;
+  color: #fff;
 }
 
 /* Empty state */
@@ -289,6 +341,111 @@
   word-break: break-word;
 }
 
+/* ---- Phản hồi từ shop ---- */
+.review-reply {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f4f4ff;
+  border-left: 3px solid #6c63ff;
+  border-radius: 6px;
+}
+
+.review-reply-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6c63ff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.review-reply-text {
+  font-size: 0.83rem;
+  color: #3a3a5c;
+  line-height: 1.6;
+  margin: 0 0 4px;
+  word-break: break-word;
+}
+
+.review-reply-date {
+  font-size: 0.7rem;
+  color: #a0a0b8;
+}
+
+/* ---- Form phản hồi (admin) ---- */
+.review-reply-form {
+  margin-top: 10px;
+}
+
+.reply-open-btn {
+  background: none;
+  border: none;
+  color: #6c63ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.reply-open-btn:hover {
+  text-decoration: underline;
+}
+
+.review-reply-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dcdce8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.83rem;
+  font-family: inherit;
+  color: #1a1a2e;
+  resize: none;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.review-reply-form textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+}
+
+.review-reply-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.reply-send-btn,
+.reply-cancel-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.reply-send-btn {
+  background: #6c63ff;
+  color: #fff;
+}
+
+.reply-send-btn:hover {
+  background: #5a52e0;
+}
+
+.reply-cancel-btn {
+  background: #f0f0f5;
+  color: #6b6b8a;
+}
+
+.reply-cancel-btn:hover {
+  background: #e4e4ec;
+}
+
 /* =============================================
    RESPONSIVE — stack thành 1 cột
    ============================================= */
@@ -305,5 +462,10 @@
 
   .reviews-list-panel {
     max-height: 400px;
+  }
+
+  .scroll-controls {
+    right: 10px;
+    bottom: 10px;
   }
 }

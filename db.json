@@ -3,59 +3,64 @@
     {
       "id": "1",
       "name": "Thế Giới Máy Tính",
-      "price": 200000,
-      "image": "/images/logo11.jpg"
+      "price": 299999,
+      "image": "/images/MT.jpg",
+      "deleted": false
     },
     {
       "id": "2",
-      "name": "Thế Giới Của M2",
-      "price": 200000,
-      "image": "/images/logo10.jpg"
+      "name": "Thế Giới Đồng Hồ",
+      "price": 599999,
+      "image": "/images/DH.jpg",
+      "deleted": false
     },
     {
       "id": "3",
       "name": "Thế Giới Trò Chơi",
-      "price": 100000,
-      "image": "/images/logo12.jpg"
+      "price": 499999,
+      "image": "/images/Game.jpg",
+      "deleted": false
     },
     {
       "id": "4",
-      "name": "Thế Giới Của PC",
-      "price": 300000,
-      "image": "/images/logo6.jpg"
+      "name": "Thế Giới TiVi",
+      "price": 399999,
+      "image": "/images/tivi.jpg",
+      "deleted": false
     },
     {
       "id": "5",
-      "name": "Thế Giới Huyền Bí",
-      "price": 500000,
-      "image": "/images/logo8.jpg"
+      "name": "Thế Giới Âm Thanh",
+      "price": 699999,
+      "image": "/images/LN23.webp",
+      "deleted": false
     },
     {
       "id": "6",
-      "name": "Thế Giới Moto",
-      "price": 400000,
-      "image": "/images/moto01.jpg",
+      "name": "Thế Giới Tai Nghe",
+      "price": 499999,
+      "image": "/images/TN90.jpg",
       "deleted": false
     },
     {
       "id": 7,
-      "name": "Thế Giới Anime",
-      "price": 200000,
-      "image": "/images/AN01.jpg",
+      "name": "Thế Giới Loa Bluetooth ",
+      "price": 299999,
+      "image": "/images/Loa.png",
       "deleted": false
     },
     {
       "id": 8,
-      "name": "Thế Giới Ôtô",
-      "price": 500000,
-      "image": "/images/oto1.jpg",
+      "name": "Thế Giới Công Nghệ ",
+      "price": 899999,
+      "image": "/images/CN.jpg",
       "deleted": false
     },
     {
       "id": 9,
-      "name": "Thế Giới Tốc Độ",
-      "price": 7000000,
-      "image": "/images/moto02.webp",
+      "name": "Thế Giới Điện Thoại",
+      "price": 799999,
+      "image": "/images/DT.webp",
       "deleted": false
     }
   ],
@@ -476,8 +481,22 @@
     {
       "id": 18,
       "name": "Tai Nghe Gaming HyperX Cloud III",
-      "price": 4000000,
+      "price": 1999999,
       "image": "/images/LT18.webp",
+      "deleted": false
+    },
+    {
+      "id": 19,
+      "name": "Tai nghe Bluetooth True Wireless Huawei Freebuds 6i",
+      "price": 3000000,
+      "image": "/images/TN03.webp",
+      "deleted": false
+    },
+    {
+      "id": 20,
+      "name": "Loa Bluetooth Sony SRS-XB100 Extra Bass",
+      "price": 5999999,
+      "image": "/images/TN04.webp",
       "deleted": false
     }
   ],
@@ -908,14 +927,584 @@
       }
     },
     {
-      "id": "18",
-      "name": "Điện Thoại iPhone 16 PRO MAX 1TB Titan Đen Chính Hãng VNA",
+      "id": "10",
+      "name": "Laptop Apple MacBook Neo 13 inch A18 Pro Hồng Phớt 6CPU/5GPU/8GB/256GB - MHFH4SA/A",
       "brand": "Dell",
       "category": "PC Office",
       "status": "Còn hàng",
-      "price": 2000000,
+      "price": 20000000,
       "oldPrice": 14000000,
-      "image": "/images/LT18.webp",
+      "image": "/images/lap01.png",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "11",
+      "name": "Laptop Apple MacBook Air MDH84SA/A MBA 13.6 M5/10C/10GPU/16G/1T/35W/Silver",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 20000000,
+      "oldPrice": 14000000,
+      "image": "/images/lap02.jpg",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "12",
+      "name": "iPhone 16 Pro Max Giá ưu đãi | Hỗ trợ trả góp 0% lãi suất",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 30000000,
+      "oldPrice": 14000000,
+      "image": "/images/Ip02.jpg",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "13",
+      "name": "iPhone 17 Pro Max Quốc tế giá tốt tại Đà Nẵng | Trả góp 0% lãi suất",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 3999999,
+      "oldPrice": 14000000,
+      "image": "/images/Ip03.jpg",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "14",
+      "name": "Điện thoại Iphone 17 Pro - Chính hãng giá tốt tại Đà Nẵng",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 40000000,
+      "oldPrice": 14000000,
+      "image": "/images/Ip04.jpg",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "15",
+      "name": "iPhone 12 128GB Giá rẻ tại Hà Nội | Hỗ trợ góp 0đ",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 70000000,
+      "oldPrice": 14000000,
+      "image": "/images/Ip05.jpg",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "16",
+      "name": "iPhone 13 128GB (New VN/A)",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 20000000,
+      "oldPrice": 14000000,
+      "image": "/images/Ip06.jpg",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "17",
+      "name": "Tai Nghe Gaming HyperX Cloud III",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 4000000,
+      "oldPrice": 14000000,
+      "image": "/images/pr10.webp",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "18",
+      "name": "Tai nghe không dây chụp tai Soundpeats Space Pro",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 1999999,
+      "oldPrice": 14000000,
+      "image": "/images/TN01.webp",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "19",
+      "name": "Tai nghe Bluetooth True Wireless Huawei Freebuds 6i",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 3000000,
+      "oldPrice": 14000000,
+      "image": "/images/TN03.webp",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20",
+      "name": "Loa Bluetooth Sony SRS-XB100 Extra Bass",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 5999999,
+      "oldPrice": 14000000,
+      "image": "/images/TN04.webp",
       "specs": {
         "CPU": "Intel Core i5-12400",
         "GPU": "Intel UHD Graphics 730",
@@ -1057,7 +1646,7 @@
       "views": 2400,
       "thumbnail": "",
       "content": "Intel vừa chính thức ra mắt dòng CPU thế hệ 15 với Core i9-15900K dẫn đầu. Chip sử dụng kiến trúc Lion Cove mới, tăng 30% IPC so với Raptor Lake. Đặc biệt, i9-15900K tích hợp NPU xử lý AI trực tiếp trên die, hỗ trợ các tác vụ AI như upscaling, noise cancellation mà không cần GPU. Giá dự kiến từ 12.500.000đ khi ra mắt tại Việt Nam.",
-      "image": "/images/logo11.jpg"
+      "image": "/images/TB10.jpg"
     },
     {
       "id": 2,
@@ -1070,7 +1659,7 @@
       "views": 5100,
       "thumbnail": "",
       "content": "ASUS ROG Zephyrus G16 2025 gây ấn tượng ngay từ cái nhìn đầu tiên với thiết kế chỉ 18.9mm, nặng 1.85kg nhưng trang bị RTX 4080 Laptop GPU và Core i9-14900HX. Màn hình OLED 16 inch 240Hz, độ phủ 100% DCI-P3 cho màu sắc cực kỳ sống động. Pin 90Wh thực dụng được khoảng 8-10 tiếng duyệt web. Giá từ 55.000.000đ.",
-      "image": "/images/logo10.jpg"
+      "image": "/images/tivi.jpg"
     },
     {
       "id": 3,
@@ -1083,7 +1672,7 @@
       "views": 8700,
       "thumbnail": "",
       "content": "Nhân dịp mùa hè 2025, cửa hàng triển khai chương trình Sale lớn nhất năm với hơn 500 sản phẩm tham gia. GPU giảm đến 35%, RAM DDR5 giảm 25%, SSD NVMe giảm 30%. Đặc biệt, khách hàng mua PC Gaming trọn bộ được tặng thêm màn hình 27 inch trị giá 4.500.000đ. Chương trình kéo dài đến 31/07/2025.",
-      "image": "/images/logo8.jpg"
+      "image": "/images/TB09.png"
     },
     {
       "id": 4,
@@ -1096,7 +1685,7 @@
       "views": 3200,
       "thumbnail": "",
       "content": "DDR5 đang trở thành tiêu chuẩn mới cho PC gaming cao cấp. Bài viết phân tích benchmark thực tế trên 6 tựa game AAA với RAM ở các mức 5600MHz, 6000MHz, 6400MHz và 7200MHz. Kết quả cho thấy 6000MHz CL30 là điểm ngọt nhất về giá-hiệu năng, tăng 8-12% FPS so với 5600MHz mà chênh lệch giá chỉ 300.000–500.000đ. 7200MHz mang lại lợi ích không đáng kể cho gaming.",
-      "image": "/images/logo6.jpg"
+      "image": "/images/TB08.png"
     },
     {
       "id": 5,
@@ -1109,7 +1698,7 @@
       "views": 6300,
       "thumbnail": "",
       "content": "Computex 2025 tại Đài Bắc quy tụ hơn 1.600 thương hiệu công nghệ. Điểm nhấn là NVIDIA RTX 5000 series, AMD Ryzen 9000 và Intel Arrow Lake-S. ASUS, MSI, Gigabyte đồng loạt ra mắt bo mạch chủ Z890 và X870E. Samsung giới thiệu RAM DDR5-8000 đầu tiên thế giới. LG trình diễn màn hình OLED 27 inch 480Hz mỏng 3mm gây sốt cộng đồng.",
-      "image": "/images/logo4.png"
+      "image": "/images/TN01.webp"
     },
     {
       "id": 6,
@@ -1122,7 +1711,7 @@
       "views": 11200,
       "thumbnail": "",
       "content": "Các benchmark rò rỉ từ nguồn tin uy tín cho thấy RTX 5090 dựa trên kiến trúc Blackwell với 192 SM, 24.576 CUDA cores và 32GB GDDR7 băng thông 1.8TB/s. Điểm 3DMark Time Spy Extreme đạt 35.000 — gấp 2.1 lần RTX 4090. Ray tracing cải thiện 2.5x nhờ thế hệ RT core mới. Giá dự kiến khoảng 1.999 USD, ra mắt quý 4/2025.",
-      "image": "/images/logo12.jpg"
+      "image": "/images/TB07.png"
     },
     {
       "id": 7,
@@ -1135,7 +1724,7 @@
       "views": 4100,
       "thumbnail": "",
       "content": "Z890 mang đến PCIe 5.0 x16 cho GPU, PCIe 5.0 x4 cho SSD và hỗ trợ DDR5-8000+. ASUS ROG Maximus Z890 Apex dẫn đầu về ép xung với VRM 24+1 pha 110A. MSI MEG Z890 ACE cân bằng tính năng và giá tốt nhất ở mức 12.000.000đ. Gigabyte Z890 Aorus Master nổi bật với hệ thống tản nhiệt VRM xuất sắc. ASRock Z890 Taichi là lựa chọn giá tốt nhất phân khúc cao cấp.",
-      "image": "/images/logo2.png"
+      "image": "/images/TB06.jpg"
     },
     {
       "id": 8,
@@ -1148,7 +1737,7 @@
       "views": 7800,
       "thumbnail": "",
       "content": "Nhân dịp kỷ niệm 10 năm, cửa hàng triển khai chương trình tri ân đặc biệt. Khách mua PC Gaming từ 30.000.000đ được tặng bộ phụ kiện gồm chuột gaming Logitech G Pro X Superlight 2, bàn phím cơ ASUS ROG Strix Scope và tai nghe SteelSeries Arctis Nova Pro — tổng giá trị 5.200.000đ. Chương trình áp dụng đến hết 30/06/2025, số lượng có hạn.",
-      "image": "/images/logo1.jpg"
+      "image": "/images/TB5.jpg"
     },
     {
       "id": 9,
@@ -1161,7 +1750,7 @@
       "views": 9500,
       "thumbnail": "",
       "content": "Với ngân sách 20 triệu, bạn có thể build PC gaming đủ sức chơi tất cả game AAA 2025 ở 1080p Ultra 60fps+. Gợi ý cấu hình: AMD Ryzen 5 7600 (3.200.000đ) + Mainboard B650 (2.800.000đ) + RAM 16GB DDR5-6000 (1.200.000đ) + RTX 4060 Ti (8.500.000đ) + SSD 1TB NVMe (900.000đ) + Nguồn 650W 80+ Gold (1.200.000đ) + Case mid-tower (800.000đ). Tổng: 18.600.000đ, còn dư cho tản nhiệt khí cao cấp.",
-      "image": "/images/logo2.png"
+      "image": "/images/TB4.webp"
     },
     {
       "id": 10,
@@ -1174,7 +1763,7 @@
       "views": 3900,
       "thumbnail": "",
       "content": "Cửa hàng tổ chức chuỗi workshop 'Build PC từ A đến Z' miễn phí vào các ngày 5, 12, 19 và 26/07/2025. Mỗi buổi kéo dài 3 tiếng, học viên được thực hành trực tiếp lắp ráp PC gaming hoàn chỉnh dưới sự hướng dẫn của kỹ thuật viên 10 năm kinh nghiệm. Bao gồm: chọn linh kiện, lắp ráp, cài đặt hệ điều hành và tối ưu hiệu năng. Đăng ký tại quầy hoặc qua hotline 1900.1515.",
-      "image": "/images/moto01.jpg"
+      "image": "/images/TB3.png"
     },
     {
       "id": 11,
@@ -1187,7 +1776,7 @@
       "views": 4800,
       "thumbnail": "",
       "content": "PCIe 5.0 SSD đã giảm giá mạnh trong nửa đầu 2025. Samsung 990 Pro 5.0 dẫn đầu với 14.500 MB/s đọc tuần tự, giá 1TB chỉ còn 2.100.000đ. WD Black SN850X 5.0 cân bằng tốt giữa hiệu năng random và tuần tự. Crucial T705 nổi bật với tản nhiệt tích hợp, phù hợp cho workstation. Corsair MP700 Pro SE có phần mềm quản lý tốt nhất trong nhóm. Cả 4 đều tương thích PS5 mở rộng.",
-      "image": "/images/oto1.jpg"
+      "image": "/images/TB2.jpg"
     },
     {
       "id": 12,
@@ -1200,7 +1789,7 @@
       "views": 7200,
       "thumbnail": "",
       "content": "DLSS 4 của NVIDIA sử dụng mô hình transformer thay thế CNN cũ, cho chất lượng hình ảnh sắc nét hơn 30% và FPS tăng thêm 15% so với DLSS 3.5. FSR 4 của AMD lần đầu dùng machine learning thực sự, thu hẹp khoảng cách với DLSS đáng kể. XeSS 2 của Intel cải thiện vật thể chuyển động rõ rệt. Kết luận: DLSS 4 vẫn dẫn đầu, FSR 4 là lựa chọn tốt nhất cho GPU AMD, XeSS 2 phù hợp Arc và các GPU không hỗ trợ hai công nghệ kia.",
-      "image": "/images/moto02.webp"
+      "image": "/images/TB.jpg"
     }
   ],
   "vouchers": [
@@ -1289,5 +1878,102 @@
     }
   ],
   "serviceRequests": [],
+  "demoUnits": [
+    {
+      "id": 1,
+      "name": "Máy Lọc Nước Karofi",
+      "image": "/images/TB.jpg",
+      "deleted": false
+    },
+    {
+      "id": 2,
+      "name": "Máy lọc không khí Cuckoo CAC-K1910FW",
+      "image": "/images/TB2.jpg",
+      "deleted": false
+    },
+    {
+      "id": 3,
+      "name": "Máy lọc không khí Levoit Core 400S",
+      "image": "/images/TB3.png",
+      "deleted": false
+    },
+    {
+      "id": 4,
+      "name": "GOOJODOQ GFS025 Quạt Cầm Tay Camera Xoay 180° | Màn Hình 1.3 Inch | Chụp Ảnh & Quay Video",
+      "image": "/images/TB4.webp",
+      "deleted": false
+    },
+    {
+      "id": 5,
+      "name": "Nồi cơm điện tử AQUA 1.5 lít AQS-RBC401R(N)-VN ",
+      "image": "/images/TB5.jpg",
+      "deleted": false
+    },
+    {
+      "id": 6,
+      "name": "Nồi cơm điện cao tần áp suất Cuckoo CRP-JHR1060FD 1.8L",
+      "image": "/images/TB06.jpg",
+      "deleted": false
+    },
+    {
+      "id": 7,
+      "name": "Nồi cơm điện cao tần áp suất Cuckoo CRP-AHXB1060FD 1.8L",
+      "image": "/images/TB07.png",
+      "deleted": false
+    },
+    {
+      "id": 8,
+      "name": "Nồi cơm áp suất điện tử Cuckoo CRP-N0680SR 1.08L",
+      "image": "/images/TB08.png",
+      "deleted": false
+    },
+    {
+      "id": 9,
+      "name": "Máy hút ẩm và lọc không khí Cuckoo DH-Z16AF45FG 16.5L",
+      "image": "/images/TB09.png",
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "name": "Máy lọc nước Cuckoo CP-RRP702MBK",
+      "image": "/images/TB10.jpg",
+      "deleted": false
+    },
+    {
+      "id": 11,
+      "name": "Robot hút bụi lau nhà Roborock Qrevo 2 Pro – Bản Quốc Tế",
+      "price": 1,
+      "image": "/images/TB12.jpg",
+      "deleted": false
+    },
+    {
+      "id": 12,
+      "name": "Robot Ecovacs Deebot Ozmo T8 Aivi hút bụi lau nhà",
+      "price": 1,
+      "image": "/images/TB11.jpg",
+      "deleted": false
+    },
+    {
+      "id": 13,
+      "name": "Máy lạnh LG Inverter 1.5 HP IEC12M1",
+      "price": 1,
+      "image": "/images/TB13.webp",
+      "deleted": false
+    },
+    {
+      "id": 14,
+      "name": "Bàn phím cơ không dây Aula S100 Pro xanh dương trắng tím",
+      "price": 1,
+      "image": "/images/TB14.webp",
+      "deleted": false
+    },
+    {
+      "id": 15,
+      "name": "Bàn Phím Giả Cơ Gaming L200 LED RGB 6 Chế Độ LED, Fullsize, Keycap Pudding cực đẹp",
+      "price": 1,
+      "image": "/images/TB15.jpg",
+      "deleted": false
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

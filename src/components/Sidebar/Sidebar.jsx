@@ -45,6 +45,10 @@ const menu = [
     ],
   },
   {
+    title: "Sản Phẩm Trưng Bày",
+    path: "/proDemo",
+  },
+  {
     title: "Tin Tức",
     path: "/news",
   },

@@ -13,6 +13,7 @@ import Sevicer from "../../components/Sevicer/Sevicer";
 import { getImageUrl } from "../../utils/imageUtils";
 import { toast } from "sonner";
 import ProductReviews from "../../pages/ProductReviews";
+import ShowroomSystem from "../ShowroomSystem";
 
 const ComponentPage = () => {
   const { id } = useParams(); // Lấy ID sản phẩm từ URL
@@ -441,6 +442,7 @@ const ComponentPage = () => {
         product={product}
       />
       <Sevicer />
+      <ShowroomSystem />
       <Footer />
     </div>
   );
