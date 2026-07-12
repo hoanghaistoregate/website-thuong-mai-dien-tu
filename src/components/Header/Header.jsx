@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import logo from "../../assets/AMI.png";
 import "./Header.css";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { MdDiscount } from "react-icons/md";
@@ -161,7 +160,7 @@ const Header = (props) => {
         <div className="site-header__top">
           <div className="site-header__logo">
             <Link to="/">
-              <img src={logo} alt="FlashSCore" className="logo" />
+              <img src="/images/AMI.png" alt="FlashSCore" className="logo" />
             </Link>
           </div>
           <nav className="site-header__nav">

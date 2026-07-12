@@ -870,6 +870,120 @@
       }
     },
     {
+      "id": "7",
+      "name": "Laptop TP 15s-fq1017TU ",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 19000000,
+      "oldPrice": 14000000,
+      "image": "/images/pr7.webp",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8",
+      "name": "Laptop HP 15s-fq1017TU 8VY69PA (Silver)",
+      "brand": "Dell",
+      "category": "PC Office",
+      "status": "Còn hàng",
+      "price": 20000000,
+      "oldPrice": 14000000,
+      "image": "/images/pr8.webp",
+      "specs": {
+        "CPU": "Intel Core i5-12400",
+        "GPU": "Intel UHD Graphics 730",
+        "RAM": "16GB DDR4",
+        "SSD": "512GB NVMe",
+        "Nguồn": "500W"
+      },
+      "promotions": [
+        "Tặng chuột + bàn phím văn phòng",
+        "Giảm 3% đơn công ty",
+        "Voucher 30K"
+      ],
+      "services": [
+        "Bảo hành 24 tháng",
+        "Hỗ trợ cài đặt phần mềm",
+        "Giao hàng tận nơi"
+      ],
+      "description": {
+        "title": "Máy văn phòng ổn định",
+        "content": [
+          {
+            "heading": "CPU i5-12400 tiết kiệm điện",
+            "text": "Phù hợp làm việc văn phòng, học tập và xử lý cơ bản.",
+            "image": "/images/cpu.jpg"
+          },
+          {
+            "heading": "Đồ họa tích hợp UHD",
+            "text": "Đáp ứng tốt nhu cầu hiển thị và công việc nhẹ.",
+            "image": "/images/gpu.png"
+          },
+          {
+            "heading": "RAM DDR5 32GB",
+            "text": "Dung lượng RAM 32GB DDR5 đáp ứng tốt nhu cầu chơi game, livestream và xử lý nhiều ứng dụng cùng lúc.",
+            "image": "/images/ram3.jpeg"
+          },
+          {
+            "heading": "SSD NVMe Gen4 1TB",
+            "text": "Ổ cứng SSD tốc độ cao giúp khởi động hệ điều hành, mở game và sao chép dữ liệu nhanh chóng.",
+            "image": "/images/ssd2.jpg"
+          },
+          {
+            "heading": "Nguồn 850W 80 Plus Gold",
+            "text": "Bộ nguồn chất lượng cao đảm bảo hệ thống hoạt động ổn định và sẵn sàng nâng cấp trong tương lai.",
+            "image": "/images/psu1.jpg"
+          }
+        ]
+      }
+    },
+    {
       "id": "9",
       "name": "Điện Thoại iPhone 16 PRO MAX 1TB Titan Đen Chính Hãng VNA",
       "brand": "Dell",
@@ -1569,35 +1683,7 @@
     }
   ],
   "cart": [],
-  "orders": [
-    {
-      "orderCode": "DH-20260712-161718",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "admin7709@gmail.com",
-      "address": "Đống Đa - Hà Nội",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "shipping",
-      "totalAmount": 0,
-      "voucherCode": "SANMUAHE50K",
-      "discountAmount": 5000000,
-      "createdAt": "2026-07-12T09:17:18.394Z",
-      "products": [
-        {
-          "productId": "1",
-          "name": "Nguồn Gigabyte P650B 650W (80 Plus Bronze/Non Modular)",
-          "image": "/images/LC1.jpg",
-          "quantity": 2,
-          "unitPrice": 1050000,
-          "subtotal": 2100000,
-          "fromTable": "eventList"
-        }
-      ],
-      "id": 1
-    }
-  ],
+  "orders": [],
   "reviews": [],
   "news": [
     {
