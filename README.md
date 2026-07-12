@@ -74,3 +74,4 @@ Chạy xong là dùng được ngay
 
 - git branch
 - Dấu \* là nhánh hiện tại.
+<img width="1344" height="840" alt="Ảnh màn hình 2026-07-12 lúc 22 21 50" src="https://github.com/user-attachments/assets/ba7d9687-1bca-49d9-bf9e-d56ce20a66cf" />
