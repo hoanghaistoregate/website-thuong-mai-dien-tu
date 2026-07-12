@@ -14,6 +14,7 @@ import { getImageUrl } from "../utils/imageUtils";
 import { toast } from "sonner";
 import ProductReviews from "./ProductReviews";
 import ShowroomSystem from "./ShowroomSystem";
+import PromoPopup from "../components/PromoPopup/PromoPopup";
 
 const ProductDetail = () => {
   const { id } = useParams(); // Lấy ID sản phẩm từ URL
@@ -109,7 +110,7 @@ const ProductDetail = () => {
   useEffect(() => {
     setLoading(true);
 
-    // 🌟 ĐÃ KHÓA CHẶT: Chỉ fetch đúng bảng catenogies theo ID, không gọi lung tung nữa
+    //  ĐÃ KHÓA CHẶT: Chỉ fetch đúng bảng catenogies theo ID, không gọi lung tung nữa
     fetch(`http://localhost:3000/catenogies/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Không tìm thấy sản phẩm trong danh mục!");
@@ -151,6 +152,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail-page">
+      <PromoPopup triggerKey={id} />
       <Header />
 
       <div className="bread-bar">

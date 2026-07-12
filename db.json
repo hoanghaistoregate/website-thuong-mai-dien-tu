@@ -1558,79 +1558,44 @@
     {
       "id": "1",
       "fullName": "Hoàng Hải",
-      "email": "Admin7709@gmail.com",
+      "email": "admin7709@gmail.com",
       "phone": "0911108133",
       "password": "123456789@",
       "role": "admin",
       "status": "active",
-      "address": "hà đông - hà nội ",
-      "createdAt": ""
+      "address": "Đống Đa - Hà Nội",
+      "createdAt": "",
+      "username": "Admin7709"
     }
   ],
   "cart": [],
   "orders": [
     {
-      "orderCode": "DH-20260703-215520",
+      "orderCode": "DH-20260712-161718",
       "userId": "1",
       "fullName": "Hoàng Hải",
       "phone": "0911108133",
-      "email": "Admin7709@gmail.com",
-      "address": "hà đông - hà nội ",
+      "email": "admin7709@gmail.com",
+      "address": "Đống Đa - Hà Nội",
       "note": "",
       "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 6500000,
-      "voucherCode": "SANMUAHE",
-      "discountAmount": 2000000,
-      "createdAt": "2026-07-03T14:55:20.795Z",
+      "status": "shipping",
+      "totalAmount": 0,
+      "voucherCode": "SANMUAHE50K",
+      "discountAmount": 5000000,
+      "createdAt": "2026-07-12T09:17:18.394Z",
       "products": [
         {
-          "productId": "2",
-          "name": "Card đồ họa ASROCK Radeon RX 6800 Challenger Pro 16G OC (16GB GDDR6, 256-bit, HDMI+DP, 2x8-pin)",
-          "image": "/images/LC2.jpg",
-          "quantity": 1,
-          "unitPrice": 8500000,
-          "subtotal": 8500000,
+          "productId": "1",
+          "name": "Nguồn Gigabyte P650B 650W (80 Plus Bronze/Non Modular)",
+          "image": "/images/LC1.jpg",
+          "quantity": 2,
+          "unitPrice": 1050000,
+          "subtotal": 2100000,
           "fromTable": "eventList"
         }
       ],
       "id": 1
-    },
-    {
-      "orderCode": "DH-20260704-152015",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "Admin7709@gmail.com",
-      "address": "hà đông - hà nội ",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 4990000,
-      "voucherCode": "SANMUAHE50K",
-      "discountAmount": 5000000,
-      "createdAt": "2026-07-04T08:20:15.399Z",
-      "products": [
-        {
-          "productId": "3",
-          "name": "Ổ cứng HDD WD Purple 1TB 3.5 inch, 5400RPM, SATA, 64MB Cache (WD10PURZ)",
-          "image": "/images/LC3.jpg",
-          "quantity": 1,
-          "unitPrice": 990000,
-          "subtotal": 990000,
-          "fromTable": "eventList"
-        },
-        {
-          "productId": "9",
-          "name": "HP Gaming VICTUS 16 e0170AX R7 5800H",
-          "image": "/images/LT11.png",
-          "quantity": 1,
-          "unitPrice": 9000000,
-          "subtotal": 9000000,
-          "fromTable": "LaptopUser"
-        }
-      ],
-      "id": 2
     }
   ],
   "reviews": [],
@@ -1824,7 +1789,7 @@
       "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
       "expiredAt": "2026-08-31",
       "maxCollect": 100,
-      "collectedCount": 44
+      "collectedCount": 45
     },
     {
       "id": "v4",
@@ -1875,9 +1840,27 @@
       "collectedAt": "2026-07-04T08:19:55.586Z",
       "used": true,
       "id": 2
+    },
+    {
+      "userId": "1",
+      "voucherCode": "SANMUAHE200K",
+      "collectedAt": "2026-07-12T09:15:29.479Z",
+      "used": false,
+      "id": 3
     }
   ],
-  "serviceRequests": [],
+  "serviceRequests": [
+    {
+      "service": "GIAO HÀNG MIỄN PHÍ",
+      "fullName": "Hoàng Hải",
+      "email": "sieucapbro92@gmail.com",
+      "phone": "0911108133",
+      "message": "hhhhh",
+      "status": "pending",
+      "createdAt": "2026-07-12T08:39:37.802Z",
+      "id": 1
+    }
+  ],
   "demoUnits": [
     {
       "id": 1,
@@ -1973,6 +1956,22 @@
       "price": 1,
       "image": "/images/TB15.jpg",
       "deleted": false
+    }
+  ],
+  "chatMessages": [
+    {
+      "visitorId": "guest_1783855230216_8145",
+      "sender": "user",
+      "text": "hi",
+      "createdAt": "2026-07-12T11:29:49.187Z",
+      "id": 1
+    },
+    {
+      "visitorId": "guest_1783855230216_8145",
+      "sender": "bot",
+      "text": "Chào bạn 👋 Mình là trợ lý hỗ trợ. Bạn cần mình giúp gì hôm nay?",
+      "createdAt": "2026-07-12T11:29:49.913Z",
+      "id": 2
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

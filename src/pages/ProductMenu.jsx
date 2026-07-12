@@ -13,7 +13,6 @@ import { FcShipped } from "react-icons/fc";
 import "./ProductMenu.css";
 import ProductReviews from "./ProductReviews";
 import ShowroomSystem from "./ShowroomSystem";
-
 const ProductMenu = () => {
   const { id } = useParams();
   const navigate = useNavigate();

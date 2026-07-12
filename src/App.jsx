@@ -30,6 +30,7 @@ import FlashSalePage from "./components/Sidebar/FlashSalePage";
 import VoucherWallet from "./components/Sidebar/VoucherWallet";
 import AdminServiceRequests from "./components/AdminDashboash/AdminServiceRequests";
 import ProDemo from "./components/Sidebar/Prodemo";
+import ChatBox from "./components/ChatboxAI/ChatBox";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -132,6 +133,7 @@ function App() {
           }
         />
       </Routes>
+      <ChatBox />
     </BrowserRouter>
   );
 }

@@ -14,6 +14,7 @@ import { getImageUrl } from "../../utils/imageUtils";
 import { toast } from "sonner";
 import ProductReviews from "../../pages/ProductReviews";
 import ShowroomSystem from "../ShowroomSystem";
+import PromoPopup from "../../components/PromoPopup/PromoPopup";
 
 const ComponentPage = () => {
   const { id } = useParams(); // Lấy ID sản phẩm từ URL
@@ -144,6 +145,7 @@ const ComponentPage = () => {
 
   return (
     <div className="product-detail-page">
+      <PromoPopup triggerKey={id} />
       <Header />
 
       <div className="bread-bar">

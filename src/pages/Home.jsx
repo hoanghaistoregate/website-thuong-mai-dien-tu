@@ -11,6 +11,7 @@ import FooterUser from "../components/Footer/FooterUser";
 // import GameModal from "../components/GameTitle/GameModal"; // Import component rời
 import "./Home.css";
 import ShowroomSystem from "./ShowroomSystem";
+import IntroVideoModal from "../components/IntroVideo/IntroVideoModal";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -76,6 +77,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
+      <IntroVideoModal />
       <Header />
 
       {/* Gọi Component Modal tách rời ở đây */}
