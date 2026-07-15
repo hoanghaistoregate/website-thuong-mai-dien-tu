@@ -134,7 +134,7 @@ const FooterUser = () => {
       </div>
 
       <div className="footer-copyright-bar">
-        <p>Hoàng Hải DevTo</p>
+        <p>2026 - Hoàng Hải DevTo</p>
       </div>
     </footer>
   );

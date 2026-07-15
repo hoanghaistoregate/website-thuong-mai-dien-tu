@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import FooterUser from "../../components/Footer/FooterUser";
 import Sevicer from "../../components/Sevicer/Sevicer";
 import "./ProductPage.css";
+import PromoPopup from "../../components/PromoPopup/PromoPopup";
 
 const ProductPage = () => {
   const navigate = useNavigate();
@@ -19,19 +20,20 @@ const ProductPage = () => {
 
   return (
     <div className="product-page">
+      <PromoPopup />
       <Header />
 
       {/* 1. Thanh điều hướng (Breadcrumbs) */}
-      <div className="bread-bar">
-        <div className="inner-bread">
+      <div className="demo-bar">
+        <div className="demo-bread">
           <Link to="/">
             <span>Trang chủ </span>
           </Link>
-          <Link to="/">
-            <span>Máy tính </span>
+          <Link to="/product-manga-new">
+            <span>Sản Phẩm Mới Về</span>
           </Link>
-          <Link to="/menu/1">
-            <span>Phần Đặc Biệt </span>
+          <Link to="/">
+            <span className="demo-bread-current">Sản Phẩm Đặc Biệt </span>
           </Link>
         </div>
       </div>

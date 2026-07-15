@@ -60,11 +60,15 @@ const NewsDetail = () => {
     <>
       <Header />
 
-      <div className="nd-breadcrumb">
-        <div className="nd-breadcrumb__inner">
-          <Link to="/">Trang chủ</Link>
-          <Link to="/news">Tin tức</Link>
-          <span>{article.title}</span>
+      <div className="demo-bar">
+        <div className="demo-bread">
+          <Link to="/">
+            <span>Trang chủ</span>
+          </Link>
+          <Link to="/news">
+            <span>Tin Tức</span>
+          </Link>
+          <span className="demo-bread-current">{article.title}</span>
         </div>
       </div>
 

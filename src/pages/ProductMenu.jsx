@@ -156,16 +156,16 @@ const ProductMenu = () => {
       <Header />
 
       {/* BREADCRUMB */}
-      <div className="pm-breadcrumb">
-        <div className="pm-breadcrumb__inner">
+      <div className="demo-bar">
+        <div className="demo-bread">
           <Link to="/">
             <span>Trang chủ</span>
           </Link>
-          <Link to="/">
-            <span>Máy tính mới</span>
+          <Link to="/proDemo">
+            <span>Đồ Gia Dụng</span>
           </Link>
-          <Link to="/page/:id">
-            <span>Sản Phẩm Mới</span>
+          <Link>
+            <span className="demo-bread-current">{product.name}</span>
           </Link>
         </div>
       </div>

@@ -155,13 +155,16 @@ const ProductDetail = () => {
       <PromoPopup triggerKey={id} />
       <Header />
 
-      <div className="bread-bar">
-        <div className="inner-bread">
+      <div className="demo-bar">
+        <div className="demo-bread">
           <Link to="/">
             <span>Trang chủ </span>
           </Link>
+          <Link to="/product-manga-new">
+            <span>Sản Phẩm Mới Về</span>
+          </Link>
           <Link to="/">
-            <span>Máy tính mới</span>
+            <span className="demo-bread-current">{product.name}</span>
           </Link>
         </div>
       </div>

@@ -176,6 +176,7 @@ const ProductManager = () => {
               <option value="LaptopUser">Laptop User</option>
               <option value="ProductPagies">Product Pagies</option>
               <option value="demoUnits">Prodemo</option>
+              <option value="appliances">ProductMangaNew</option>
             </select>
           </div>
 

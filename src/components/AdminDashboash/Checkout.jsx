@@ -299,15 +299,15 @@ const Checkout = () => {
   return (
     <>
       <Header />
-      <div className="product-detail-pages">
-        <div className="inner-breads">
+      <div className="demo-bar">
+        <div className="demo-bread">
           <Link to="/">
             <span>Trang chủ</span>
           </Link>
           <Link to="/cart">
             <span>Giỏ hàng</span>
           </Link>
-          <span>Thanh toán</span>
+          <span className="demo-bread-current">Thanh toán</span>
         </div>
         <div className="container">
           <form className="checkout-wrapper" onSubmit={handleSubmitOrder}>

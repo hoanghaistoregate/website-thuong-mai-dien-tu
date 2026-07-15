@@ -45,11 +45,11 @@ const menu = [
     ],
   },
   {
-    title: "Sản Phẩm Trưng Bày",
+    title: "Đồ Gia Dụng",
     path: "/proDemo",
   },
   {
-    title: "Tin Tức",
+    title: "Tin Tức Mới Nhất",
     path: "/news",
   },
 ];

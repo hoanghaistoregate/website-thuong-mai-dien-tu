@@ -49,8 +49,8 @@ const Prodemo = () => {
           <Link>
             <span className="demo-bread-current">Đồ Gia Dụng</span>
           </Link>
-          <Link to="/">
-            <span className="demo-bread-current">Phần Trưng Bày</span>
+          <Link to="/product-manga-new">
+            <span className="demo-bread-current">Sản Phẩm Mới Về</span>
           </Link>
         </div>
       </div>

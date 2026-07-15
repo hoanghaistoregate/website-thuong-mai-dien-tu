@@ -1683,7 +1683,98 @@
     }
   ],
   "cart": [],
-  "orders": [],
+  "orders": [
+    {
+      "orderCode": "DH-20260715-191341",
+      "userId": "1",
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "admin7709@gmail.com",
+      "address": "Đống Đa - Hà Nội",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 71480000,
+      "voucherCode": null,
+      "discountAmount": 0,
+      "createdAt": "2026-07-15T12:13:41.718Z",
+      "products": [
+        {
+          "productId": "1",
+          "name": "Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động",
+          "image": "/images/SPMV1.webp",
+          "quantity": 2,
+          "unitPrice": 30990000,
+          "subtotal": 61980000,
+          "fromTable": "appliances"
+        },
+        {
+          "productId": "1",
+          "name": "Laptop HP 15s-fq1017TU 8VY69PA (Silver)",
+          "image": "/images/LT10.jpg",
+          "quantity": 1,
+          "unitPrice": 9500000,
+          "subtotal": 9500000,
+          "fromTable": "LaptopUser"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderCode": "DH-20260715-19193",
+      "userId": "1",
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "admin7709@gmail.com",
+      "address": "Đống Đa - Hà Nội",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 32990000,
+      "voucherCode": null,
+      "discountAmount": 0,
+      "createdAt": "2026-07-15T12:19:03.107Z",
+      "products": [
+        {
+          "productId": "2",
+          "name": "PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB)",
+          "image": "/images/pr2.webp",
+          "quantity": 1,
+          "unitPrice": 32990000,
+          "subtotal": 32990000,
+          "fromTable": "ProductMenus"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "orderCode": "DH-20260715-192230",
+      "userId": "1",
+      "fullName": "Hoàng Hải",
+      "phone": "0911108133",
+      "email": "admin7709@gmail.com",
+      "address": "Đống Đa - Hà Nội",
+      "note": "",
+      "paymentMethod": "cod",
+      "status": "pending",
+      "totalAmount": 14000000,
+      "voucherCode": "SANMUAHE50K",
+      "discountAmount": 5000000,
+      "createdAt": "2026-07-15T12:22:30.017Z",
+      "products": [
+        {
+          "productId": "7",
+          "name": "Laptop TP 15s-fq1017TU ",
+          "image": "/images/pr7.webp",
+          "quantity": 1,
+          "unitPrice": 19000000,
+          "subtotal": 19000000,
+          "fromTable": "ProductMenus"
+        }
+      ],
+      "id": 3
+    }
+  ],
   "reviews": [],
   "news": [
     {
@@ -1912,41 +2003,8 @@
       "collectedCount": 45
     }
   ],
-  "userVouchers": [
-    {
-      "userId": "1",
-      "voucherCode": "SANMUAHE",
-      "collectedAt": "2026-07-02T12:11:01.223Z",
-      "used": true,
-      "id": 1
-    },
-    {
-      "userId": "1",
-      "voucherCode": "SANMUAHE50K",
-      "collectedAt": "2026-07-04T08:19:55.586Z",
-      "used": true,
-      "id": 2
-    },
-    {
-      "userId": "1",
-      "voucherCode": "SANMUAHE200K",
-      "collectedAt": "2026-07-12T09:15:29.479Z",
-      "used": false,
-      "id": 3
-    }
-  ],
-  "serviceRequests": [
-    {
-      "service": "GIAO HÀNG MIỄN PHÍ",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "hhhhh",
-      "status": "pending",
-      "createdAt": "2026-07-12T08:39:37.802Z",
-      "id": 1
-    }
-  ],
+  "userVouchers": [],
+  "serviceRequests": [],
   "demoUnits": [
     {
       "id": 1,
@@ -2041,6 +2099,246 @@
       "name": "Bàn Phím Giả Cơ Gaming L200 LED RGB 6 Chế Độ LED, Fullsize, Keycap Pudding cực đẹp",
       "price": 1,
       "image": "/images/TB15.jpg",
+      "deleted": false
+    }
+  ],
+  "appliances": [
+    {
+      "id": 1,
+      "name": "Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động",
+      "category": "smartwatch",
+      "price": 30990000,
+      "warranty": "12 tháng",
+      "image": "/images/SPMV1.webp",
+      "description": "Apple Watch Series 10 sở hữu màn hình OLED LTPO Always-On sắc nét, thiết kế viền mỏng hiện đại cùng khả năng theo dõi sức khỏe toàn diện như đo nhịp tim, nồng độ oxy trong máu, giấc ngủ và phát hiện té ngã. Thiết bị hỗ trợ GPS chính xác, chống nước 50m và thời lượng pin sử dụng cả ngày.",
+      "features": [
+        "Màn hình OLED Always-On siêu sáng",
+        "Đo nhịp tim, SpO2, ECG",
+        "Theo dõi hơn 100 chế độ luyện tập",
+        "Chống nước WR50",
+        "Nhận cuộc gọi và thông báo ngay trên đồng hồ"
+      ],
+      "specs": [
+        {
+          "k": "Màn hình",
+          "v": "OLED LTPO 46mm"
+        },
+        {
+          "k": "Pin",
+          "v": "18 giờ"
+        },
+        {
+          "k": "Chống nước",
+          "v": "50 mét"
+        },
+        {
+          "k": "Kết nối",
+          "v": "Bluetooth 5.3, Wi-Fi, GPS"
+        }
+      ],
+      "deleted": false
+    },
+    {
+      "id": 2,
+      "name": "Tai nghe Bluetooth True Wireless Sony WF-1000XM5",
+      "category": "headphone",
+      "price": 89900000,
+      "warranty": "24 tháng",
+      "image": "/images/SPMV2.webp",
+      "description": "Sony WH-1000XM6 là mẫu tai nghe chống ồn cao cấp với bộ xử lý AI thế hệ mới, mang lại chất lượng âm thanh Hi-Res Audio vượt trội. Công nghệ chống ồn chủ động giúp loại bỏ tiếng ồn hiệu quả trong môi trường đông người.",
+      "features": [
+        "Chống ồn chủ động AI",
+        "Âm thanh Hi-Res Audio",
+        "Pin lên đến 40 giờ",
+        "Sạc nhanh 3 phút dùng 3 giờ",
+        "Điều khiển cảm ứng"
+      ],
+      "specs": [
+        {
+          "k": "Driver",
+          "v": "30mm"
+        },
+        {
+          "k": "Bluetooth",
+          "v": "5.4"
+        },
+        {
+          "k": "Pin",
+          "v": "40 giờ"
+        },
+        {
+          "k": "Sạc",
+          "v": "USB-C"
+        }
+      ],
+      "deleted": false
+    },
+    {
+      "id": 3,
+      "name": "Tai nghe Logitech G321 LightSpeed Black",
+      "category": "speaker",
+      "price": 39900000,
+      "warranty": "12 tháng",
+      "image": "/images/SPMV3.webp",
+      "description": "JBL Charge 6 mang đến âm thanh mạnh mẽ với công suất 40W, khả năng chống nước và chống bụi chuẩn IP67. Pin dung lượng lớn có thể phát nhạc liên tục tới 28 giờ và còn đóng vai trò như một viên pin sạc dự phòng.",
+      "features": [
+        "Âm thanh JBL Original Pro",
+        "Pin 28 giờ",
+        "Chống nước IP67",
+        "Sạc thiết bị khác qua USB-C",
+        "Kết nối nhiều loa bằng Auracast"
+      ],
+      "specs": [
+        {
+          "k": "Công suất",
+          "v": "40W"
+        },
+        {
+          "k": "Pin",
+          "v": "28 giờ"
+        },
+        {
+          "k": "Chuẩn chống nước",
+          "v": "IP67"
+        },
+        {
+          "k": "Bluetooth",
+          "v": "5.4"
+        }
+      ],
+      "deleted": false
+    },
+    {
+      "id": 4,
+      "name": "Tai nghe Bluetooth chụp tai Anker Soundcore Space One",
+      "category": "camera",
+      "price": 15900000,
+      "warranty": "24 tháng",
+      "image": "/images/SPMV4.webp",
+      "description": "Camera Xiaomi CW500 hỗ trợ ghi hình độ phân giải 2K, quay quét 360 độ, nhận diện chuyển động bằng AI và đàm thoại hai chiều. Thiết bị lưu trữ trên thẻ nhớ hoặc đám mây giúp giám sát ngôi nhà mọi lúc mọi nơi.",
+      "features": [
+        "Độ phân giải 2K",
+        "AI nhận diện con người",
+        "Quay ngang 360°",
+        "Đàm thoại hai chiều",
+        "Quan sát ban đêm hồng ngoại"
+      ],
+      "specs": [
+        {
+          "k": "Độ phân giải",
+          "v": "2304 x 1296"
+        },
+        {
+          "k": "Góc quay",
+          "v": "360°"
+        },
+        {
+          "k": "Kết nối",
+          "v": "Wi-Fi"
+        },
+        {
+          "k": "Lưu trữ",
+          "v": "MicroSD tối đa 256GB"
+        }
+      ],
+      "deleted": false
+    },
+    {
+      "id": 5,
+      "name": "Tai nghe Bluetooth True Wireless Beats Solo Buds",
+      "category": "powerbank",
+      "price": 31900000,
+      "warranty": "18 tháng",
+      "image": "/images/SPMV5.webp",
+      "description": "Anker Prime 20000mAh hỗ trợ sạc nhanh PD 3.1 công suất tối đa 200W, có thể sạc đồng thời laptop, điện thoại và máy tính bảng. Màn hình LCD hiển thị công suất và dung lượng pin theo thời gian thực.",
+      "features": [
+        "Dung lượng 20.000mAh",
+        "Sạc nhanh 200W",
+        "Màn hình LCD",
+        "3 cổng sạc",
+        "Hỗ trợ PD 3.1"
+      ],
+      "specs": [
+        {
+          "k": "Dung lượng",
+          "v": "20000mAh"
+        },
+        {
+          "k": "Công suất",
+          "v": "200W"
+        },
+        {
+          "k": "Cổng",
+          "v": "2 USB-C, 1 USB-A"
+        },
+        {
+          "k": "Chuẩn sạc",
+          "v": "PD 3.1, QC 4.0"
+        }
+      ],
+      "deleted": false
+    },
+    {
+      "id": 6,
+      "name": "Loa thông minh Apple HomePod Mini",
+      "category": "router",
+      "price": 31900000,
+      "warranty": "36 tháng",
+      "image": "/images/SPMV6.png",
+      "description": "TP-Link Archer BE550 sử dụng chuẩn Wi-Fi 7 mới nhất, mang đến tốc độ truyền tải lên tới 9.2Gbps. Thiết bị hỗ trợ Mesh, OFDMA, MU-MIMO và bảo mật WPA3, phù hợp cho gia đình hoặc văn phòng hiện đại.",
+      "features": [
+        "Chuẩn Wi-Fi 7",
+        "Tốc độ 9.2Gbps",
+        "Hỗ trợ EasyMesh",
+        "Bảo mật WPA3",
+        "Quản lý qua ứng dụng Tether"
+      ],
+      "specs": [
+        {
+          "k": "Chuẩn Wi-Fi",
+          "v": "Wi-Fi 7"
+        },
+        {
+          "k": "Tốc độ",
+          "v": "9.2Gbps"
+        },
+        {
+          "k": "Cổng LAN",
+          "v": "2.5GbE"
+        },
+        {
+          "k": "Băng tần",
+          "v": "2.4GHz / 5GHz / 6GHz"
+        }
+      ],
+      "deleted": false
+    },
+    {
+      "id": 7,
+      "name": " loa thông minh Apple HomePod mini",
+      "price": 20000000,
+      "image": "/images/SPMV7.jpg",
+      "deleted": false
+    },
+    {
+      "id": 8,
+      "name": "Bang & Olufsen Beosound A5 – Tuyệt phẩm thiết kế và âm thanh 360 độ",
+      "price": 70000000,
+      "image": "/images/SPMV8.jpg",
+      "deleted": false
+    },
+    {
+      "id": 9,
+      "name": "Devialet Mania – Âm thanh mạnh mẽ, âm trường rộng",
+      "price": 59000000,
+      "image": "/images/SPMV9.jpg",
+      "deleted": false
+    },
+    {
+      "id": 10,
+      "name": "Loa Cabasse The Pearl",
+      "price": 80000000,
+      "image": "/images/SPMV10.jpg",
       "deleted": false
     }
   ],

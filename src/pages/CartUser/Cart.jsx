@@ -177,16 +177,16 @@ const Cart = () => {
   return (
     <>
       <Header />
-      <div className="product-detail-pages">
+      <div className="demo-bar">
         {/* 1. Thanh điều hướng */}
-        <div className="inner-breads">
+        <div className="demo-bread">
           <Link to="/">
             <span>Trang chủ</span>
           </Link>
           <Link to="/cart">
             <span>Giỏ hàng</span>
           </Link>
-          <span>Thanh toán</span>
+          <span className="demo-bread-current">Thanh toán</span>
         </div>
 
         {/* 2. Nội dung chính trang giỏ hàng */}

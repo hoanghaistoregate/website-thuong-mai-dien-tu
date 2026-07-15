@@ -56,17 +56,20 @@ const News = () => {
     <>
       <Header />
 
-      <div className="nw-breadcrumb">
-        <div className="nw-breadcrumb__inner">
-          <Link to="/">Trang chủ</Link> <span>› Tin tức</span>
+      <div className="demo-bar">
+        <div className="demo-bread">
+          <Link to="/">
+            <span>Trang chủ</span>
+          </Link>
+          <span className="demo-bread-current"> Tin tức</span>
         </div>
       </div>
 
       <div className="nw-page">
         <div className="nw-container">
           <div className="nw-header">
-            <h1>Tin tức công nghệ</h1>
-            <p>Cập nhật mới nhất về PC, Laptop, linh kiện và khuyến mãi</p>
+            {/* <h1>Tin tức công nghệ</h1>
+            <p>Cập nhật mới nhất về PC, Laptop, linh kiện và khuyến mãi</p> */}
           </div>
 
           <div className="nw-filter">

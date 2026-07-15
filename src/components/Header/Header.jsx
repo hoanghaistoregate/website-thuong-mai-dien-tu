@@ -17,8 +17,10 @@ const Header = (props) => {
   const [activeModal, setActiveModal] = useState(null);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  // MỚI: state lưu từ khoá người dùng đang gõ trong ô tìm kiếm
   const [searchQuery, setSearchQuery] = useState("");
+
+  // MỚI: theo dõi trạng thái cuộn trang để ẩn/hiện thanh marquee + search
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const isLoggedIn = !!currentUser;
@@ -92,6 +94,15 @@ const Header = (props) => {
     return () => window.removeEventListener("click", handleCloseMenu);
   }, []);
 
+  // MỚI: lắng nghe sự kiện cuộn trang
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -143,7 +154,6 @@ const Header = (props) => {
     navigate("/login");
   };
 
-  // MỚI: xử lý khi người dùng bấm nút search hoặc nhấn Enter trong ô input
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     const trimmed = searchQuery.trim();
@@ -155,7 +165,44 @@ const Header = (props) => {
   };
 
   return (
-    <header className="site-header">
+    <header
+      className={`site-header ${isScrolled ? "site-header--compact" : ""}`}
+    >
+      {/* MỚI: thanh thông báo chạy ngang - sẽ ẩn khi cuộn xuống */}
+      <div
+        className={`site-header__marquee ${
+          isScrolled ? "site-header__marquee--hidden" : ""
+        }`}
+      >
+        <div className="site-header__marquee-track">
+          <span className="site-header__marquee-item">
+            Giảm giá đến 50% cho tất cả sản phẩm laptop gaming
+          </span>
+          <span className="site-header__marquee-item">
+            Miễn phí vận chuyển toàn quốc cho đơn hàng từ 500.000đ
+          </span>
+          <span className="site-header__marquee-item">
+            Hỗ trợ trả góp 0% lãi suất qua thẻ tín dụng
+          </span>
+          <span className="site-header__marquee-item">
+            Tặng ngay chuột không dây khi mua PC gaming
+          </span>
+          {/* Lặp lại để hiệu ứng chạy liên tục không bị đứt đoạn */}
+          <span className="site-header__marquee-item">
+            Giảm giá đến 50% cho tất cả sản phẩm laptop gaming
+          </span>
+          <span className="site-header__marquee-item">
+            Miễn phí vận chuyển toàn quốc cho đơn hàng từ 500.000đ
+          </span>
+          <span className="site-header__marquee-item">
+            Hỗ trợ trả góp 0% lãi suất qua thẻ tín dụng
+          </span>
+          <span className="site-header__marquee-item">
+            Tặng ngay chuột không dây khi mua PC gaming
+          </span>
+        </div>
+      </div>
+
       <div className="site-header__container">
         <div className="site-header__top">
           <div className="site-header__logo">
@@ -251,7 +298,12 @@ const Header = (props) => {
           </nav>
         </div>
 
-        <div className="site-header__bottom">
+        {/* MỚI: thanh search - sẽ ẩn khi cuộn xuống */}
+        <div
+          className={`site-header__bottom ${
+            isScrolled ? "site-header__bottom--hidden" : ""
+          }`}
+        >
           <div
             className="site-header__bottom-inner"
             style={{
@@ -264,7 +316,6 @@ const Header = (props) => {
             <button className="site-header__category-btn">
               Danh Mục Sản Phẩm
             </button>
-            {/* MỚI: bọc trong <form> + input controlled để bắt được submit/Enter */}
             <form
               className="site-header__search-box"
               onSubmit={handleSearchSubmit}

@@ -60,16 +60,15 @@ const Profile = () => {
       <Header />
 
       {/* 1. Thanh điều hướng */}
-      <div className="product-detail-pages">
-        <div className="inner-breads">
+      <div className="demo-bar">
+        <div className="demo-bread">
           <Link to="/">
-            <span>Trang chủ </span>
+            <span>Trang chủ</span>
           </Link>
-          <Link to="/">
-            <span>Máy tính mới</span>
+          <Link>
+            <span className="demo-bread-current">Trang Cá Nhân</span>
           </Link>
         </div>
-
         <div className="container">
           <div className="profile-wrapper">
             {/* ================= LEFT (SIDEBAR + MENU) ================= */}

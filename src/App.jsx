@@ -31,6 +31,8 @@ import VoucherWallet from "./components/Sidebar/VoucherWallet";
 import AdminServiceRequests from "./components/AdminDashboash/AdminServiceRequests";
 import ProDemo from "./components/Sidebar/Prodemo";
 import ChatBox from "./components/ChatboxAI/ChatBox";
+import ProductMangaNew from "./components/Sidebar/ProductMangaNew";
+import ProductManaCategory from "./components/Sidebar/ProductManaCategory";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -71,6 +73,8 @@ function App() {
         <Route path="/component-category/:id" element={<ComponentPage />} />
         <Route path="/san-sale" element={<FlashSalePage />} />
         <Route path="/proDemo" element={<ProDemo />} />
+        <Route path="/product-manga-new" element={<ProductMangaNew />} />
+        <Route path="/appliance/:id" element={<ProductManaCategory />} />
         <Route path="/tri-an-khach-hang" element={<VoucherWallet />} />
 
         {/* Giỏ hàng & Thanh toán */}

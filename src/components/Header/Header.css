@@ -31,6 +31,124 @@
 /* --------------------------------------------------------------------
    Top strip — utility bar
    -------------------------------------------------------------------- */
+/* Thanh thông báo chạy ngang - phong cách nhẹ nhàng */
+.site-header__marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f5f7; /* xám nhạt, dịu mắt */
+  border-bottom: 1px solid #eaeaea;
+  padding: 6px 0;
+}
+
+.site-header__marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.site-header__marquee-item {
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  padding-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.site-header__marquee:hover .site-header__marquee-track {
+  animation-play-state: paused;
+}
+
+/* Header ghim lại trên cùng khi cuộn */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header--compact {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Thanh thông báo chạy ngang - nhẹ nhàng */
+.site-header__marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f5f7;
+  border-bottom: 1px solid #eaeaea;
+  padding: 6px 0;
+  max-height: 40px;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.site-header__marquee--hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  border-bottom: none;
+}
+
+.site-header__marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.site-header__marquee-item {
+  color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  padding-right: 60px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.site-header__marquee:hover .site-header__marquee-track {
+  animation-play-state: paused;
+}
+
+/* Thanh search - ẩn khi cuộn */
+.site-header__bottom {
+  max-height: 70px;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.site-header__bottom--hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
 
 .site-header__top {
   display: flex;

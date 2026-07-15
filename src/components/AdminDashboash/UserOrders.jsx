@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast, Toaster } from "sonner";
 import { FaBoxOpen, FaCalendarAlt } from "react-icons/fa";
-
 import Header from "../../components/Header/Header";
 import FooterUser from "../../components/Footer/FooterUser";
 import Sevicer from "../Sevicer/Sevicer";
@@ -87,20 +86,20 @@ const UserOrders = () => {
     <>
       <Header />
 
-      <div className="product-detail-pages">
-        <div className="inner-breads">
+      <div className="demo-bar">
+        <div className="demo-bread">
           <Link to="/">
             <span>Trang chủ</span>
           </Link>
           <Link to="/profile">
             <span>Hồ sơ cá nhân</span>
           </Link>
-          <span>Đơn hàng của tôi</span>
+          <span className="demo-bread-current">Đơn hàng của tôi</span>
         </div>
 
         <div className="container">
           <div className="orders-page-wrapper">
-            <h2> ĐƠN HÀNG CỦA TÔI</h2>
+            {/* <h2> ĐƠN HÀNG CỦA TÔI</h2> */}
             {orders.length === 0 ? (
               <div className="empty-orders">
                 <FaBoxOpen className="empty-icon" />
