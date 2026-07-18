@@ -243,16 +243,13 @@ const ProductReviews = ({ productId, collectionName = "categories" }) => {
 
           <form onSubmit={handleSubmit}>
             <div className="form-field">
-              <div className="form-label">Số sao</div>
               <StarSelector value={rating} onChange={setRating} />
             </div>
 
             <div className="form-field">
               <label className="form-label" htmlFor="review-comment">
                 Nhận xét
-                <span className="form-label__hint">
-                  Enter để gửi · Shift+Enter xuống dòng
-                </span>
+                <span className="form-label__hint"></span>
               </label>
               <textarea
                 id="review-comment"
@@ -261,8 +258,6 @@ const ProductReviews = ({ productId, collectionName = "categories" }) => {
                 onChange={(e) => setComment(e.target.value)}
                 onKeyDown={(e) => {
                   if (e.key !== "Enter" || e.shiftKey) return;
-                  // Bỏ qua khi đang gõ dở bằng bộ gõ tiếng Việt (composing)
-                  // hoặc khi phím đang tự lặp lại, tránh gửi 2 lần.
                   if (e.nativeEvent.isComposing || e.keyCode === 229) return;
                   if (e.repeat) return;
                   e.preventDefault();

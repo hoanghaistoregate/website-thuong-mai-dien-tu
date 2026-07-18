@@ -334,6 +334,14 @@ const ProductMenu = () => {
       )}
 
       {/* SẢN PHẨM LIÊN QUAN */}
+      <div className="review">
+        {product && product.id && (
+          <ProductReviews
+            productId={product.id}
+            collectionName="ProductMenus"
+          />
+        )}
+      </div>
       <section className="pms-related">
         <h2>SẢN PHẨM LIÊN QUAN</h2>
         <div className="pms-related__grid">
@@ -357,9 +365,6 @@ const ProductMenu = () => {
           onClose={() => setShowInstallment(false)}
           product={product}
         />
-      )}
-      {product && product.id && (
-        <ProductReviews productId={product.id} collectionName="ProductMenus" />
       )}
 
       <Sevicer />

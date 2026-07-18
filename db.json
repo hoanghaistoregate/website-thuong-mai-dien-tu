@@ -1705,7 +1705,21 @@
   ],
   "cart": [],
   "orders": [],
-  "reviews": [],
+  "reviews": [
+    {
+      "productId": "3",
+      "collection": "ProductMenus",
+      "userId": "1",
+      "userName": "Hoàng Hải",
+      "rating": 5,
+      "comment": "hhhhh",
+      "createdAt": "2026-07-18T12:55:05.273Z",
+      "id": "1784379305273",
+      "hidden": false,
+      "reply": "hhhhh",
+      "replyAt": "2026-07-18T12:55:13.936Z"
+    }
+  ],
   "news": [
     {
       "id": 1,
