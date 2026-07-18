@@ -83,10 +83,12 @@ const CategoryPage = () => {
       <Header />
 
       {/* BREADCRUMB */}
-      <div className="cp-breadcrumb">
-        <div className="cp-breadcrumb__inner">
-          <Link to="/">Trang chủ</Link>
-          <span>{activeTab.label}</span>
+      <div className="demo-bar">
+        <div className="demo-bread">
+          <Link to="/">
+            <span>Trang chủ</span>
+          </Link>
+          <span className="demo-bread-current">{activeTab.label}</span>
         </div>
       </div>
 

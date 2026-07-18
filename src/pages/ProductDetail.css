@@ -1059,6 +1059,12 @@
   font-weight: 500;
 }
 
+.review {
+  margin: 50px auto;
+  max-width: 1400px; /* nếu muốn cùng chiều rộng với nội dung */
+  padding: 0 20px;
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1150px) {
   .product-detail-layout {

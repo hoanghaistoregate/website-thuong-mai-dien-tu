@@ -33,6 +33,8 @@ import ProDemo from "./components/Sidebar/Prodemo";
 import ChatBox from "./components/ChatboxAI/ChatBox";
 import ProductMangaNew from "./components/Sidebar/ProductMangaNew";
 import ProductManaCategory from "./components/Sidebar/ProductManaCategory";
+import ReviewManager from "./components/AdminDashboash/ReviewManager";
+import FlashSaleManager from "./components/AdminDashboash/FlashSaleManager";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -78,7 +80,6 @@ function App() {
         <Route path="/tri-an-khach-hang" element={<VoucherWallet />} />
 
         {/* Giỏ hàng & Thanh toán */}
-        <Route path="/admin/statistics" element={<Statistics />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orders" element={<UserOrders />} />
@@ -93,6 +94,14 @@ function App() {
           element={
             <AdminProtectedRoute>
               <Admin />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/reviews"
+          element={
+            <AdminProtectedRoute>
+              <ReviewManager />
             </AdminProtectedRoute>
           }
         />
@@ -124,7 +133,7 @@ function App() {
           path="/admin/statistics"
           element={
             <AdminProtectedRoute>
-              <statistics />
+              <Statistics />
             </AdminProtectedRoute>
           }
         />
@@ -133,6 +142,14 @@ function App() {
           element={
             <AdminProtectedRoute>
               <Admin />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/flash-sale"
+          element={
+            <AdminProtectedRoute>
+              <FlashSaleManager />
             </AdminProtectedRoute>
           }
         />

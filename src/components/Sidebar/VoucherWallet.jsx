@@ -3,6 +3,7 @@ import { toast, Toaster } from "sonner";
 import Header from "../../components/Header/Header";
 import FooterUser from "../../components/Footer/FooterUser";
 import "./VoucherWallet.css";
+import ShowroomSystem from "../../pages/ShowroomSystem";
 
 const API_URL = "http://localhost:3000";
 
@@ -181,6 +182,7 @@ const VoucherWallet = () => {
             })}
         </div>
       </div>
+      <ShowroomSystem />
       <FooterUser />
       <Toaster />
     </>

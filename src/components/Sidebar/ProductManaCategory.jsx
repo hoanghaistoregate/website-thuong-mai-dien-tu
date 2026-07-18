@@ -283,6 +283,12 @@ const ProductManaCategory = () => {
         </div>
       </div>
 
+      <div className="review">
+        {product?.id && (
+          <ProductReviews productId={product.id} collectionName="appliances" />
+        )}
+      </div>
+
       {relatedProducts.length > 0 && (
         <section className="ad-related-section">
           <div className="ad-related-inner">
@@ -315,10 +321,6 @@ const ProductManaCategory = () => {
             </div>
           </div>
         </section>
-      )}
-
-      {product?.id && (
-        <ProductReviews productId={product.id} collectionName="appliances" />
       )}
 
       <InstallmentModal

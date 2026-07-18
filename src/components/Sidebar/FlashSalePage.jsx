@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { PiShoppingCartDuotone } from "react-icons/pi";
@@ -32,31 +32,30 @@ const FlashSalePage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [sort, setSort] = useState("default");
 
-  const [timeLeft, setTimeLeft] = useState(() => {
-    const saved = sessionStorage.getItem("flashSaleEnd");
-    if (saved) {
-      const diff = Math.floor((Number(saved) - Date.now()) / 1000);
-      return diff > 0 ? diff : 0;
-    }
-    const duration = 12 * 3600 + 45 * 60 + 30;
-    sessionStorage.setItem("flashSaleEnd", Date.now() + duration * 1000);
-    return duration;
-  });
+  const [endAt, setEndAt] = useState(null); // timestamp (ms) admin cấu hình
+  const [timeLeft, setTimeLeft] = useState(0);
 
+  // Lấy thời gian kết thúc Flash Sale do admin cấu hình
   useEffect(() => {
-    if (timeLeft <= 0) return;
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          sessionStorage.removeItem("flashSaleEnd");
-          clearInterval(timer);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
+    fetch("http://localhost:3000/settings/flashSale")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.endTime) setEndAt(new Date(data.endTime).getTime());
+      })
+      .catch(() => setEndAt(null));
   }, []);
+
+  // Đếm ngược dựa trên mốc endAt lấy từ server
+  useEffect(() => {
+    if (!endAt) return;
+    const tick = () => {
+      const diff = Math.floor((endAt - Date.now()) / 1000);
+      setTimeLeft(diff > 0 ? diff : 0);
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    return () => clearInterval(timer);
+  }, [endAt]);
 
   const hours = String(Math.floor(timeLeft / 3600)).padStart(2, "0");
   const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, "0");
@@ -68,13 +67,27 @@ const FlashSalePage = () => {
     Promise.all([
       fetch("http://localhost:3000/LaptopUser").then((r) => r.json()),
       fetch("http://localhost:3000/eventList").then((r) => r.json()),
+      fetch("http://localhost:3000/catenogies").then((r) => r.json()),
     ])
-      .then(([LaptopUser, eventList]) => {
-        const all = [...LaptopUser, ...eventList];
-        // Chỉ lấy sản phẩm có field discount > 0
-        const saleItems = all.filter(
-          (item) => item.discount && item.discount > 0,
-        );
+      .then(([LaptopUser, eventList, catenogies]) => {
+        const all = [
+          ...LaptopUser.map((item) => ({
+            ...item,
+            source: "LaptopUser",
+          })),
+
+          ...eventList.map((item) => ({
+            ...item,
+            source: "eventList",
+          })),
+
+          ...catenogies.map((item) => ({
+            ...item,
+            source: "catenogies",
+          })),
+        ];
+        // Chỉ lấy sản phẩm được admin bật cờ Flash Sale
+        const saleItems = all.filter((item) => item.flashSale === true);
         setAllItems(Array.isArray(saleItems) ? saleItems : []);
       })
       .catch((err) => {
@@ -156,19 +169,15 @@ const FlashSalePage = () => {
                   { val: minutes, label: "PHÚT" },
                   { val: seconds, label: "GIÂY" },
                 ].map((unit, i) => (
-                  <>
-                    {i > 0 && (
-                      <span key={`sep-${i}`} className="fsp-cd-sep">
-                        :
-                      </span>
-                    )}
-                    <div key={unit.label} className="fsp-cd-unit">
+                  <Fragment key={unit.label}>
+                    {i > 0 && <span className="fsp-cd-sep">:</span>}
+                    <div className="fsp-cd-unit">
                       <div className="fsp-cd-box">
                         <div className="fsp-cd-num">{unit.val}</div>
                       </div>
                       <span className="fsp-cd-label">{unit.label}</span>
                     </div>
-                  </>
+                  </Fragment>
                 ))}
               </div>
             </div>
@@ -254,13 +263,24 @@ const FlashSalePage = () => {
                   <div
                     key={`${item.id}-${item.name}`}
                     className="fsp-card"
-                    onClick={() =>
-                      navigate(
-                        item.category === "laptop"
-                          ? `/laptop-detail/${item.id}`
-                          : `/component-category/${item.id}`,
-                      )
-                    }
+                    onClick={() => {
+                      switch (item.source) {
+                        case "LaptopUser":
+                          navigate(`/laptop-detail/${item.id}`);
+                          break;
+
+                        case "eventList":
+                          navigate(`/component-category/${item.id}`);
+                          break;
+
+                        case "catenogies":
+                          navigate(`/product/${item.id}`);
+                          break;
+
+                        default:
+                          break;
+                      }
+                    }}
                   >
                     {item.discount && (
                       <div className="fsp-card__badge">-{item.discount}%</div>

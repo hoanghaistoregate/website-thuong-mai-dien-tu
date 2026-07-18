@@ -156,7 +156,7 @@
   justify-content: space-between;
   gap: 32px;
   background: var(--void);
-  padding: 12px 32px;
+  padding: 0px 32px;
 }
 
 .site-header__logo img.logo {
@@ -373,7 +373,7 @@
 .site-header__bottom {
   background: var(--cloud);
   border-bottom: 1px solid var(--line-dark);
-  padding: 14px 32px;
+  padding: 4px 32px;
 }
 
 .site-header__bottom-inner {

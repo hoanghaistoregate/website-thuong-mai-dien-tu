@@ -446,6 +446,12 @@ const LaptopPage = () => {
         </div>
       </div>
 
+      <div className="review">
+        {product && product.id && (
+          <ProductReviews productId={product.id} collectionName="LaptopUser" />
+        )}
+      </div>
+
       {relatedProducts.length > 0 && (
         <section className="related-products-section">
           <div className="related-inner-container">
@@ -504,9 +510,6 @@ const LaptopPage = () => {
             </div>
           </div>
         </section>
-      )}
-      {product && product.id && (
-        <ProductReviews productId={product.id} collectionName="LaptopUser" />
       )}
 
       <InstallmentModal

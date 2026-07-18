@@ -70,7 +70,8 @@
       "name": "PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060)",
       "price": 14000000,
       "category": "top-ban-chay",
-      "image": "/images/pc.jpg"
+      "image": "/images/pc.jpg",
+      "flashSale": true
     },
     {
       "id": "2",
@@ -148,7 +149,8 @@
       "status": "Còn hàng",
       "soldPercent": 62,
       "stockLeft": 8,
-      "image": "/images/LC1.jpg"
+      "image": "/images/LC1.jpg",
+      "flashSale": true
     },
     {
       "id": "2",
@@ -160,7 +162,8 @@
       "status": "Còn hàng",
       "soldPercent": 75,
       "stockLeft": 5,
-      "image": "/images/LC2.jpg"
+      "image": "/images/LC2.jpg",
+      "flashSale": true
     },
     {
       "id": "3",
@@ -172,7 +175,8 @@
       "status": "Còn hàng",
       "soldPercent": 40,
       "stockLeft": 18,
-      "image": "/images/LC3.jpg"
+      "image": "/images/LC3.jpg",
+      "flashSale": true
     },
     {
       "id": "4",
@@ -184,7 +188,8 @@
       "status": "Còn hàng",
       "soldPercent": 55,
       "stockLeft": 12,
-      "image": "/images/LC4.jpg"
+      "image": "/images/LC4.jpg",
+      "flashSale": true
     },
     {
       "id": "5",
@@ -196,7 +201,8 @@
       "status": "Còn hàng",
       "soldPercent": 33,
       "stockLeft": 25,
-      "image": "/images/LC5.jpg"
+      "image": "/images/LC5.jpg",
+      "flashSale": true
     },
     {
       "id": "6",
@@ -208,7 +214,8 @@
       "status": "Còn hàng",
       "soldPercent": 81,
       "stockLeft": 3,
-      "image": "/images/LC6.webp"
+      "image": "/images/LC6.webp",
+      "flashSale": true
     },
     {
       "id": "7",
@@ -220,7 +227,8 @@
       "status": "Còn hàng",
       "soldPercent": 28,
       "stockLeft": 40,
-      "image": "/images/LC7.jpg"
+      "image": "/images/LC7.jpg",
+      "flashSale": true
     },
     {
       "id": "8",
@@ -232,7 +240,8 @@
       "status": "Còn hàng",
       "soldPercent": 47,
       "stockLeft": 14,
-      "image": "/images/LC8.webp"
+      "image": "/images/LC8.webp",
+      "flashSale": true
     },
     {
       "id": 9,
@@ -240,7 +249,8 @@
       "price": 13000000,
       "category": "ram",
       "image": "/images/LC11.webp",
-      "deleted": false
+      "deleted": false,
+      "flashSale": true
     },
     {
       "id": 10,
@@ -248,7 +258,8 @@
       "price": 3000000,
       "category": "psu",
       "image": "/images/LC13.webp",
-      "deleted": false
+      "deleted": false,
+      "flashSale": true
     }
   ],
   "LaptopUser": [
@@ -263,7 +274,8 @@
       "soldPercent": 58,
       "stockLeft": 7,
       "image": "/images/LT10.jpg",
-      "deleted": false
+      "deleted": false,
+      "flashSale": true
     },
     {
       "id": "2",
@@ -275,7 +287,8 @@
       "status": "Còn hàng",
       "soldPercent": 70,
       "stockLeft": 4,
-      "image": "/images/LT2.jpg"
+      "image": "/images/LT2.jpg",
+      "flashSale": true
     },
     {
       "id": "3",
@@ -287,7 +300,8 @@
       "status": "Còn hàng",
       "soldPercent": 44,
       "stockLeft": 11,
-      "image": "/images/LT3.jpg"
+      "image": "/images/LT3.jpg",
+      "flashSale": true
     },
     {
       "id": "4",
@@ -299,7 +313,8 @@
       "status": "Còn hàng",
       "soldPercent": 35,
       "stockLeft": 16,
-      "image": "/images/LT4.jpg"
+      "image": "/images/LT4.jpg",
+      "flashSale": true
     },
     {
       "id": "5",
@@ -311,7 +326,8 @@
       "status": "Còn hàng",
       "soldPercent": 25,
       "stockLeft": 22,
-      "image": "/images/LT5.jpg"
+      "image": "/images/LT5.jpg",
+      "flashSale": true
     },
     {
       "id": "6",
@@ -323,7 +339,8 @@
       "status": "Còn hàng",
       "soldPercent": 52,
       "stockLeft": 9,
-      "image": "/images/LT6.jpg"
+      "image": "/images/LT6.jpg",
+      "flashSale": true
     },
     {
       "id": "7",
@@ -335,7 +352,8 @@
       "status": "Còn hàng",
       "soldPercent": 67,
       "stockLeft": 6,
-      "image": "/images/LT7.jpg"
+      "image": "/images/LT7.jpg",
+      "flashSale": true
     },
     {
       "id": "8",
@@ -347,7 +365,8 @@
       "status": "Còn hàng",
       "soldPercent": 89,
       "stockLeft": 2,
-      "image": "/images/LT8.jpg"
+      "image": "/images/LT8.jpg",
+      "flashSale": true
     },
     {
       "id": 9,
@@ -355,7 +374,8 @@
       "price": 9000000,
       "category": "laptop-gaming",
       "image": "/images/LT11.png",
-      "deleted": false
+      "deleted": false,
+      "flashSale": true
     },
     {
       "id": 10,
@@ -363,7 +383,8 @@
       "price": 10000000,
       "category": "laptop-moi",
       "image": "/images/LT12.png",
-      "deleted": false
+      "deleted": false,
+      "flashSale": true
     }
   ],
   "ProductPagies": [
@@ -1683,98 +1704,7 @@
     }
   ],
   "cart": [],
-  "orders": [
-    {
-      "orderCode": "DH-20260715-191341",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "admin7709@gmail.com",
-      "address": "Đống Đa - Hà Nội",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 71480000,
-      "voucherCode": null,
-      "discountAmount": 0,
-      "createdAt": "2026-07-15T12:13:41.718Z",
-      "products": [
-        {
-          "productId": "1",
-          "name": "Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động",
-          "image": "/images/SPMV1.webp",
-          "quantity": 2,
-          "unitPrice": 30990000,
-          "subtotal": 61980000,
-          "fromTable": "appliances"
-        },
-        {
-          "productId": "1",
-          "name": "Laptop HP 15s-fq1017TU 8VY69PA (Silver)",
-          "image": "/images/LT10.jpg",
-          "quantity": 1,
-          "unitPrice": 9500000,
-          "subtotal": 9500000,
-          "fromTable": "LaptopUser"
-        }
-      ],
-      "id": 1
-    },
-    {
-      "orderCode": "DH-20260715-19193",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "admin7709@gmail.com",
-      "address": "Đống Đa - Hà Nội",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 32990000,
-      "voucherCode": null,
-      "discountAmount": 0,
-      "createdAt": "2026-07-15T12:19:03.107Z",
-      "products": [
-        {
-          "productId": "2",
-          "name": "PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB)",
-          "image": "/images/pr2.webp",
-          "quantity": 1,
-          "unitPrice": 32990000,
-          "subtotal": 32990000,
-          "fromTable": "ProductMenus"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "orderCode": "DH-20260715-192230",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "admin7709@gmail.com",
-      "address": "Đống Đa - Hà Nội",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "pending",
-      "totalAmount": 14000000,
-      "voucherCode": "SANMUAHE50K",
-      "discountAmount": 5000000,
-      "createdAt": "2026-07-15T12:22:30.017Z",
-      "products": [
-        {
-          "productId": "7",
-          "name": "Laptop TP 15s-fq1017TU ",
-          "image": "/images/pr7.webp",
-          "quantity": 1,
-          "unitPrice": 19000000,
-          "subtotal": 19000000,
-          "fromTable": "ProductMenus"
-        }
-      ],
-      "id": 3
-    }
-  ],
+  "orders": [],
   "reviews": [],
   "news": [
     {
@@ -2356,6 +2286,12 @@
       "text": "Chào bạn 👋 Mình là trợ lý hỗ trợ. Bạn cần mình giúp gì hôm nay?",
       "createdAt": "2026-07-12T11:29:49.913Z",
       "id": 2
+    }
+  ],
+  "settings": [
+    {
+      "id": "flashSale",
+      "endTime": "2026-07-21T09:55:00.000Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -373,6 +373,12 @@ const ComponentPage = () => {
         </div>
       </div>
 
+      <div className="review">
+        {product && product.id && (
+          <ProductReviews productId={product.id} collectionName="eventList" />
+        )}
+      </div>
+
       {relatedProducts.length > 0 && (
         <section className="related-products-section">
           <div className="related-inner-container">
@@ -431,9 +437,6 @@ const ComponentPage = () => {
             </div>
           </div>
         </section>
-      )}
-      {product && product.id && (
-        <ProductReviews productId={product.id} collectionName="eventList" />
       )}
 
       <InstallmentModal

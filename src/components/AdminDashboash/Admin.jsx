@@ -9,6 +9,8 @@ import {
   FaShoppingCart,
   FaChartBar,
   FaSignOutAlt,
+  FaStar,
+  FaBolt,
 } from "react-icons/fa";
 import { MdSupportAgent } from "react-icons/md";
 
@@ -58,6 +60,14 @@ const Admin = () => {
           <Link to="/admin/statistics" className={isActive("statistics")}>
             <FaChartBar />
             <span>Thống Kê</span>
+          </Link>
+          <Link to="/admin/reviews" className={isActive("reviews")}>
+            <FaStar />
+            <span>Đánh Giá</span>
+          </Link>
+          <Link to="/admin/flash-sale" className={isActive("flash-sale")}>
+            <FaBolt />
+            <span>Flash Sale</span>
           </Link>
           <Link
             to="/admin/service-requests"

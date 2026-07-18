@@ -92,10 +92,12 @@ const EventListPage = () => {
       <Header />
 
       {/* BREADCRUMB */}
-      <div className="elp-breadcrumb">
-        <div className="elp-breadcrumb__inner">
-          <Link to="/">Trang chủ</Link>
-          <span>{activeTab.label}</span>
+      <div className="demo-bar">
+        <div className="demo-bread">
+          <Link to="/">
+            <span>Trang chủ</span>
+          </Link>
+          <span className="demo-bread-current">{activeTab.label}</span>
         </div>
       </div>
 

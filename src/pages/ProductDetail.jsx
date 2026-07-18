@@ -453,6 +453,11 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      <div className="review">
+        {product && product.id && (
+          <ProductReviews productId={product.id} collectionName="catenogies" />
+        )}
+      </div>
 
       {relatedProducts.length > 0 && (
         <section className="related-products-section">
@@ -511,9 +516,6 @@ const ProductDetail = () => {
             </div>
           </div>
         </section>
-      )}
-      {product && product.id && (
-        <ProductReviews productId={product.id} collectionName="catenogies" />
       )}
 
       <InstallmentModal
