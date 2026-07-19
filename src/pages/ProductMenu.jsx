@@ -13,6 +13,8 @@ import { FcShipped } from "react-icons/fc";
 import "./ProductMenu.css";
 import ProductReviews from "./ProductReviews";
 import ShowroomSystem from "./ShowroomSystem";
+import WishlistButton from "../components/Wishlist/WishlistButton";
+
 const ProductMenu = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -167,6 +169,11 @@ const ProductMenu = () => {
           <Link>
             <span className="demo-bread-current">{product.name}</span>
           </Link>
+          <WishlistButton
+            productId={id}
+            fromTable="ProductMenus"
+            productName={product?.name}
+          />
         </div>
       </div>
 

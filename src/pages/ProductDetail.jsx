@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import ProductReviews from "./ProductReviews";
 import ShowroomSystem from "./ShowroomSystem";
 import PromoPopup from "../components/PromoPopup/PromoPopup";
+import WishlistButton from "../components/Wishlist/WishlistButton";
 
 const ProductDetail = () => {
   const { id } = useParams(); // Lấy ID sản phẩm từ URL
@@ -166,6 +167,11 @@ const ProductDetail = () => {
           <Link to="/">
             <span className="demo-bread-current">{product.name}</span>
           </Link>
+          <WishlistButton
+            productId={id}
+            fromTable="catenogies"
+            productName={product?.name}
+          />
         </div>
       </div>
 
@@ -236,7 +242,6 @@ const ProductDetail = () => {
                 THÊM VÀO GIỎ HÀNG
                 <span>THÊM VÀO GIỎ ĐỂ CHỌN TIẾP</span>
               </button>
-
               <div className="sub-buy-buttons-row">
                 <button
                   className="btn-buy-now-split"

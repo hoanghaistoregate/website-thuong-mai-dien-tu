@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import ProductReviews from "../../pages/ProductReviews";
 import ShowroomSystem from "../ShowroomSystem";
 import PromoPopup from "../../components/PromoPopup/PromoPopup";
+import WishlistButton from "../../components/Wishlist/WishlistButton";
 
 const LaptopPage = () => {
   const { id } = useParams(); // Lấy ID sản phẩm từ URL
@@ -159,6 +160,11 @@ const LaptopPage = () => {
           <Link to="/">
             <span className="demo-bread-current">{product.name}</span>
           </Link>
+          <WishlistButton
+            productId={id}
+            fromTable="LaptopUser"
+            productName={product?.name}
+          />
         </div>
       </div>
 

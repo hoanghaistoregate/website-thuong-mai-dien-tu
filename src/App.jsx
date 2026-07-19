@@ -35,6 +35,8 @@ import ProductMangaNew from "./components/Sidebar/ProductMangaNew";
 import ProductManaCategory from "./components/Sidebar/ProductManaCategory";
 import ReviewManager from "./components/AdminDashboash/ReviewManager";
 import FlashSaleManager from "./components/AdminDashboash/FlashSaleManager";
+import WishlistFloatingWidget from "./components/Wishlist/WishlistFloatingWidget";
+import Wishlist from "./components/Wishlist/Wishlist";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -83,6 +85,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orders" element={<UserOrders />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+
         <Route
           path="/admin/service-requests"
           element={<AdminServiceRequests />}
@@ -154,6 +158,7 @@ function App() {
           }
         />
       </Routes>
+      <WishlistFloatingWidget />
       <ChatBox />
     </BrowserRouter>
   );

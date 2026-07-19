@@ -1810,35 +1810,7 @@
     }
   ],
   "cart": [],
-  "orders": [
-    {
-      "orderCode": "DH-20260719-18261",
-      "userId": "1",
-      "fullName": "Hoàng Hải",
-      "phone": "0911108133",
-      "email": "admin7709@gmail.com",
-      "address": "Đống Đa - Hà Nội",
-      "note": "",
-      "paymentMethod": "cod",
-      "status": "shipping",
-      "totalAmount": 20000000,
-      "voucherCode": null,
-      "discountAmount": 0,
-      "createdAt": "2026-07-19T11:26:01.270Z",
-      "products": [
-        {
-          "productId": "2",
-          "name": "PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER )",
-          "image": "/images/pc3.webp",
-          "quantity": 1,
-          "unitPrice": 20000000,
-          "subtotal": 20000000,
-          "fromTable": "catenogies"
-        }
-      ],
-      "id": 1
-    }
-  ],
+  "orders": [],
   "reviews": [],
   "news": [
     {
@@ -2316,6 +2288,7 @@
       "deleted": false
     }
   ],
+  "wishlist": [],
   "chatMessages": [
     {
       "visitorId": "guest_1783855230216_8145",
@@ -2338,6 +2311,183 @@
       "endTime": "2026-07-21T09:55:00.000Z"
     }
   ],
-  "notifications": [],
+  "notifications": [
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/pc3.webp",
+      "read": true,
+      "createdAt": "2026-07-19T16:30:57.646Z",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T16:31:01.478Z",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T16:31:01.978Z",
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T16:31:02.195Z",
+      "id": 4
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/pr2.webp",
+      "read": true,
+      "createdAt": "2026-07-19T17:38:49.223Z",
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/pr2.webp",
+      "read": true,
+      "createdAt": "2026-07-19T17:38:50.455Z",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T18:57:59.418Z",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T18:58:00.718Z",
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T18:58:01.734Z",
+      "id": 9
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn PC GAMING RYZEN 7-RTX 5070 (Ryzen 7 9700X, RTX 5070 12GB, RAM 32GB DDR5, SSD 1TB) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/pr2.webp",
+      "read": true,
+      "createdAt": "2026-07-19T18:58:02.918Z",
+      "id": 10
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/SPMV1.webp",
+      "read": true,
+      "createdAt": "2026-07-19T18:58:57.453Z",
+      "id": 11
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/SPMV1.webp",
+      "read": true,
+      "createdAt": "2026-07-19T18:59:00.486Z",
+      "id": 12
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Loa Cabasse The Pearl và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/SPMV10.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T18:59:42.103Z",
+      "id": 13
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Loa Cabasse The Pearl và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/SPMV10.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T18:59:54.686Z",
+      "id": 14
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Loa Cabasse The Pearl và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/SPMV10.jpg",
+      "read": true,
+      "createdAt": "2026-07-19T18:59:55.018Z",
+      "id": 15
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/SPMV1.webp",
+      "read": true,
+      "createdAt": "2026-07-19T18:59:58.185Z",
+      "id": 16
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

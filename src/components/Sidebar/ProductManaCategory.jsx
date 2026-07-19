@@ -5,6 +5,8 @@ import Footer from "../../components/Footer/FooterUser";
 import Sevicer from "../../components/Sevicer/Sevicer";
 import InstallmentModal from "../../pages/InstallmentModal";
 import ProductReviews from "../../pages/ProductReviews";
+import WishlistButton from "../../components/Wishlist/WishlistButton";
+
 import { getImageUrl } from "../../utils/imageUtils";
 import { toast } from "sonner";
 import {
@@ -147,6 +149,11 @@ const ProductManaCategory = () => {
             <span>Trang chủ</span>
           </Link>
           <span className="demo-bread-current">{product.name}</span>
+          <WishlistButton
+            productId={id}
+            fromTable="appliances"
+            productName={product?.name}
+          />
         </div>
       </div>
       <main className="ad-container">
