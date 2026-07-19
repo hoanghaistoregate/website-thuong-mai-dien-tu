@@ -19,7 +19,7 @@
   --font-mono: "JetBrains Mono", monospace;
 
   position: relative;
-  z-index: 100;
+  z-index: 1000;
   font-family: var(--font-body);
   color: var(--ink);
 }
@@ -70,40 +70,47 @@
 }
 
 /* Header ghim lại trên cùng khi cuộn */
+/* Header ghim khi cuộn */
 .site-header {
   position: sticky;
-  top: 0;
+  top: -32px;
   z-index: 1000;
   background-color: #fff;
+  overflow: visible;
   transition: box-shadow 0.3s ease;
 }
+.site-header__menu-item--notif {
+  padding: 8px 14px;
+  gap: 8px;
+}
 
+.site-header__menu-item--notif > span {
+  white-space: nowrap;
+}
 .site-header--compact {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Thanh thông báo chạy ngang - nhẹ nhàng */
+/* Thanh thông báo chạy ngang */
 .site-header__marquee {
   width: 100%;
   overflow: hidden;
   background-color: #f5f5f7;
   border-bottom: 1px solid #eaeaea;
   padding: 6px 0;
-  max-height: 40px;
+
   transition:
-    max-height 0.3s ease,
-    padding 0.3s ease,
+    transform 0.3s ease,
     opacity 0.3s ease;
 }
 
+/* Ẩn thanh chạy khi scroll */
 .site-header__marquee--hidden {
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  transform: translateY(-100%);
   opacity: 0;
-  border-bottom: none;
 }
 
+/* Nội dung chạy */
 .site-header__marquee-track {
   display: flex;
   width: max-content;
@@ -124,6 +131,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -133,20 +141,20 @@
   animation-play-state: paused;
 }
 
-/* Thanh search - ẩn khi cuộn */
+/* Thanh search phía dưới */
 .site-header__bottom {
-  max-height: 70px;
-  overflow: hidden;
+  background: var(--cloud);
+  border-bottom: 1px solid var(--line-dark);
+  padding: 4px 32px;
+
   transition:
-    max-height 0.3s ease,
-    padding 0.3s ease,
+    transform 0.3s ease,
     opacity 0.3s ease;
 }
 
+/* Ẩn thanh search khi scroll */
 .site-header__bottom--hidden {
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  transform: translateY(-100%);
   opacity: 0;
 }
 
@@ -156,7 +164,7 @@
   justify-content: space-between;
   gap: 32px;
   background: var(--void);
-  padding: 0px 32px;
+  padding: 0px 45px;
 }
 
 .site-header__logo img.logo {
@@ -185,7 +193,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 4px 10px;
   color: var(--muted-light);
   font-size: 12.5px;
   font-weight: 500;
@@ -224,11 +232,6 @@
   outline-offset: -2px;
   border-radius: 4px;
 }
-
-/* HOTLINE gets a live/pulse marker — it's the one item that means "now".
-   Targeted by position (5th menu item) since react-icons don't expose
-   a component-name class to select on. If the menu order ever changes,
-   move this rule to whichever <li> wraps the HOTLINE trigger. */
 .site-header__menu-item--clickable:nth-child(5) {
   font-family: var(--font-mono);
   color: var(--alert);
@@ -373,14 +376,22 @@
 .site-header__bottom {
   background: var(--cloud);
   border-bottom: 1px solid var(--line-dark);
-  padding: 4px 32px;
+  padding: 0px 32px;
 }
 
 .site-header__bottom-inner {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
 
+.site-header__bottom,
+.site-header__bottom-inner {
+  overflow: visible;
+}
 .site-header__category-btn {
   flex-shrink: 0;
   background: var(--void);

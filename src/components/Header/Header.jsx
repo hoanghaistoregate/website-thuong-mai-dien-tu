@@ -10,6 +10,7 @@ import { MdOutlineAddIcCall } from "react-icons/md";
 import { PiShoppingCartDuotone } from "react-icons/pi";
 import { IoSearch } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
+import NotificationBell from "../Notification/NotificationBell";
 
 const Header = (props) => {
   const navigate = useNavigate();
@@ -241,6 +242,11 @@ const Header = (props) => {
                 <MdOutlineAddIcCall />
                 HOTLINE
               </li>
+
+              <li className="site-header__menu-item site-header__menu-item--notif ">
+                <NotificationBell label="Thông Báo" />
+              </li>
+
               <li
                 className="site-header__menu-item site-header__menu-item--clickable site-header__cart-item"
                 onClick={() => navigate("/cart")}
@@ -304,15 +310,7 @@ const Header = (props) => {
             isScrolled ? "site-header__bottom--hidden" : ""
           }`}
         >
-          <div
-            className="site-header__bottom-inner"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "20px",
-              width: "100%",
-            }}
-          >
+          <div className="site-header__bottom-inner">
             <button className="site-header__category-btn">
               Danh Mục Sản Phẩm
             </button>

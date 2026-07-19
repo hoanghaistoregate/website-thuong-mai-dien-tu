@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
+import { createNotification } from "../../utils/notify";
 import {
   FaShoppingBag,
   FaUser,
@@ -11,6 +12,13 @@ import {
 import "./AdminOrders.css";
 
 const API_URL = "http://localhost:3000";
+const STATUS_LABEL = {
+  pending: "Chờ xử lý",
+  confirmed: "Đã xác nhận",
+  shipping: "Đang giao",
+  completed: "Hoàn thành",
+  cancelled: "Đã hủy",
+};
 
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -53,6 +61,35 @@ const AdminOrders = () => {
             ? "Đã hủy đơn hàng!"
             : "Cập nhật trạng thái thành công!",
         );
+
+        // Báo cho khách hàng biết đơn hàng của họ vừa đổi trạng thái
+        // Báo cho khách hàng biết đơn hàng của họ vừa đổi trạng thái
+        // Báo cho khách hàng biết đơn hàng của họ vừa đổi trạng thái
+        const order = orders.find((o) => o.id === orderId);
+        if (order?.userId) {
+          const products = order.products || [];
+          const firstProduct = products[0];
+          const productName =
+            firstProduct?.name || `Sản phẩm #${firstProduct?.productId}`;
+          const hasMore = products.length > 1;
+
+          const productImage =
+            firstProduct?.image &&
+            (firstProduct.image.startsWith("http") ||
+              firstProduct.image.startsWith("data:") ||
+              firstProduct.image.startsWith("/images"))
+              ? firstProduct.image
+              : null;
+
+          createNotification({
+            userId: order.userId,
+            type: "order",
+            title: `Đơn ${productName}${hasMore ? " và các sản phẩm khác" : ""} đã cập nhật`,
+            message: `Đơn hàng của bạn hiện đang ở trạng thái "${STATUS_LABEL[newStatus] || newStatus}".`,
+            link: "/orders",
+            image: productImage,
+          });
+        }
         fetchOrders();
       } else {
         toast.error("Không thể cập nhật trạng thái.");
