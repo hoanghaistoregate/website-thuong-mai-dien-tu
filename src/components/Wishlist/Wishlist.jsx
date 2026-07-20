@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "sonner";
 import { FaHeart, FaTrash, FaShoppingCart } from "react-icons/fa";
 import Header from "../Header/Header";
@@ -8,7 +8,6 @@ import "./Wishlist.css";
 
 const API_URL = "http://localhost:3000";
 
-// Mỗi bảng nguồn tương ứng với 1 route xem chi tiết khác nhau trong app
 const DETAIL_ROUTE_BY_TABLE = {
   catenogies: (id) => `/product/${id}`,
   ProductMenus: (id) => `/menu/${id}`,
@@ -50,7 +49,6 @@ const Wishlist = () => {
         }
       }
 
-      // Với mỗi mục yêu thích, đi lấy thông tin chi tiết sản phẩm ở đúng bảng nguồn
       const fullItems = await Promise.all(
         raw.map(async (item) => {
           try {
@@ -68,7 +66,6 @@ const Wishlist = () => {
         }),
       );
 
-      // Bỏ qua sản phẩm đã bị xoá khỏi hệ thống (không còn tồn tại nữa)
       setItems(fullItems.filter((item) => item.product));
     } catch (error) {
       console.error("Lỗi tải danh sách yêu thích:", error);
@@ -104,20 +101,28 @@ const Wishlist = () => {
   };
 
   return (
-    <>
+    <div className="wishlist-page-wrapper">
       <Header />
-      <div className="wishlist-page">
-        <div className="wishlist-header">
-          <h1>
-            <FaHeart className="wishlist-header__icon" /> Sản Phẩm Yêu Thích
-          </h1>
-          {!loading && items.length > 0 && (
-            <span className="wishlist-header__count">
-              {items.length} sản phẩm
-            </span>
-          )}
+
+      <div className="demo-bar">
+        <div className="demo-bread">
+          <Link to="/">
+            <span>Trang chủ</span>
+          </Link>
+          <Link to="/proDemo">
+            <span className="demo-bread-current">Sản Phẩm Mới Về</span>
+          </Link>
+          <Link to="/product-manga-new">
+            <span className="demo-bread-current">Sản Phẩm Yêu Thích</span>
+          </Link>
         </div>
 
+        {!loading && items.length > 0 && (
+          <span className="wishlist-header__count"></span>
+        )}
+      </div>
+
+      <main className="wishlist-main-content">
         {!currentUser ? (
           <div className="wishlist-empty">
             <p>Vui lòng đăng nhập để xem danh sách yêu thích của bạn.</p>
@@ -190,9 +195,10 @@ const Wishlist = () => {
             ))}
           </div>
         )}
-      </div>
+      </main>
+
       <FooterUser />
-    </>
+    </div>
   );
 };
 

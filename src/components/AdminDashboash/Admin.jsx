@@ -65,6 +65,10 @@ const Admin = () => {
             <FaStar />
             <span>Đánh Giá</span>
           </Link>
+          <Link to="/admin/vouchers" className={isActive("vouchers")}>
+            <BiSolidDiscount />
+            <span>Voucher</span>
+          </Link>
           <Link to="/admin/flash-sale" className={isActive("flash-sale")}>
             <FaBolt />
             <span>Flash Sale</span>

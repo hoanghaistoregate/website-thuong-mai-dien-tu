@@ -6,12 +6,6 @@ import "./WishlistButton.css";
 
 const API_URL = "http://localhost:3000";
 
-/**
- * Nút trái tim yêu thích — gắn ở trang chi tiết sản phẩm.
- * Mỗi loại sản phẩm nằm ở 1 bảng khác nhau (catenogies, ProductMenus,
- * LaptopUser, eventList) nên cần truyền đúng `fromTable` để không bị lẫn
- * giữa 2 sản phẩm trùng id nhưng khác bảng.
- */
 const WishlistButton = ({ productId, fromTable, productName = "" }) => {
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
@@ -56,7 +50,6 @@ const WishlistButton = ({ productId, fromTable, productName = "" }) => {
 
   useEffect(() => {
     fetchWishlistEntry();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId, fromTable]);
 
   const handleToggle = async () => {

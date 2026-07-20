@@ -37,6 +37,7 @@ import ReviewManager from "./components/AdminDashboash/ReviewManager";
 import FlashSaleManager from "./components/AdminDashboash/FlashSaleManager";
 import WishlistFloatingWidget from "./components/Wishlist/WishlistFloatingWidget";
 import Wishlist from "./components/Wishlist/Wishlist";
+import VoucherManager from "./components/AdminDashboash/VoucherManager";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -142,10 +143,10 @@ function App() {
           }
         />
         <Route
-          path="/admin/discount"
+          path="/admin/vouchers"
           element={
             <AdminProtectedRoute>
-              <Admin />
+              <VoucherManager />
             </AdminProtectedRoute>
           }
         />

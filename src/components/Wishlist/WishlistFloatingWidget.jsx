@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
+// import { FaHandHoldingHeart } from "react-icons/fa";
+import { BsFillHeartPulseFill } from "react-icons/bs";
 import "./WishlistFloatingWidget.css";
 
 const API_URL = "http://localhost:3000";
@@ -56,7 +57,6 @@ const WishlistFloatingWidget = () => {
       window.removeEventListener("wishlistUpdated", handleUpdate);
       clearTimeout(hideTimer.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser?.id]);
 
   // Không hiện widget nếu chưa đăng nhập, hoặc đang đứng ngay trên trang Yêu Thích rồi
@@ -72,7 +72,7 @@ const WishlistFloatingWidget = () => {
       {bubble && (
         <div className="wishlist-fw__bubble" onClick={goToWishlist}>
           <div className="wishlist-fw__bubble-icon">
-            <FaHeart />
+            <BsFillHeartPulseFill />
           </div>
           <div className="wishlist-fw__bubble-text">
             <strong>
@@ -91,7 +91,7 @@ const WishlistFloatingWidget = () => {
         onClick={goToWishlist}
         aria-label="Xem sản phẩm yêu thích"
       >
-        <FaHeart />
+        <BsFillHeartPulseFill />
         {count > 0 && <span className="wishlist-fw__badge">{count}</span>}
       </button>
     </div>
