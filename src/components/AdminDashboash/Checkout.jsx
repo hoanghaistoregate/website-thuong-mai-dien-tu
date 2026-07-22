@@ -133,7 +133,14 @@ const Checkout = () => {
             const table = item.fromTable || "catenogies";
             const pRes = await fetch(`${API_URL}/${table}/${item.productId}`);
             const pData = pRes.ok ? await pRes.json() : {};
-            return { ...pData, ...item, cartId: item.id, table };
+            // Giữ nguyên id gốc của cart item (item.id) trong field cartId
+            // để tránh bị đè bởi id của sản phẩm khi merge object.
+            return {
+              ...pData,
+              ...item,
+              cartId: item.id,
+              table,
+            };
           }),
         );
         setCartItems(itemsWithDetails);
@@ -271,16 +278,38 @@ const Checkout = () => {
         }
       }
 
+      // Xóa các item trong giỏ hàng thật (bảng /cart) sau khi đặt hàng thành công.
+      // Chỉ áp dụng cho luồng checkout từ giỏ hàng, không áp dụng cho "Mua ngay".
       if (!buyNowItem) {
-        await Promise.all(
-          cartItems.map((item) => {
-            if (item.cartId) {
-              return fetch(`${API_URL}/cart/${item.cartId}`, {
+        const deleteResults = await Promise.all(
+          cartItems.map(async (item) => {
+            if (!item.cartId) return { ok: true };
+            try {
+              const delRes = await fetch(`${API_URL}/cart/${item.cartId}`, {
                 method: "DELETE",
               });
+              if (!delRes.ok) {
+                console.error(
+                  `Xóa cart item ${item.cartId} thất bại, status:`,
+                  delRes.status,
+                );
+              }
+              return { ok: delRes.ok, cartId: item.cartId };
+            } catch (err) {
+              console.error(`Lỗi khi xóa cart item ${item.cartId}:`, err);
+              return { ok: false, cartId: item.cartId };
             }
           }),
         );
+
+        const failedDeletes = deleteResults.filter((r) => !r.ok);
+        if (failedDeletes.length > 0) {
+          console.warn(
+            "Một số item chưa xóa được khỏi giỏ hàng:",
+            failedDeletes,
+          );
+        }
+
         window.dispatchEvent(new Event("cartUpdated"));
       }
 

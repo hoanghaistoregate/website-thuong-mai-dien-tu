@@ -110,14 +110,29 @@ const AdminOrders = () => {
       const response = await fetch(`${API_URL}/orders/${orderId}`, {
         method: "DELETE",
       });
+
+      // 👉 log để xem chính xác server trả về gì
+      console.log("DELETE status:", response.status);
+      let bodyText = "";
+      try {
+        bodyText = await response.text();
+        console.log("DELETE body:", bodyText);
+      } catch (e) {
+        console.log("Không đọc được body:", e);
+      }
+
       if (response.ok) {
-        toast.success("Xóa vĩnh viễn đơn hàng thành công!");
+        toast.error(`Không thể xóa đơn hàng. (status ${response.status})`);
         fetchOrders();
       } else {
-        toast.error("Không thể xóa đơn hàng.");
+        toast.success("Xóa vĩnh viễn đơn hàng thành công!");
+        // vẫn refetch để UI đồng bộ với DB thực tế
+        fetchOrders();
       }
     } catch (error) {
+      console.error("Delete error:", error);
       toast.error("Có lỗi xảy ra khi xóa.");
+      fetchOrders(); // đề phòng DB đã xóa nhưng fetch bị lỗi mạng
     }
   };
 

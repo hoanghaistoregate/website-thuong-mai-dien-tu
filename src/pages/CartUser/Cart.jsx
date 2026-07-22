@@ -120,8 +120,14 @@ const Cart = () => {
     }
   };
 
+  // Fetch lần đầu khi mount, và tự fetch lại mỗi khi có nơi khác báo giỏ hàng thay đổi
+  // (ví dụ: sau khi đặt hàng ở trang Checkout sẽ dispatch sự kiện này)
   useEffect(() => {
     fetchCart();
+
+    const handleCartUpdated = () => fetchCart();
+    window.addEventListener("cartUpdated", handleCartUpdated);
+    return () => window.removeEventListener("cartUpdated", handleCartUpdated);
   }, []);
 
   // ================= TĂNG GIẢM SỐ LƯỢNG SẢN PHẨM =================
@@ -137,8 +143,12 @@ const Cart = () => {
         // Phát sự kiện đồng bộ số lượng hiển thị lên badge icon của Header ngay lập tức
         window.dispatchEvent(new Event("cartUpdated"));
         fetchCart();
+      } else {
+        console.error("Cập nhật số lượng thất bại, status:", res.status);
+        toast.error("Không thể cập nhật số lượng");
       }
     } catch (error) {
+      console.error("Lỗi cập nhật số lượng:", error);
       toast.error("Không thể cập nhật số lượng");
     }
   };
@@ -151,8 +161,12 @@ const Cart = () => {
         toast.success("Đã xóa sản phẩm khỏi giỏ hàng");
         window.dispatchEvent(new Event("cartUpdated"));
         fetchCart();
+      } else {
+        console.error("Xóa item thất bại, status:", res.status);
+        toast.error("Lỗi khi xóa sản phẩm");
       }
     } catch (error) {
+      console.error("Lỗi khi xóa sản phẩm:", error);
       toast.error("Lỗi khi xóa sản phẩm");
     }
   };
@@ -284,18 +298,44 @@ const Cart = () => {
                     className="remove-all-btn"
                     onClick={async () => {
                       try {
-                        // Gọi xóa đồng thời toàn bộ các item có trong giỏ hàng hiện tại
-                        await Promise.all(
-                          cartItems.map((item) =>
-                            fetch(`${API_URL}/cart/${item.id}`, {
-                              method: "DELETE",
-                            }),
-                          ),
-                        );
-                        toast.success("Đã xóa sạch giỏ hàng");
+                        const results = [];
+                        // Xóa lần lượt từng item để tránh race condition ghi file của json-server
+                        for (const item of cartItems) {
+                          try {
+                            const res = await fetch(
+                              `${API_URL}/cart/${item.id}`,
+                              {
+                                method: "DELETE",
+                              },
+                            );
+                            results.push({
+                              id: item.id,
+                              ok: res.ok,
+                              status: res.status,
+                            });
+                          } catch (err) {
+                            results.push({
+                              id: item.id,
+                              ok: false,
+                              error: err.message,
+                            });
+                          }
+                        }
+
+                        const failed = results.filter((r) => !r.ok);
+                        if (failed.length > 0) {
+                          console.error("Một số item không xóa được:", failed);
+                          toast.error(
+                            "Một số sản phẩm không thể xóa, vui lòng thử lại.",
+                          );
+                        } else {
+                          toast.success("Đã xóa sạch giỏ hàng");
+                        }
+
                         window.dispatchEvent(new Event("cartUpdated"));
                         fetchCart();
                       } catch (error) {
+                        console.error("Lỗi khi xóa toàn bộ giỏ hàng:", error);
                         toast.error("Không thể làm trống giỏ hàng");
                       }
                     }}
