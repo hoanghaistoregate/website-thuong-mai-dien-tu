@@ -64,7 +64,7 @@
       "price": 14000000,
       "category": "top-ban-chay",
       "image": "/images/pc.jpg",
-      "flashSale": true
+      "flashSale": false
     },
     {
       "id": "2",
@@ -72,7 +72,7 @@
       "price": 20000000,
       "category": "top-ban-chay",
       "image": "/images/pc3.webp",
-      "flashSale": true
+      "flashSale": false
     },
     {
       "id": "3",
@@ -80,7 +80,7 @@
       "price": 18000000,
       "category": "top-cuc-khung",
       "image": "/images/pc.jpg",
-      "flashSale": true
+      "flashSale": false
     },
     {
       "id": "4",
@@ -88,7 +88,7 @@
       "price": 15000000,
       "category": "top-cuc-khung",
       "image": "/images/pc5.jpg",
-      "flashSale": true
+      "flashSale": false
     },
     {
       "id": "5",
@@ -297,7 +297,7 @@
       "soldPercent": 44,
       "stockLeft": 11,
       "image": "/images/LT3.jpg",
-      "flashSale": true
+      "flashSale": false
     },
     {
       "id": "4",
@@ -1782,7 +1782,29 @@
       "deleted": false
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Hoàng Hải",
+      "email": "admin7709@gmail.com",
+      "phone": "0911108133",
+      "password": "123456789@",
+      "role": "admin",
+      "status": "active",
+      "address": "Đống Đa - Hà Nội",
+      "createdAt": "",
+      "username": "Admin7709"
+    },
+    {
+      "id": "1784379657593",
+      "fullName": "Harry Hoàng",
+      "email": "Hoanghai09@gmail.com",
+      "phone": "0911108139",
+      "password": "123456789",
+      "role": "user",
+      "status": "active"
+    }
+  ],
   "cart": [],
   "orders": [],
   "reviews": [],
@@ -1944,48 +1966,7 @@
       "image": "/images/TB.jpg"
     }
   ],
-  "serviceRequests": [
-    {
-      "service": "HỖ TRỢ TRẢ GÓP",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "gửi yêu cầu\n",
-      "status": "pending",
-      "createdAt": "2026-07-21T05:23:55.846Z",
-      "id": 1
-    },
-    {
-      "service": "HỖ TRỢ TRẢ GÓP",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "gửi yêu cầu \n",
-      "status": "pending",
-      "createdAt": "2026-07-21T05:29:57.644Z",
-      "id": 2
-    },
-    {
-      "service": "GIÁ ƯU ĐÃI NHẤT",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "gửi yêu cầu ",
-      "status": "pending",
-      "createdAt": "2026-07-21T05:30:53.828Z",
-      "id": 3
-    },
-    {
-      "service": "HỖ TRỢ TRẢ GÓP",
-      "fullName": "Hoàng Hải",
-      "email": "sieucapbro92@gmail.com",
-      "phone": "0911108133",
-      "message": "hhhh\n",
-      "status": "pending",
-      "createdAt": "2026-07-21T07:16:10.429Z",
-      "id": 4
-    }
-  ],
+  "serviceRequests": [],
   "vouchers": [
     {
       "id": "v2",
@@ -2021,26 +2002,15 @@
       "collectedCount": 46
     },
     {
-      "code": "UNGHONSANPHAMNHOMMINH",
+      "code": "THONGBAOVIP",
       "type": "amount",
-      "value": 5000000,
-      "minOrder": 50000000,
-      "des": "Mọi người hãy ủng hộ sản phẩm của shop nhé",
-      "expiredAt": "2026-07-22",
-      "maxCollect": 3,
-      "collectedCount": 3,
-      "id": "Vb0Unwu"
-    },
-    {
-      "code": "TAOMOIVOUCHER",
-      "type": "amount",
-      "value": 5000000,
-      "minOrder": 60000000,
-      "des": "tri ân khách hàng",
-      "expiredAt": "2026-07-22",
-      "maxCollect": 4,
-      "collectedCount": 1,
-      "id": "WB0ZjZw"
+      "value": 500000,
+      "minOrder": 10000000,
+      "des": "KHUYẾN MÃI KHÁCH VIP",
+      "expiredAt": "2026-07-23",
+      "maxCollect": 2,
+      "collectedCount": 0,
+      "id": "_5-u-BT"
     }
   ],
   "userVouchers": [
@@ -2394,444 +2364,70 @@
   ],
   "notifications": [
     {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/SPMV1.webp",
-      "read": true,
-      "createdAt": "2026-07-21T06:53:25.418Z",
+      "userId": null,
+      "type": "service",
+      "title": "Yêu cầu dịch vụ \"HỖ TRỢ TRẢ GÓP\" đã được xử lý",
+      "message": "Yêu cầu của bạn về \"HỖ TRỢ TRẢ GÓP\" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!",
+      "link": "/lien-he",
+      "image": null,
+      "read": false,
+      "createdAt": "2026-07-22T06:57:48.559Z",
       "id": 1
     },
     {
       "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc3.webp",
+      "type": "service",
+      "title": "Yêu cầu dịch vụ \"HỖ TRỢ TRẢ GÓP\" đã được xử lý",
+      "message": "Yêu cầu của bạn về \"HỖ TRỢ TRẢ GÓP\" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!",
+      "link": "/lien-he",
+      "image": null,
       "read": true,
-      "createdAt": "2026-07-21T06:53:27.040Z",
+      "createdAt": "2026-07-22T07:01:11.228Z",
       "id": 2
     },
     {
       "userId": "1",
-      "type": "order",
-      "title": "Đơn Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/SPMV1.webp",
+      "type": "service",
+      "title": "Yêu cầu dịch vụ \"Bảo hành - Sửa chữa\" đã được xử lý",
+      "message": "Yêu cầu của bạn về \"Bảo hành - Sửa chữa\" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!",
+      "link": "/lien-he",
+      "image": null,
       "read": true,
-      "createdAt": "2026-07-21T06:54:21.558Z",
+      "createdAt": "2026-07-22T07:30:06.550Z",
       "id": 3
     },
     {
       "userId": "1",
       "type": "order",
-      "title": "Đơn PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "title": "Đơn PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
       "link": "/orders",
-      "image": "/images/pc3.webp",
+      "image": "/images/pr1.webp",
       "read": true,
-      "createdAt": "2026-07-21T06:54:23.544Z",
+      "createdAt": "2026-07-22T07:31:08.719Z",
       "id": 4
     },
     {
       "userId": "1",
       "type": "order",
-      "title": "Đơn Tai nghe Bluetooth Apple AirPods 4 chống ồn chủ động đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "title": "Đơn PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
       "link": "/orders",
-      "image": "/images/SPMV1.webp",
+      "image": "/images/pr1.webp",
       "read": true,
-      "createdAt": "2026-07-21T06:54:31.280Z",
+      "createdAt": "2026-07-22T07:31:09.482Z",
       "id": 5
     },
     {
       "userId": "1",
       "type": "order",
-      "title": "Đơn PC GAMING XIGMATEK I5 THẾ HỆ 10 ( H510 - I5 10400F - RAM 16G - SSD 256G NVME - VGA GTX1660 SUPER ) và các sản phẩm khác đã cập nhật",
+      "title": "Đơn PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB) và các sản phẩm khác đã cập nhật",
       "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
       "link": "/orders",
-      "image": "/images/pc3.webp",
+      "image": "/images/pr1.webp",
       "read": true,
-      "createdAt": "2026-07-21T06:54:32.468Z",
+      "createdAt": "2026-07-22T07:31:11.185Z",
       "id": 6
-    },
-    {
-      "userId": null,
-      "type": "voucher",
-      "title": "Voucher mới: Giảm 5.000.000đ",
-      "message": "tri an khách hàng — đơn tối thiểu 60.000.000đ. Nhanh tay thu thập trước khi hết hạn 22/7/2026!",
-      "link": "/tri-an-khach-hang",
-      "image": null,
-      "read": false,
-      "createdAt": "2026-07-21T07:02:25.865Z",
-      "id": 7
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn Tai nghe Bluetooth Apple AirPods  đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/SPMV1.webp",
-      "read": true,
-      "createdAt": "2026-07-21T08:08:37.505Z",
-      "id": 8
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T08:08:38.459Z",
-      "id": 9
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T08:08:39.749Z",
-      "id": 10
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn Tai nghe Bluetooth Apple AirPods  đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/SPMV1.webp",
-      "read": true,
-      "createdAt": "2026-07-21T08:09:17.948Z",
-      "id": 11
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T08:09:18.835Z",
-      "id": 12
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T08:09:20.008Z",
-      "id": 13
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn Tai nghe Bluetooth Apple AirPods  đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/SPMV1.webp",
-      "read": true,
-      "createdAt": "2026-07-21T08:09:55.913Z",
-      "id": 14
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T08:09:56.901Z",
-      "id": 15
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T08:09:57.772Z",
-      "id": 16
-    },
-    {
-      "userId": null,
-      "type": "voucher",
-      "title": "Voucher mới: Giảm 5.000.000đ",
-      "message": "tri ân khách hàng — đơn tối thiểu 60.000.000đ. Nhanh tay thu thập trước khi hết hạn 22/7/2026!",
-      "link": "/tri-an-khach-hang",
-      "image": null,
-      "read": false,
-      "createdAt": "2026-07-21T08:18:24.013Z",
-      "id": 17
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T15:44:03.739Z",
-      "id": 18
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T15:44:03.893Z",
-      "id": 19
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-21T15:44:04.061Z",
-      "id": 20
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T04:56:46.712Z",
-      "id": 21
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T04:56:47.367Z",
-      "id": 22
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T04:56:48.805Z",
-      "id": 23
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T04:58:26.186Z",
-      "id": 24
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T04:58:26.618Z",
-      "id": 25
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T04:58:27.268Z",
-      "id": 26
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:00.600Z",
-      "id": 27
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:01.033Z",
-      "id": 28
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:01.549Z",
-      "id": 29
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:05.866Z",
-      "id": 30
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:06.049Z",
-      "id": 31
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:06.217Z",
-      "id": 32
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:06.384Z",
-      "id": 33
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:11:06.999Z",
-      "id": 34
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:51:16.756Z",
-      "id": 35
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:51:17.305Z",
-      "id": 36
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:51:17.505Z",
-      "id": 37
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:51:20.590Z",
-      "id": 38
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:51:20.755Z",
-      "id": 39
-    },
-    {
-      "userId": "1",
-      "type": "order",
-      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
-      "link": "/orders",
-      "image": "/images/pc.jpg",
-      "read": true,
-      "createdAt": "2026-07-22T05:51:20.938Z",
-      "id": 40
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

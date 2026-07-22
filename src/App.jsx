@@ -38,6 +38,7 @@ import FlashSaleManager from "./components/AdminDashboash/FlashSaleManager";
 import WishlistFloatingWidget from "./components/Wishlist/WishlistFloatingWidget";
 import Wishlist from "./components/Wishlist/Wishlist";
 import VoucherManager from "./components/AdminDashboash/VoucherManager";
+import ContactPage from "./components/AdminDashboash/ContactPage";
 
 // BẢO VỆ ROUTE ADMIN
 const AdminProtectedRoute = ({ children }) => {
@@ -81,6 +82,7 @@ function App() {
         <Route path="/product-manga-new" element={<ProductMangaNew />} />
         <Route path="/appliance/:id" element={<ProductManaCategory />} />
         <Route path="/tri-an-khach-hang" element={<VoucherWallet />} />
+        <Route path="/lien-he" element={<ContactPage />} />
 
         {/* Giỏ hàng & Thanh toán */}
         <Route path="/cart" element={<Cart />} />

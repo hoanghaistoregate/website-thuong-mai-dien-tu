@@ -121,6 +121,7 @@ const Header = (props) => {
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
+          userId: currentUser?.id || null, // MỚI: lưu người gửi để bắn thông báo cá nhân sau này
           status: "pending", // pending | processing | done
           createdAt: new Date().toISOString(),
         }),
@@ -227,9 +228,12 @@ const Header = (props) => {
                 <MdDiscount />
                 Giá Ưu Đãi Nhất
               </li>
-              <li className="site-header__menu-item">
+              <li
+                className="site-header__menu-item site-header__menu-item--clickable"
+                onClick={() => navigate("/lien-he")}
+              >
                 <AiOutlineFileProtect />
-                Bảo Hành Tận Nhà
+                Liên Hệ Với Chúng Tôi
               </li>
               <li className="site-header__menu-item">
                 <FaShippingFast />

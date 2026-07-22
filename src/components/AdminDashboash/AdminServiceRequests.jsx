@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { toast } from "sonner";
+import { createNotification } from "../../utils/notify";
 import "./AdminServiceRequests.css";
 
 const STATUS_LABELS = {
@@ -67,6 +68,9 @@ const AdminServiceRequests = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
       });
+
+      const target = requests.find((r) => r.id === id);
+
       setRequests((prev) =>
         prev.map((r) => (r.id === id ? { ...r, status: newStatus } : r)),
       );
@@ -74,6 +78,18 @@ const AdminServiceRequests = () => {
         setSelected((prev) => ({ ...prev, status: newStatus }));
       }
       toast.success("Đã cập nhật trạng thái!");
+
+      // MỚI: chỉ gửi thông báo riêng cho khách hàng đã gửi yêu cầu này
+      // khi trạng thái vừa chuyển sang "Đã xử lý"
+      if (newStatus === "done" && target && target.status !== "done") {
+        createNotification({
+          userId: target.userId,
+          type: "service",
+          title: `Yêu cầu dịch vụ "${target.service}" đã được xử lý`,
+          message: `Yêu cầu của bạn về "${target.service}" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!`,
+          link: "/lien-he",
+        });
+      }
     } catch (err) {
       console.error(err);
       toast.error("Cập nhật thất bại!");
@@ -83,12 +99,22 @@ const AdminServiceRequests = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Xóa yêu cầu này? Hành động không thể hoàn tác."))
       return;
+
     try {
-      await fetch(`http://localhost:3000/serviceRequests/${id}`, {
+      const res = await fetch(`http://localhost:3000/serviceRequests/${id}`, {
         method: "DELETE",
       });
+
+      if (!res.ok) {
+        throw new Error(`Delete failed: ${res.status}`);
+      }
+
       setRequests((prev) => prev.filter((r) => r.id !== id));
-      setSelected(null);
+
+      if (selected?.id === id) {
+        setSelected(null);
+      }
+
       toast.success("Đã xóa yêu cầu!");
     } catch (err) {
       console.error(err);

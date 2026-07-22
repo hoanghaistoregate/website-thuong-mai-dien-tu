@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { FaBell } from "react-icons/fa";
 import { MdOutlineDiscount } from "react-icons/md";
 import { IoFlashSharp, IoGift } from "react-icons/io5";
+import { MdContactMail } from "react-icons/md";
+
 import "./NotificationBell.css";
 
 const API_URL = "http://localhost:3000";
@@ -10,6 +12,7 @@ const POLL_INTERVAL = 20000; // 20s — tự làm mới danh sách thông báo
 
 const TYPE_ICON = {
   order: <IoGift />,
+  service: <MdContactMail />,
   voucher: <MdOutlineDiscount />,
   flashsale: <IoFlashSharp />,
 };
