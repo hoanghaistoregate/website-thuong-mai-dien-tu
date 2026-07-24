@@ -131,7 +131,8 @@
       "name": "PC CSUTOM CM MASTERFRAME 700",
       "price": 40000000,
       "image": "/images/pc12.webp",
-      "deleted": false
+      "deleted": false,
+      "flashSale": true
     }
   ],
   "eventList": [
@@ -1802,7 +1803,9 @@
       "phone": "0911108139",
       "password": "123456789",
       "role": "user",
-      "status": "active"
+      "status": "active",
+      "address": "Tôn Đức Thắng - Hà Nội",
+      "createdAt": ""
     }
   ],
   "cart": [],
@@ -1966,7 +1969,19 @@
       "image": "/images/TB.jpg"
     }
   ],
-  "serviceRequests": [],
+  "serviceRequests": [
+    {
+      "service": "Khiếu nại đơn hàng",
+      "fullName": "Hoàng Hải",
+      "email": "sieucapbro92@gmail.com",
+      "phone": "0911108133",
+      "message": "toi cần bảo hành ngay lập tức",
+      "userId": "1",
+      "status": "done",
+      "createdAt": "2026-07-23T08:38:19.485Z",
+      "id": 1
+    }
+  ],
   "vouchers": [
     {
       "id": "v2",
@@ -1988,18 +2003,7 @@
       "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
       "expiredAt": "2026-08-31",
       "maxCollect": 100,
-      "collectedCount": 47
-    },
-    {
-      "id": "v5",
-      "code": "SAN200K",
-      "type": "amount",
-      "value": 2000000,
-      "minOrder": 3000000,
-      "des": "Giảm 200k khách hàng thân thiết - đơn từ 3 triệu",
-      "expiredAt": "2026-08-31",
-      "maxCollect": 100,
-      "collectedCount": 46
+      "collectedCount": 48
     },
     {
       "code": "THONGBAOVIP",
@@ -2041,6 +2045,13 @@
       "collectedAt": "2026-07-21T08:18:50.111Z",
       "used": false,
       "id": 4
+    },
+    {
+      "userId": "1784379657593",
+      "voucherCode": "SANMUAHE200K",
+      "collectedAt": "2026-07-24T12:27:57.108Z",
+      "used": true,
+      "id": 5
     }
   ],
   "appliances": [
@@ -2284,150 +2295,112 @@
     }
   ],
   "wishlist": [],
-  "chatMessages": [
-    {
-      "visitorId": "guest_1783855230216_8145",
-      "sender": "user",
-      "text": "hi",
-      "createdAt": "2026-07-12T11:29:49.187Z",
-      "id": 1
-    },
-    {
-      "visitorId": "guest_1783855230216_8145",
-      "sender": "bot",
-      "text": "Chào bạn 👋 Mình là trợ lý hỗ trợ. Bạn cần mình giúp gì hôm nay?",
-      "createdAt": "2026-07-12T11:29:49.913Z",
-      "id": 2
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "user",
-      "text": "laptop",
-      "createdAt": "2026-07-21T05:48:43.281Z",
-      "id": 3
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "bot",
-      "text": "Cảm ơn bạn đã nhắn tin! Nhân viên sẽ phản hồi sớm nhất. Trong lúc chờ, bạn có thể hỏi mình về giá, bảo hành, giao hàng, trả góp hoặc voucher nhé.",
-      "createdAt": "2026-07-21T05:48:44.100Z",
-      "id": 4
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "user",
-      "text": "rẻ nhất",
-      "createdAt": "2026-07-21T05:48:56.438Z",
-      "id": 5
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "bot",
-      "text": "Cảm ơn bạn đã nhắn tin! Nhân viên sẽ phản hồi sớm nhất. Trong lúc chờ, bạn có thể hỏi mình về giá, bảo hành, giao hàng, trả góp hoặc voucher nhé.",
-      "createdAt": "2026-07-21T05:48:57.277Z",
-      "id": 6
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "user",
-      "text": "tiếp thị",
-      "createdAt": "2026-07-21T07:05:22.717Z",
-      "id": 7
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "bot",
-      "text": "Cảm ơn bạn đã nhắn tin! Nhân viên sẽ phản hồi sớm nhất. Trong lúc chờ, bạn có thể hỏi mình về giá, bảo hành, giao hàng, trả góp hoặc voucher nhé.",
-      "createdAt": "2026-07-21T07:05:23.460Z",
-      "id": 8
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "user",
-      "text": "tiếp thị",
-      "createdAt": "2026-07-21T08:21:22.994Z",
-      "id": 9
-    },
-    {
-      "visitorId": "user_1",
-      "sender": "bot",
-      "text": "Cảm ơn bạn đã nhắn tin! Nhân viên sẽ phản hồi sớm nhất. Trong lúc chờ, bạn có thể hỏi mình về giá, bảo hành, giao hàng, trả góp hoặc voucher nhé.",
-      "createdAt": "2026-07-21T08:21:24.180Z",
-      "id": 10
-    }
-  ],
+  "chatMessages": [],
   "settings": [
     {
       "id": "flashSale",
-      "endTime": "2026-07-21T09:55:00.000Z"
+      "endTime": "2026-07-24T09:55:00.000Z"
     }
   ],
   "notifications": [
     {
-      "userId": null,
-      "type": "service",
-      "title": "Yêu cầu dịch vụ \"HỖ TRỢ TRẢ GÓP\" đã được xử lý",
-      "message": "Yêu cầu của bạn về \"HỖ TRỢ TRẢ GÓP\" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!",
-      "link": "/lien-he",
-      "image": null,
-      "read": false,
-      "createdAt": "2026-07-22T06:57:48.559Z",
+      "userId": "1784379657593",
+      "type": "order",
+      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-24T12:31:41.130Z",
       "id": 1
     },
     {
-      "userId": "1",
-      "type": "service",
-      "title": "Yêu cầu dịch vụ \"HỖ TRỢ TRẢ GÓP\" đã được xử lý",
-      "message": "Yêu cầu của bạn về \"HỖ TRỢ TRẢ GÓP\" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!",
-      "link": "/lien-he",
-      "image": null,
+      "userId": "1784379657593",
+      "type": "order",
+      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
       "read": true,
-      "createdAt": "2026-07-22T07:01:11.228Z",
+      "createdAt": "2026-07-24T12:31:54.462Z",
       "id": 2
     },
     {
-      "userId": "1",
-      "type": "service",
-      "title": "Yêu cầu dịch vụ \"Bảo hành - Sửa chữa\" đã được xử lý",
-      "message": "Yêu cầu của bạn về \"Bảo hành - Sửa chữa\" đã được xử lý xong. Cảm ơn bạn đã sử dụng dịch vụ!",
-      "link": "/lien-he",
-      "image": null,
+      "userId": "1784379657593",
+      "type": "order",
+      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
       "read": true,
-      "createdAt": "2026-07-22T07:30:06.550Z",
+      "createdAt": "2026-07-24T12:31:54.911Z",
       "id": 3
     },
     {
-      "userId": "1",
+      "userId": "1784379657593",
       "type": "order",
-      "title": "Đơn PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
       "link": "/orders",
-      "image": "/images/pr1.webp",
+      "image": "/images/pc.jpg",
       "read": true,
-      "createdAt": "2026-07-22T07:31:08.719Z",
+      "createdAt": "2026-07-24T12:31:55.896Z",
       "id": 4
     },
     {
-      "userId": "1",
+      "userId": "1784379657593",
       "type": "order",
-      "title": "Đơn PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB) và các sản phẩm khác đã cập nhật",
-      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "title": "Đơn PC GAMING MSI FORGE I5 THẾ HỆ 12 ( B660M - I5 12400F - RAM 16G - SSD 256G - VGA RTX2060) và các sản phẩm khác đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
       "link": "/orders",
-      "image": "/images/pr1.webp",
+      "image": "/images/pc.jpg",
       "read": true,
-      "createdAt": "2026-07-22T07:31:09.482Z",
+      "createdAt": "2026-07-24T12:32:23.210Z",
       "id": 5
+    },
+    {
+      "userId": "1784379657593",
+      "type": "order",
+      "title": "Đơn PC GAMING RAPTOR LAKE I5 THẾ HỆ 13 ( Z690 - I5 13600K - RAM 16G - SSD 500G - VGA RTX3060 ) đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
+      "link": "/orders",
+      "image": "/images/pc.jpg",
+      "read": true,
+      "createdAt": "2026-07-24T12:32:25.979Z",
+      "id": 6
     },
     {
       "userId": "1",
       "type": "order",
-      "title": "Đơn PC RENDER i9-4070 (i9-14900K, RTX 4070 OC 12GB, RAM 64GB DDR5, SSD 1TB) và các sản phẩm khác đã cập nhật",
+      "title": "Đơn Tai nghe Bluetooth chụp tai Anker Soundcore Space One đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đã xác nhận\".",
+      "link": "/orders",
+      "image": "/images/SPMV4.webp",
+      "read": true,
+      "createdAt": "2026-07-24T14:05:27.567Z",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Tai nghe Bluetooth chụp tai Anker Soundcore Space One đã cập nhật",
+      "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Đang giao\".",
+      "link": "/orders",
+      "image": "/images/SPMV4.webp",
+      "read": true,
+      "createdAt": "2026-07-24T14:05:27.882Z",
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "type": "order",
+      "title": "Đơn Tai nghe Bluetooth chụp tai Anker Soundcore Space One đã cập nhật",
       "message": "Đơn hàng của bạn hiện đang ở trạng thái \"Hoàn thành\".",
       "link": "/orders",
-      "image": "/images/pr1.webp",
+      "image": "/images/SPMV4.webp",
       "read": true,
-      "createdAt": "2026-07-22T07:31:11.185Z",
-      "id": 6
+      "createdAt": "2026-07-24T14:05:28.014Z",
+      "id": 9
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

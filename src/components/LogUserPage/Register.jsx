@@ -127,7 +127,6 @@ const Register = () => {
     <>
       <Header />
       <div className="login-page">
-        {/* Dùng chung class tổng với Login để đồng bộ giao diện */}
         <div className="container">
           <div className="breadcrumb">
             <Link to="/">

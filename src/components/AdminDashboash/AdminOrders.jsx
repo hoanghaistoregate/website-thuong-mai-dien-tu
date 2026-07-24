@@ -122,10 +122,10 @@ const AdminOrders = () => {
       }
 
       if (response.ok) {
-        toast.error(`Không thể xóa đơn hàng. (status ${response.status})`);
+        toast.success("Xóa vĩnh viễn đơn hàng thành công!");
         fetchOrders();
       } else {
-        toast.success("Xóa vĩnh viễn đơn hàng thành công!");
+        toast.error(`Không thể xóa đơn hàng. (status ${response.status})`);
         // vẫn refetch để UI đồng bộ với DB thực tế
         fetchOrders();
       }

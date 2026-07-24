@@ -41,7 +41,7 @@ const Admin = () => {
 
       <aside className="admin-sidebar">
         <div className="sidebar-logo">
-          <h2>ADMIN</h2>
+          <h2>HCore Store</h2>
         </div>
         <nav className="sidebar-menu">
           <Link to="/admin/products" className={isActive("products")}>

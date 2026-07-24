@@ -208,8 +208,10 @@ const Header = (props) => {
       <div className="site-header__container">
         <div className="site-header__top">
           <div className="site-header__logo">
-            <Link to="/">
-              <img src="/images/AMI.png" alt="FlashSCore" className="logo" />
+            <Link to="/" className="logo">
+              <span className="logo-h">H</span>
+              <span className="logo-core">Core</span>
+              <span className="logo-store">Store</span>
             </Link>
           </div>
           <nav className="site-header__nav">

@@ -26,7 +26,7 @@
 }
 
 .breadcrumb span::after {
-  content: "/";
+  content: "";
   margin: 0 8px;
   color: #cbd5e1;
 }

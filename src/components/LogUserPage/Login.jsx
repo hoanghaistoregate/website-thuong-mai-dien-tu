@@ -68,7 +68,7 @@ const Login = () => {
       });
 
       if (foundUser) {
-        // 🌟 2. Sonner bắn lỗi khi tài khoản bị khóa
+        //  2. Sonner bắn lỗi khi tài khoản bị khóa
         if (foundUser.status !== "active") {
           toast.error("Tài khoản của bạn hiện đang bị khóa!");
           return;
@@ -77,7 +77,7 @@ const Login = () => {
         // Đăng nhập thành công -> Lưu dữ liệu
         localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
-        // 🌟 3. Sonner bắn thông báo thành công theo từng quyền hạn
+        // 3. Sonner bắn thông báo thành công theo từng quyền hạn
         if (foundUser.role === "admin") {
           toast.success(" Đăng nhập thành công với quyền Admin!");
           setTimeout(() => navigate("/admin"), 1000);
@@ -86,14 +86,14 @@ const Login = () => {
           setTimeout(() => navigate("/"), 1000);
         }
       } else {
-        // 🌟 4. Sonner bắn lỗi sai thông tin
+        // 4. Sonner bắn lỗi sai thông tin
         toast.error("Mật khẩu hoặc tài khoản không chính xác!");
         setPassword("");
         setAccount(""); //
       }
     } catch (error) {
       console.error("Chi tiết lỗi API đăng nhập:", error);
-      // 🌟 5. Sonner bắn lỗi sập server json-server
+      // 5. Sonner bắn lỗi sập server json-server
       toast.error(
         "Không thể kết nối tới server. Hãy chắc chắn bạn đã chạy json-server!",
       );
